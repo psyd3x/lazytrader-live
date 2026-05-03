@@ -1,0 +1,1107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LazyTrader GUI Options</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #081018;
+        --bg-2: #0d1721;
+        --panel: rgba(14, 22, 31, 0.88);
+        --panel-2: rgba(18, 28, 40, 0.96);
+        --border: rgba(143, 161, 179, 0.18);
+        --text: #eaf1f7;
+        --muted: #9fb0bf;
+        --primary: #9945ff;
+        --secondary: #14f195;
+        --success: #37df91;
+        --danger: #ff6478;
+        --warning: #ffb44b;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        --radius-xl: 32px;
+        --radius-lg: 24px;
+        --radius-md: 18px;
+        --radius-sm: 14px;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(153, 69, 255, 0.18), transparent 30%),
+          radial-gradient(circle at 80% 20%, rgba(20, 241, 149, 0.14), transparent 20%),
+          radial-gradient(circle at 70% 70%, rgba(153, 69, 255, 0.08), transparent 22%),
+          linear-gradient(180deg, #060b11 0%, var(--bg) 100%);
+      }
+
+      .wrap {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 32px 20px 40px;
+      }
+
+      .hero {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1.3fr 0.7fr;
+        align-items: end;
+        margin-bottom: 28px;
+      }
+
+      .title {
+        max-width: 860px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(153, 69, 255, 0.22);
+        background: rgba(153, 69, 255, 0.08);
+        color: var(--primary);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 16px 0 10px;
+        font-size: clamp(34px, 5vw, 68px);
+        line-height: 0.96;
+        letter-spacing: -0.06em;
+      }
+
+      .lede {
+        margin: 0;
+        max-width: 760px;
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .meta {
+        display: grid;
+        gap: 10px;
+        justify-items: end;
+      }
+
+      .meta-card {
+        min-width: 280px;
+        padding: 16px 18px;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: rgba(10, 17, 24, 0.72);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow);
+      }
+
+      .meta-label {
+        color: var(--muted);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 8px;
+      }
+
+      .meta-value {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .option {
+        position: relative;
+        min-height: 760px;
+        padding: 18px;
+        border-radius: 28px;
+        border: 1px solid var(--border);
+        background: linear-gradient(180deg, rgba(17, 24, 32, 0.9), rgba(10, 15, 22, 0.88));
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .option::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top, rgba(153, 69, 255, 0.08), transparent 38%);
+        pointer-events: none;
+      }
+
+      .option-header {
+        position: relative;
+        display: grid;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .option-topline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .chip.primary { background: rgba(153, 69, 255, 0.12); color: var(--primary); border: 1px solid rgba(153, 69, 255, 0.18); }
+      .chip.success { background: rgba(55, 223, 145, 0.12); color: var(--success); border: 1px solid rgba(55, 223, 145, 0.18); }
+      .chip.warning { background: rgba(255, 180, 75, 0.12); color: var(--warning); border: 1px solid rgba(255, 180, 75, 0.18); }
+      .chip.danger { background: rgba(255, 100, 120, 0.12); color: var(--danger); border: 1px solid rgba(255, 100, 120, 0.18); }
+
+      .option h2 {
+        margin: 0;
+        font-size: 28px;
+        line-height: 1;
+        letter-spacing: -0.05em;
+      }
+
+      .option p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+        font-size: 14px;
+      }
+
+      .phone {
+        position: relative;
+        z-index: 1;
+        height: 640px;
+        padding: 14px;
+        border-radius: 38px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      }
+
+      .screen {
+        height: 100%;
+        border-radius: 28px;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.05);
+        background: var(--bg);
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        position: relative;
+      }
+
+      .statusbar {
+        padding: 14px 18px 6px;
+        display: flex;
+        justify-content: space-between;
+        color: rgba(234, 241, 247, 0.82);
+        font-size: 12px;
+      }
+
+      .nav {
+        padding: 14px 16px 16px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        border-top: 1px solid rgba(255,255,255,0.06);
+        background: rgba(8, 16, 24, 0.88);
+        position: sticky;
+        bottom: 0;
+        z-index: 3;
+        backdrop-filter: blur(18px);
+      }
+
+      .nav .item {
+        display: grid;
+        justify-items: center;
+        gap: 6px;
+        color: rgba(159, 176, 191, 0.9);
+        font-size: 10px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .nav .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(159, 176, 191, 0.45);
+      }
+
+      .nav .item.active {
+        color: var(--text);
+      }
+
+      .nav .item.active .dot {
+        background: var(--primary);
+        box-shadow: 0 0 12px rgba(153, 69, 255, 0.6);
+      }
+
+      .content {
+        padding: 10px 16px 14px;
+        display: grid;
+        gap: 14px;
+        overflow: auto;
+        min-height: 0;
+        scrollbar-width: thin;
+      }
+
+      .panel {
+        padding: 16px;
+        border-radius: var(--radius-lg);
+        background: var(--panel);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(16px);
+      }
+
+      .panel.soft {
+        background: rgba(17, 24, 32, 0.72);
+      }
+
+      .panel-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+
+      .panel-title strong {
+        font-size: 14px;
+        letter-spacing: -0.02em;
+      }
+
+      .panel-title span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .primary-stat {
+        display: grid;
+        gap: 6px;
+      }
+
+      .primary-stat .value {
+        font-size: 44px;
+        line-height: 0.95;
+        font-weight: 800;
+        letter-spacing: -0.06em;
+      }
+
+      .primary-stat .sub {
+        color: var(--muted);
+        line-height: 1.5;
+        font-size: 13px;
+      }
+
+      .button-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 14px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+
+      .btn.primary {
+        background: linear-gradient(90deg, rgba(153, 69, 255, 0.98), rgba(20, 241, 149, 0.92));
+        color: #04110c;
+        border-color: rgba(153, 69, 255, 0.42);
+      }
+
+      .btn.secondary {
+        background: rgba(255,255,255,0.04);
+        color: var(--text);
+      }
+
+      .btn.ghost {
+        background: transparent;
+        color: var(--muted);
+      }
+
+      .stack {
+        display: grid;
+        gap: 10px;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .label {
+        color: var(--muted);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .value {
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .rating-card {
+        position: relative;
+        padding: 18px;
+        border-radius: 24px;
+        border: 1px solid rgba(153, 69, 255, 0.15);
+        background:
+          radial-gradient(circle at top right, rgba(153, 69, 255, 0.16), transparent 30%),
+          linear-gradient(180deg, rgba(20, 31, 43, 0.98), rgba(11, 16, 22, 0.98));
+      }
+
+      .rating-big {
+        font-size: 72px;
+        line-height: 0.9;
+        font-weight: 900;
+        letter-spacing: -0.08em;
+      }
+
+      .rating-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .bars {
+        display: grid;
+        gap: 10px;
+      }
+
+      .bar {
+        display: grid;
+        gap: 6px;
+      }
+
+      .bar .top {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .meter {
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.06);
+        overflow: hidden;
+      }
+
+      .meter > span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, rgba(72,224,255,0.95), rgba(55,223,145,0.95));
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .mini {
+        padding: 12px;
+        border-radius: 16px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .mini .k {
+        color: var(--muted);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .mini .v {
+        margin-top: 6px;
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 8px;
+      }
+
+      .step {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: 16px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.06);
+        font-size: 13px;
+      }
+
+      .step strong {
+        font-size: 13px;
+      }
+
+      .step span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .theme-a .screen {
+        background:
+          radial-gradient(circle at top, rgba(20, 241, 149, 0.12), transparent 28%),
+          linear-gradient(180deg, #070d13, #0b1016);
+      }
+
+      .theme-b .screen {
+        background:
+          radial-gradient(circle at top, rgba(55, 223, 145, 0.14), transparent 30%),
+          linear-gradient(180deg, #081017, #0d141c);
+      }
+
+      .theme-c .screen {
+        background:
+          radial-gradient(circle at top, rgba(255, 180, 75, 0.16), transparent 30%),
+          linear-gradient(180deg, #0a1015, #0e151d);
+      }
+
+      .theme-b .rating-card {
+        border-color: rgba(55, 223, 145, 0.2);
+        background:
+          radial-gradient(circle at top right, rgba(55, 223, 145, 0.18), transparent 30%),
+          linear-gradient(180deg, rgba(13, 26, 19, 0.98), rgba(9, 15, 13, 0.98));
+      }
+
+      .theme-c .rating-card {
+        border-color: rgba(255, 180, 75, 0.18);
+        background:
+          radial-gradient(circle at top right, rgba(255, 180, 75, 0.16), transparent 30%),
+          linear-gradient(180deg, rgba(31, 24, 13, 0.98), rgba(14, 15, 16, 0.98));
+      }
+
+      .swatch {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        margin-right: 8px;
+        background: var(--primary);
+        box-shadow: 0 0 10px rgba(153, 69, 255, 0.7);
+      }
+
+      .footer {
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 1200px) {
+        .grid { grid-template-columns: 1fr; }
+        .option { min-height: auto; }
+      }
+
+      @media (max-width: 900px) {
+        .hero { grid-template-columns: 1fr; }
+        .meta { justify-items: start; }
+        .meta-card { width: 100%; min-width: 0; }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .option {
+          transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        }
+        .option:hover {
+          transform: translateY(-4px);
+          border-color: rgba(153, 69, 255, 0.3);
+          box-shadow: 0 22px 60px rgba(0, 0, 0, 0.48);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="hero">
+        <div class="title">
+          <div class="eyebrow"><span class="swatch"></span> LazyTrader GUI options</div>
+          <h1>Three mobile UI directions for the app.</h1>
+          <p class="lede">
+            These are browser previews for the Android interface. The flow starts
+            with importing a signal, then moves into review, verification, and
+            settings. Each option keeps the same product flow, but changes the
+            visual mood so you can choose the one that feels most right for LazyTrader.
+          </p>
+        </div>
+        <div class="meta">
+          <div class="meta-card">
+            <div class="meta-label">Recommended default</div>
+            <div class="meta-value">
+              <strong>Option A</strong> is the safest fit for the PRD: dark, precise,
+              high-trust, and closest to a serious trading terminal.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="option theme-a">
+          <div class="option-header">
+            <div class="option-topline">
+              <span class="chip primary">Option A</span>
+              <span class="chip success">Default pick</span>
+            </div>
+            <h2>Graphite Terminal</h2>
+            <p>
+              The most disciplined look. Dark surfaces, cyan accents, and a very
+              clear hierarchy. Best if you want the app to feel like a premium
+              trading instrument.
+            </p>
+          </div>
+
+          <div class="phone">
+            <div class="screen">
+              <div class="statusbar">
+                <span>9:41</span>
+                <span>LazyTrader</span>
+                <span>100%</span>
+              </div>
+              <div class="content">
+                <div class="panel">
+                  <div class="panel-title">
+                    <strong>Wallet</strong>
+                    <span>Connected</span>
+                  </div>
+                  <div class="primary-stat">
+                    <div class="value">Import Signal</div>
+                    <div class="sub">Choose camera or paste text. On-device parsing only.</div>
+                  </div>
+                  <div class="button-row" style="margin-top: 14px;">
+                    <div class="btn primary">Camera</div>
+                    <div class="btn secondary">Paste signal</div>
+                  </div>
+                  <div style="margin-top: 14px; padding: 14px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.03); color: var(--muted); font-size: 13px; line-height: 1.5;">
+                    Paste a signal here, or switch to camera if the signal is in a screenshot or image.
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Verification</strong>
+                    <span>A+ 87%</span>
+                  </div>
+                  <div class="rating-card">
+                    <div class="rating-big">A+</div>
+                    <div class="rating-meta">
+                      <span>Long BTCUSDT</span>
+                      <span>1.50x size multiplier</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Signal breakdown</strong>
+                    <span>Live</span>
+                  </div>
+                  <div class="mini-grid">
+                    <div class="mini"><div class="k">Entry</div><div class="v">68724</div></div>
+                    <div class="mini"><div class="k">Stop</div><div class="v">68310</div></div>
+                    <div class="mini"><div class="k">TP1</div><div class="v">69280</div></div>
+                    <div class="mini"><div class="k">Risk</div><div class="v">0.8%</div></div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Position sizing</strong>
+                    <span>Editable</span>
+                  </div>
+                  <div class="mini-grid">
+                    <div class="mini"><div class="k">Suggested size</div><div class="v">1.42 SOL</div></div>
+                    <div class="mini"><div class="k">Risk</div><div class="v">0.8%</div></div>
+                    <div class="mini"><div class="k">Leverage</div><div class="v">3x</div></div>
+                    <div class="mini"><div class="k">SL distance</div><div class="v">$414</div></div>
+                  </div>
+                  <div style="margin-top: 14px; padding: 14px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.03); color: var(--muted); font-size: 13px; line-height: 1.5;">
+                    Swipe or tap to override the size before confirm. The app should keep the risk math visible, not hidden.
+                  </div>
+                </div>
+              </div>
+              <div class="nav">
+                <div class="item active"><span class="dot"></span>Import</div>
+                <div class="item"><span class="dot"></span>Verify</div>
+                <div class="item"><span class="dot"></span>Telegram</div>
+                <div class="item"><span class="dot"></span>History</div>
+                <div class="item"><span class="dot"></span>Settings</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="option theme-a">
+          <div class="option-header">
+            <div class="option-topline">
+              <span class="chip primary">Settings</span>
+              <span class="chip success">Always visible</span>
+            </div>
+            <h2>Control Room</h2>
+            <p>
+              This is the screen for wallet connection, risk limits, default
+              leverage, network choice, and engine preferences. It should feel
+              compact, serious, and easy to scan before trading.
+            </p>
+          </div>
+
+          <div class="phone">
+            <div class="screen">
+              <div class="statusbar">
+                <span>9:41</span>
+                <span>Settings</span>
+                <span>100%</span>
+              </div>
+              <div class="content">
+                <div class="panel">
+                  <div class="panel-title">
+                    <strong>Wallet</strong>
+                    <span>Phantom</span>
+                  </div>
+                  <div class="stack">
+                    <div class="row">
+                      <span class="label">Status</span>
+                      <span class="value" style="color: var(--success);">Connected</span>
+                    </div>
+                    <div class="row">
+                      <span class="label">Address</span>
+                      <span class="value">7F3...9K2</span>
+                    </div>
+                  </div>
+                  <div class="button-row" style="margin-top: 14px;">
+                    <div class="btn primary">Connect wallet</div>
+                    <div class="btn secondary">Disconnect</div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Risk</strong>
+                    <span>Trading limits</span>
+                  </div>
+                  <div class="bars">
+                    <div class="bar">
+                      <div class="top"><span>Account balance</span><span>12.4 SOL</span></div>
+                      <div class="meter"><span style="width: 66%"></span></div>
+                    </div>
+                    <div class="bar">
+                      <div class="top"><span>Max risk per trade</span><span>0.8%</span></div>
+                      <div class="meter"><span style="width: 42%"></span></div>
+                    </div>
+                    <div class="bar">
+                      <div class="top"><span>Default leverage</span><span>3x</span></div>
+                      <div class="meter"><span style="width: 30%"></span></div>
+                    </div>
+                    <div class="bar">
+                      <div class="top"><span>TP split</span><span>50 / 30 / 20</span></div>
+                      <div class="meter"><span style="width: 58%"></span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Telegram</strong>
+                    <span>Phase 2</span>
+                  </div>
+                  <div class="row" style="margin-bottom: 12px;">
+                    <span class="label">Integration</span>
+                    <span class="value" style="color: var(--text);">Bot + channel</span>
+                  </div>
+                  <div class="mini-grid">
+                    <div class="mini"><div class="k">API</div><div class="v">Disconnected</div></div>
+                    <div class="mini"><div class="k">Channel</div><div class="v">None</div></div>
+                    <div class="mini"><div class="k">Sync</div><div class="v">Manual</div></div>
+                    <div class="mini"><div class="k">Status</div><div class="v">Idle</div></div>
+                  </div>
+                  <div class="button-row" style="margin-top: 14px;">
+                    <div class="btn primary">Connect Telegram</div>
+                    <div class="btn secondary">Choose channel</div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Network</strong>
+                    <span>Devnet</span>
+                  </div>
+                  <div class="mini-grid">
+                    <div class="mini"><div class="k">Mode</div><div class="v">Devnet</div></div>
+                    <div class="mini"><div class="k">RPC</div><div class="v">Auto</div></div>
+                    <div class="mini"><div class="k">Mainnet</div><div class="v">Off</div></div>
+                    <div class="mini"><div class="k">Override</div><div class="v">None</div></div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>SMC engine</strong>
+                    <span>Bias rules</span>
+                  </div>
+                  <div class="mini-grid">
+                    <div class="mini"><div class="k">Structure</div><div class="v">On</div></div>
+                    <div class="mini"><div class="k">Order blocks</div><div class="v">On</div></div>
+                    <div class="mini"><div class="k">FVG</div><div class="v">On</div></div>
+                    <div class="mini"><div class="k">Swing / EMA</div><div class="v">On</div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="nav">
+                <div class="item"><span class="dot"></span>Import</div>
+                <div class="item"><span class="dot"></span>Verify</div>
+                <div class="item"><span class="dot"></span>Telegram</div>
+                <div class="item"><span class="dot"></span>History</div>
+                <div class="item active"><span class="dot"></span>Settings</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="option theme-a">
+          <div class="option-header">
+            <div class="option-topline">
+              <span class="chip primary">Settings</span>
+              <span class="chip success">Full screen</span>
+            </div>
+            <h2>Control Room</h2>
+            <p>
+              A dedicated settings screen for wallet, risk, network, Telegram, and
+              engine controls. This is the version you’d actually tap from the
+              bottom bar.
+            </p>
+          </div>
+
+          <div class="phone">
+            <div class="screen">
+              <div class="statusbar">
+                <span>9:41</span>
+                <span>Settings</span>
+                <span>100%</span>
+              </div>
+              <div class="content">
+                <div class="panel">
+                  <div class="panel-title">
+                    <strong>Wallet</strong>
+                    <span>Phantom</span>
+                  </div>
+                  <div class="stack">
+                    <div class="row">
+                      <span class="label">Status</span>
+                      <span class="value" style="color: var(--success);">Connected</span>
+                    </div>
+                    <div class="row">
+                      <span class="label">Address</span>
+                      <span class="value">7F3...9K2</span>
+                    </div>
+                  </div>
+                  <div class="button-row" style="margin-top: 14px;">
+                    <div class="btn primary">Connect wallet</div>
+                    <div class="btn secondary">Disconnect</div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Risk</strong>
+                    <span>Trading limits</span>
+                  </div>
+                  <div class="bars">
+                    <div class="bar">
+                      <div class="top"><span>Account balance</span><span>12.4 SOL</span></div>
+                      <div class="meter"><span style="width: 66%"></span></div>
+                    </div>
+                    <div class="bar">
+                      <div class="top"><span>Max risk per trade</span><span>0.8%</span></div>
+                      <div class="meter"><span style="width: 42%"></span></div>
+                    </div>
+                    <div class="bar">
+                      <div class="top"><span>Default leverage</span><span>3x</span></div>
+                      <div class="meter"><span style="width: 30%"></span></div>
+                    </div>
+                    <div class="bar">
+                      <div class="top"><span>TP split</span><span>50 / 30 / 20</span></div>
+                      <div class="meter"><span style="width: 58%"></span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Network</strong>
+                    <span>Devnet</span>
+                  </div>
+                  <div class="mini-grid">
+                    <div class="mini"><div class="k">Mode</div><div class="v">Devnet</div></div>
+                    <div class="mini"><div class="k">RPC</div><div class="v">Auto</div></div>
+                    <div class="mini"><div class="k">Mainnet</div><div class="v">Off</div></div>
+                    <div class="mini"><div class="k">Override</div><div class="v">None</div></div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Telegram</strong>
+                    <span>Phase 2</span>
+                  </div>
+                  <div class="row" style="margin-bottom: 12px;">
+                    <span class="label">Integration</span>
+                    <span class="value" style="color: var(--text);">Bot + channel</span>
+                  </div>
+                  <div class="mini-grid">
+                    <div class="mini"><div class="k">API</div><div class="v">Disconnected</div></div>
+                    <div class="mini"><div class="k">Channel</div><div class="v">None</div></div>
+                    <div class="mini"><div class="k">Sync</div><div class="v">Manual</div></div>
+                    <div class="mini"><div class="k">Status</div><div class="v">Idle</div></div>
+                  </div>
+                  <div class="button-row" style="margin-top: 14px;">
+                    <div class="btn primary">Connect Telegram</div>
+                    <div class="btn secondary">Choose channel</div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>SMC engine</strong>
+                    <span>Bias rules</span>
+                  </div>
+                  <div class="mini-grid">
+                    <div class="mini"><div class="k">Structure</div><div class="v">On</div></div>
+                    <div class="mini"><div class="k">Order blocks</div><div class="v">On</div></div>
+                    <div class="mini"><div class="k">FVG</div><div class="v">On</div></div>
+                    <div class="mini"><div class="k">Swing / EMA</div><div class="v">On</div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="nav">
+                <div class="item"><span class="dot"></span>Import</div>
+                <div class="item"><span class="dot"></span>Verify</div>
+                <div class="item"><span class="dot"></span>Telegram</div>
+                <div class="item"><span class="dot"></span>History</div>
+                <div class="item active"><span class="dot"></span>Settings</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="option theme-b">
+          <div class="option-header">
+            <div class="option-topline">
+              <span class="chip success">Option B</span>
+              <span class="chip primary">Modern</span>
+            </div>
+            <h2>Signal Glass</h2>
+            <p>
+              Slightly softer and more premium. Uses glass panels and green-forward
+              confirmations, which can feel very polished if you want a friendlier
+              but still serious market app.
+            </p>
+          </div>
+
+          <div class="phone">
+            <div class="screen">
+              <div class="statusbar">
+                <span>9:41</span>
+                <span>LazyTrader</span>
+                <span>100%</span>
+              </div>
+              <div class="content">
+                <div class="panel">
+                  <div class="panel-title">
+                    <strong>Today</strong>
+                    <span>2 verified</span>
+                  </div>
+                  <div class="primary-stat">
+                    <div class="value">A</div>
+                    <div class="sub">Strong confluence. The app highlights the approved path more softly.</div>
+                  </div>
+                  <div class="button-row" style="margin-top: 14px;">
+                    <div class="btn primary">Verify signal</div>
+                    <div class="btn ghost">Review</div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Rating card</strong>
+                    <span>87%</span>
+                  </div>
+                  <div class="rating-card">
+                    <div class="rating-big">A</div>
+                    <div class="rating-meta">
+                      <span>Bias aligned</span>
+                      <span>Killzone active</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Confluence</strong>
+                    <span>7 TFs</span>
+                  </div>
+                  <div class="bars">
+                    <div class="bar">
+                      <div class="top"><span>Structure</span><span>92%</span></div>
+                      <div class="meter"><span style="width: 92%"></span></div>
+                    </div>
+                    <div class="bar">
+                      <div class="top"><span>Order block</span><span>74%</span></div>
+                      <div class="meter"><span style="width: 74%"></span></div>
+                    </div>
+                    <div class="bar">
+                      <div class="top"><span>FVG</span><span>68%</span></div>
+                      <div class="meter"><span style="width: 68%"></span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Position sizing</strong>
+                    <span>Override</span>
+                  </div>
+                  <div class="mini-grid">
+                    <div class="mini"><div class="k">Suggested size</div><div class="v">0.96 SOL</div></div>
+                    <div class="mini"><div class="k">Risk</div><div class="v">0.6%</div></div>
+                    <div class="mini"><div class="k">Leverage</div><div class="v">2x</div></div>
+                    <div class="mini"><div class="k">Final size</div><div class="v">1.10 SOL</div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="nav">
+                <div class="item"><span class="dot"></span>Import</div>
+                <div class="item active"><span class="dot"></span>Verify</div>
+                <div class="item"><span class="dot"></span>Telegram</div>
+                <div class="item"><span class="dot"></span>History</div>
+                <div class="item"><span class="dot"></span>Settings</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="option theme-c">
+          <div class="option-header">
+            <div class="option-topline">
+              <span class="chip warning">Option C</span>
+              <span class="chip danger">High tension</span>
+            </div>
+            <h2>Tactical Control</h2>
+            <p>
+              More expressive and alert-driven. Better if you want the app to feel
+              like a live decision cockpit, with stronger separation between caution
+              and approval states.
+            </p>
+          </div>
+
+          <div class="phone">
+            <div class="screen">
+              <div class="statusbar">
+                <span>9:41</span>
+                <span>LazyTrader</span>
+                <span>100%</span>
+              </div>
+              <div class="content">
+                <div class="panel">
+                  <div class="panel-title">
+                    <strong>Live signal</strong>
+                    <span>Needs review</span>
+                  </div>
+                  <div class="primary-stat">
+                    <div class="value">D</div>
+                    <div class="sub">This version puts warnings and risk cues more prominently in the interface.</div>
+                  </div>
+                  <div class="button-row" style="margin-top: 14px;">
+                    <div class="btn primary">Keep analyzing</div>
+                    <div class="btn secondary">Reject</div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Risk monitor</strong>
+                    <span>High</span>
+                  </div>
+                  <div class="rating-card">
+                    <div class="rating-big">D</div>
+                    <div class="rating-meta">
+                      <span>Weak HTF alignment</span>
+                      <span>Outside killzone</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel soft">
+                  <div class="panel-title">
+                    <strong>Execution steps</strong>
+                    <span>6 stages</span>
+                  </div>
+                  <div class="timeline">
+                    <div class="step"><strong>Capture</strong><span>Done</span></div>
+                    <div class="step"><strong>Parse</strong><span>Done</span></div>
+                    <div class="step"><strong>Verify</strong><span>In progress</span></div>
+                    <div class="step"><strong>Confirm</strong><span>Locked</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="nav">
+                <div class="item"><span class="dot"></span>Import</div>
+                <div class="item"><span class="dot"></span>Verify</div>
+                <div class="item"><span class="dot"></span>Telegram</div>
+                <div class="item active"><span class="dot"></span>History</div>
+                <div class="item"><span class="dot"></span>Settings</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <div class="footer">
+        Pick one and I can turn it into the actual React Native UI system:
+        A is the safest default for the PRD, B is the most polished, and C is the
+        most dramatic. The flow should begin at Import Signal, then move to
+        Review, Verify, and Settings from the persistent bottom bar.
+      </div>
+    </div>
+  </body>
+</html>
