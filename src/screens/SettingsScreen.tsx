@@ -1,12 +1,76 @@
 // src/screens/SettingsScreen.tsx
+import { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { NetBadge } from "../components/NetBadge";
 import { ScreenBackdrop } from "../components/ScreenBackdrop";
+import { SecretInput } from "../components/SecretInput";
 import { WalletChip } from "../components/WalletChip";
+import { fetchBirdeyeCandles, BirdeyeAuthError } from "../data/birdeye";
+import {
+  clearBirdeyeApiKey, getBirdeyeApiKey, setBirdeyeApiKey,
+} from "../storage/secureSettings";
 import { colors, fonts, fontSize, fontWeight, radius, space } from "../theme";
 
+const SOL_TEST_PAIR = {
+  base: "SOL", quote: "USD",
+  pyth: { pythSymbol: "Crypto.SOL/USD", pythFeedId: "" },
+  birdeyeTokenAddress: "So11111111111111111111111111111111111111112",
+};
+
 export function SettingsScreen() {
+  const [savedKey, setSavedKey] = useState<string | null>(null);
+  const [draftKey, setDraftKey] = useState("");
+  const [saving, setSaving] = useState(false);
+  const [status, setStatus] = useState<string | null>(null);
+
+  useEffect(() => {
+    void (async () => {
+      const k = await getBirdeyeApiKey();
+      setSavedKey(k);
+      setDraftKey(k ?? "");
+    })();
+  }, []);
+
+  const handleSave = async () => {
+    setSaving(true);
+    setStatus("Testing key…");
+    try {
+      // Validate by hitting Birdeye OHLCV for SOL (smallest meaningful request).
+      const now = Math.floor(Date.now() / 1000);
+      await fetchBirdeyeCandles({
+        pair: SOL_TEST_PAIR,
+        tf: "1H",
+        fromUnix: now - 3600,
+        toUnix: now,
+        apiKey: draftKey.trim(),
+      });
+      await setBirdeyeApiKey(draftKey);
+      setSavedKey(draftKey.trim());
+      setStatus("Saved · key valid");
+    } catch (e) {
+      if (e instanceof BirdeyeAuthError) {
+        setStatus("Key invalid — not saved");
+      } else {
+        // Network/rate-limit — save anyway with a warning. Spec §9.
+        await setBirdeyeApiKey(draftKey);
+        setSavedKey(draftKey.trim());
+        setStatus(`Saved · couldn't verify (${(e as Error).message.slice(0, 60)})`);
+      }
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleClear = async () => {
+    await clearBirdeyeApiKey();
+    setSavedKey(null);
+    setDraftKey("");
+    setStatus("Cleared");
+  };
+
+  const fallbackEnabled = savedKey !== null && savedKey.length > 0;
+
   return (
     <ScreenBackdrop>
       <View style={styles.topbar}>
@@ -26,6 +90,26 @@ export function SettingsScreen() {
           <Row label="RPC" right={<Text style={styles.mono}>api.devnet.solana.com</Text>} />
         </Section>
 
+        <Section title="Data Sources">
+          <Row label="Primary" right={<Badge text="Pyth Benchmarks ●" />} />
+          <Row
+            label="Birdeye fallback"
+            right={<Badge text={fallbackEnabled ? "● Enabled" : "○ Disabled"} />}
+          />
+          <View style={styles.cardBody}>
+            <SecretInput
+              value={draftKey}
+              onChangeText={setDraftKey}
+              placeholder="Birdeye API key"
+              helperText={status ?? (fallbackEnabled ? "Key saved" : "Get a key at birdeye.so/developers")}
+              onSave={handleSave}
+              onClear={handleClear}
+              saving={saving}
+              saveDisabled={draftKey.trim() === (savedKey ?? "")}
+            />
+          </View>
+        </Section>
+
         <Section title="Risk">
           <Row label="Max risk per trade" right={<Text style={styles.mono}>1.0%</Text>} />
           <Row label="Max leverage" right={<Text style={styles.mono}>25×</Text>} />
@@ -37,7 +121,7 @@ export function SettingsScreen() {
           <Row label="Golden fixtures" right={<Text style={styles.mono}>27 / 27 ✓</Text>} />
         </Section>
 
-        <Text style={styles.foot}>Editable settings land in M8.</Text>
+        <Text style={styles.foot}>Editable risk settings land in M8.</Text>
       </ScrollView>
     </ScreenBackdrop>
   );
@@ -84,6 +168,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: space.md, paddingVertical: space.md,
     borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: "rgba(143,161,179,0.06)",
     flexDirection: "row", justifyContent: "space-between", alignItems: "center",
+  },
+  cardBody: {
+    paddingHorizontal: space.md, paddingVertical: space.md,
+    borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: "rgba(143,161,179,0.06)",
   },
   rowLabel: { color: colors.text, fontSize: fontSize.body },
   mono: { fontFamily: fonts.mono, fontSize: fontSize.xs, color: colors.muted },
