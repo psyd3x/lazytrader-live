@@ -1,7 +1,25 @@
+---
+title: LazyTrader UI Design System
+description: Visual design system for the LazyTrader Android MVP — palette, typography, screen architecture, and component conventions. Palette locked to Solana brand (Option A from palette-preview.html).
+type: design-system
+project: lazytrader
+version: 1.1
+status: locked
+date: 2026-05-03
+created: 2026-05-03
+tags: [design-system, lazytrader, ui, palette, typography, react-native]
+---
+
 # LazyTrader UI Design System
 
-_Version: 1.0_
+_Version: 1.1_
 _Date: 2026-05-03_
+
+**Related docs**: [[PRD]] · [[ARCHITECTURE]] · [[IMPLEMENTATION-PLAN]] · [[ANDROID-DEV-SETUP]]
+
+> **v1.1 — palette locked to Solana brand (Option A from `palette-preview.html`).**
+> Canonical tokens live in `src/theme/tokens.ts`. Update both this doc and that
+> file in lockstep if the palette ever changes.
 
 This document defines the mobile interface direction for `lazytrader.live`.
 It is intended to guide the Android app scaffold, component implementation, and
@@ -34,34 +52,44 @@ premium market terminal that was simplified for one-handed mobile use.
 
 Use semantic colors rather than decorative colors.
 
-- Background: charcoal / graphite
-- Surface: slightly lifted slate
-- Primary action: electric cyan
+- Background: deep navy
+- Surface: lifted blue-graphite
+- Primary action: Solana purple
+- Secondary accent: Solana green (sparingly)
 - Long / positive: green
 - Short / negative: red
 - Warning / caution: amber
 - Neutral info: cool gray
 
-Recommended semantic tokens:
+Canonical tokens (mirrored in `src/theme/tokens.ts`):
 
-- `bg`: `#0B0F14`
-- `surface`: `#111820`
-- `surface-2`: `#16202B`
-- `border`: `#223041`
-- `text`: `#E6EDF3`
-- `muted`: `#8FA1B3`
-- `primary`: `#4DE1FF`
-- `success`: `#3EE28F`
-- `danger`: `#FF5B6E`
-- `warning`: `#FFB84D`
+- `bg`: `#081018`
+- `surface`: `#0d1721`
+- `surface-2`: `#131e2a`
+- `border`: `rgba(143, 161, 179, 0.18)`
+- `text`: `#eaf1f7`
+- `muted`: `#9fb0bf`
+- `primary`: `#9945ff` (Solana purple)
+- `secondary`: `#14f195` (Solana green — accents only)
+- `success`: `#37df91`
+- `danger`: `#ff6478`
+- `warning`: `#ffb44b`
 
-Keep the palette restrained. Use bright color only for meaning, not decoration.
+Keep the palette restrained. Bright color only for meaning, not decoration.
+Solana purple/green telegraph the chain — earn it, don't sprinkle it.
 
 ### Typography
 
-- Headings: `Space Grotesk` or an equivalent expressive sans
-- Body: `Inter`
-- Numeric / market values: `Inter` with tabular numbers enabled
+- Headings + body: `Inter` (single family for consistency)
+- Numeric / market values + dashboard cells: platform monospace (`Menlo` on
+  iOS, `monospace` on Android) — wired through `fonts.mono` in
+  `src/theme/tokens.ts`
+- Tabular numbers enabled for any number that lines up in a column
+
+MVP ships without a custom font load (no `expo-font` dep) — `Inter` is
+specified but falls back to platform sans (San Francisco / Roboto) which is
+close enough. Upgrade path documented in `tokens.ts` when we want pixel-exact
+Inter rendering.
 
 Type should feel crisp and contemporary. Use larger numbers for trading data,
 but keep supporting labels compact and calm.
