@@ -14,12 +14,19 @@
     "ob_fvg_distance": "0.05% relative",
     "bias_percentage": "2 absolute"
   },
+  "bias": {
+    "label": "LEAN BEAR",
+    "score": -15,
+    "max_score": 52,
+    "percentage": 35.58,
+    "direction": -1
+  },
   "session": {
     "session": "LONDON",
     "killzone": "NONE"
   },
-  "current_volume_state": 1,
   "current_volatility_state": 1,
+  "current_volume_state": 1,
   "timeframe_analyses": {
     "1m": {
       "ema": {
@@ -30,7 +37,7 @@
       "swing": {
         "high": 78440.49,
         "low": 78402.78,
-        "bias": 1,
+        "bias": -1,
         "reclaim_low": false,
         "reclaim_high": false,
         "position_pct": 184.5134
@@ -42,7 +49,7 @@
         "labels": [
           "LL",
           "LL",
-          "LL"
+          "HH"
         ]
       },
       "nearest_ob": {
@@ -190,8 +197,8 @@
         "low_type": -1,
         "bias": 0,
         "labels": [
-          "LH",
           "LL",
+          "HH",
           "HH"
         ]
       },
@@ -273,7 +280,7 @@
       "swing": {
         "high": 79199.48,
         "low": 78094.43,
-        "bias": -1,
+        "bias": 1,
         "reclaim_low": false,
         "reclaim_high": false,
         "position_pct": 34.2012
@@ -394,14 +401,14 @@
         "low_type": -1,
         "bias": 0,
         "labels": [
-          "LH",
           "LL",
+          "HH",
           "HH"
         ]
       },
       "nearest_ob": {
         "direction": -1,
-        "distance": 0.0,
+        "distance": -91.34,
         "is_inside": true
       },
       "nearest_fvg": {
@@ -499,8 +506,8 @@
         "low_type": -1,
         "bias": 0,
         "labels": [
-          "LH",
           "LL",
+          "HH",
           "HH"
         ]
       },
@@ -604,8 +611,8 @@
         "low_type": -1,
         "bias": -1,
         "labels": [
-          "LL",
           "LH",
+          "LL",
           "LL"
         ]
       },
@@ -685,19 +692,10 @@
       ]
     }
   },
-  "bias": {
-    "label": "NEUTRAL",
-    "score": -3,
-    "max_score": 60,
-    "percentage": 47.5,
-    "direction": 0
-  },
   "confluence_matrix": {
     "factors": {
       "structure": {
         "scores": {
-          "1m": 0,
-          "5m": 0,
           "15m": 0,
           "1H": 1,
           "4H": 0,
@@ -715,157 +713,120 @@
       },
       "ob": {
         "scores": {
-          "1m": 1,
-          "5m": -1,
           "15m": -1,
           "1H": 1,
           "4H": -1,
           "1D": 1,
           "1W": -1
         },
-        "agreement": 0.571,
+        "agreement": 0.6,
         "majority_direction": -1,
         "agreeing_tfs": [
-          "5m",
           "15m",
           "4H",
           "1W"
         ],
         "dissenting_tfs": [
-          "1m",
           "1H",
           "1D"
         ]
       },
       "fvg": {
         "scores": {
-          "1m": 1,
-          "5m": 1,
           "15m": -1,
           "1H": -1,
           "4H": 1,
           "1D": 1,
           "1W": -1
         },
-        "agreement": 0.571,
-        "majority_direction": 1,
+        "agreement": 0.6,
+        "majority_direction": -1,
         "agreeing_tfs": [
-          "1m",
-          "5m",
-          "4H",
-          "1D"
-        ],
-        "dissenting_tfs": [
           "15m",
           "1H",
           "1W"
+        ],
+        "dissenting_tfs": [
+          "4H",
+          "1D"
         ]
       },
       "swing": {
         "scores": {
-          "1m": 1,
-          "5m": 1,
-          "15m": 1,
-          "1H": -1,
-          "4H": 1,
-          "1D": 1,
-          "1W": -1
+          "15m": -1,
+          "1H": 0,
+          "4H": -1,
+          "1D": -1,
+          "1W": 0
         },
-        "agreement": 0.714,
-        "majority_direction": 1,
+        "agreement": 1.0,
+        "majority_direction": -1,
         "agreeing_tfs": [
-          "1m",
-          "5m",
           "15m",
           "4H",
           "1D"
         ],
-        "dissenting_tfs": [
-          "1H",
-          "1W"
-        ]
+        "dissenting_tfs": []
       }
     },
     "timeframes": {
-      "1m": {
-        "raw_score": 3,
-        "weighted_score": 3,
-        "weight": 1,
-        "factor_scores": {
-          "structure": 0,
-          "ob": 1,
-          "fvg": 1,
-          "swing": 1
-        }
-      },
-      "5m": {
-        "raw_score": 1,
-        "weighted_score": 1,
-        "weight": 1,
+      "15m": {
+        "raw_score": -3,
+        "weighted_score": -6,
+        "weight": 2,
         "factor_scores": {
           "structure": 0,
           "ob": -1,
-          "fvg": 1,
-          "swing": 1
+          "fvg": -1,
+          "swing": -1
         }
       },
-      "15m": {
+      "1H": {
+        "raw_score": 1,
+        "weighted_score": 2,
+        "weight": 2,
+        "factor_scores": {
+          "structure": 1,
+          "ob": 1,
+          "fvg": -1,
+          "swing": 0
+        }
+      },
+      "4H": {
         "raw_score": -1,
         "weighted_score": -2,
         "weight": 2,
         "factor_scores": {
           "structure": 0,
           "ob": -1,
-          "fvg": -1,
-          "swing": 1
-        }
-      },
-      "1H": {
-        "raw_score": 0,
-        "weighted_score": 0,
-        "weight": 2,
-        "factor_scores": {
-          "structure": 1,
-          "ob": 1,
-          "fvg": -1,
+          "fvg": 1,
           "swing": -1
         }
       },
-      "4H": {
-        "raw_score": 1,
-        "weighted_score": 2,
-        "weight": 2,
-        "factor_scores": {
-          "structure": 0,
-          "ob": -1,
-          "fvg": 1,
-          "swing": 1
-        }
-      },
       "1D": {
-        "raw_score": 3,
-        "weighted_score": 9,
+        "raw_score": 1,
+        "weighted_score": 3,
         "weight": 3,
         "factor_scores": {
           "structure": 0,
           "ob": 1,
           "fvg": 1,
-          "swing": 1
+          "swing": -1
         }
       },
       "1W": {
-        "raw_score": -4,
-        "weighted_score": -16,
+        "raw_score": -3,
+        "weighted_score": -12,
         "weight": 4,
         "factor_scores": {
           "structure": -1,
           "ob": -1,
           "fvg": -1,
-          "swing": -1
+          "swing": 0
         }
       }
     },
-    "overall_agreement": 0.589,
+    "overall_agreement": 0.675,
     "strongest_factor": "swing",
     "weakest_factor": "structure"
   }

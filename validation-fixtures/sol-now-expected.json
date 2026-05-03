@@ -14,12 +14,19 @@
     "ob_fvg_distance": "0.05% relative",
     "bias_percentage": "2 absolute"
   },
+  "bias": {
+    "label": "NEUTRAL",
+    "score": -10,
+    "max_score": 52,
+    "percentage": 40.38,
+    "direction": 0
+  },
   "session": {
     "session": "LONDON",
     "killzone": "NONE"
   },
-  "current_volume_state": 1,
   "current_volatility_state": 1,
+  "current_volume_state": 1,
   "timeframe_analyses": {
     "1m": {
       "ema": {
@@ -30,7 +37,7 @@
       "swing": {
         "high": 83.97,
         "low": 83.89,
-        "bias": 1,
+        "bias": -1,
         "reclaim_low": false,
         "reclaim_high": false,
         "position_pct": 175.0
@@ -41,8 +48,8 @@
         "bias": 1,
         "labels": [
           "LH",
-          "LH",
-          "HL"
+          "HL",
+          "HH"
         ]
       },
       "nearest_ob": {
@@ -105,7 +112,7 @@
       "swing": {
         "high": 84.03,
         "low": 83.83,
-        "bias": 1,
+        "bias": -1,
         "reclaim_low": false,
         "reclaim_high": false,
         "position_pct": 100.0
@@ -115,14 +122,14 @@
         "low_type": -1,
         "bias": 0,
         "labels": [
-          "HL",
           "HH",
-          "LL"
+          "LL",
+          "HH"
         ]
       },
       "nearest_ob": {
         "direction": -1,
-        "distance": 0.0,
+        "distance": -0.06,
         "is_inside": true
       },
       "nearest_fvg": {
@@ -180,7 +187,7 @@
       "swing": {
         "high": 83.86,
         "low": 83.6,
-        "bias": 1,
+        "bias": -1,
         "reclaim_low": false,
         "reclaim_high": false,
         "position_pct": 165.3846
@@ -196,9 +203,9 @@
         ]
       },
       "nearest_ob": {
-        "direction": -1,
-        "distance": 0.0,
-        "is_inside": true
+        "direction": 1,
+        "distance": -0.27,
+        "is_inside": false
       },
       "nearest_fvg": {
         "direction": -1,
@@ -283,9 +290,9 @@
         ]
       },
       "nearest_ob": {
-        "direction": -1,
-        "distance": 0.0,
-        "is_inside": true
+        "direction": 1,
+        "distance": -0.08,
+        "is_inside": false
       },
       "nearest_fvg": {
         "direction": -1,
@@ -389,12 +396,12 @@
       },
       "nearest_ob": {
         "direction": -1,
-        "distance": 0.0,
+        "distance": -0.84,
         "is_inside": true
       },
       "nearest_fvg": {
         "direction": -1,
-        "distance": 0.0,
+        "distance": -0.02,
         "is_inside": true
       },
       "active_obs": [
@@ -482,7 +489,7 @@
       },
       "nearest_ob": {
         "direction": 1,
-        "distance": 0.0,
+        "distance": 2.98,
         "is_inside": true
       },
       "nearest_fvg": {
@@ -568,14 +575,14 @@
         "low_type": -1,
         "bias": -1,
         "labels": [
-          "LH",
           "LL",
-          "LH"
+          "LH",
+          "LL"
         ]
       },
       "nearest_ob": {
         "direction": 1,
-        "distance": 0.0,
+        "distance": 15.4,
         "is_inside": true
       },
       "nearest_fvg": {
@@ -643,189 +650,140 @@
       ]
     }
   },
-  "bias": {
-    "label": "NEUTRAL",
-    "score": -6,
-    "max_score": 60,
-    "percentage": 45.0,
-    "direction": 0
-  },
   "confluence_matrix": {
     "factors": {
       "structure": {
         "scores": {
-          "1m": 1,
-          "5m": 0,
           "15m": 0,
           "1H": 0,
           "4H": -1,
           "1D": 0,
           "1W": -1
         },
-        "agreement": 0.667,
+        "agreement": 1.0,
         "majority_direction": -1,
         "agreeing_tfs": [
           "4H",
           "1W"
         ],
-        "dissenting_tfs": [
-          "1m"
-        ]
+        "dissenting_tfs": []
       },
       "ob": {
         "scores": {
-          "1m": 1,
-          "5m": -1,
-          "15m": -1,
-          "1H": -1,
+          "15m": 1,
+          "1H": 1,
           "4H": -1,
           "1D": 1,
           "1W": 1
         },
-        "agreement": 0.571,
-        "majority_direction": -1,
+        "agreement": 0.8,
+        "majority_direction": 1,
         "agreeing_tfs": [
-          "5m",
           "15m",
           "1H",
-          "4H"
-        ],
-        "dissenting_tfs": [
-          "1m",
           "1D",
           "1W"
+        ],
+        "dissenting_tfs": [
+          "4H"
         ]
       },
       "fvg": {
         "scores": {
-          "1m": 1,
-          "5m": -1,
           "15m": -1,
           "1H": -1,
           "4H": -1,
           "1D": -1,
           "1W": -1
         },
-        "agreement": 0.857,
+        "agreement": 1.0,
         "majority_direction": -1,
         "agreeing_tfs": [
-          "5m",
           "15m",
           "1H",
           "4H",
           "1D",
           "1W"
         ],
-        "dissenting_tfs": [
-          "1m"
-        ]
+        "dissenting_tfs": []
       },
       "swing": {
         "scores": {
-          "1m": 1,
-          "5m": 1,
           "15m": 1,
-          "1H": -1,
-          "4H": 1,
-          "1D": 1,
-          "1W": 1
+          "1H": 0,
+          "4H": -1,
+          "1D": 0,
+          "1W": 0
         },
-        "agreement": 0.857,
+        "agreement": 0.5,
         "majority_direction": 1,
         "agreeing_tfs": [
-          "1m",
-          "5m",
-          "15m",
-          "4H",
-          "1D",
-          "1W"
+          "15m"
         ],
         "dissenting_tfs": [
-          "1H"
+          "4H"
         ]
       }
     },
     "timeframes": {
-      "1m": {
-        "raw_score": 4,
-        "weighted_score": 4,
-        "weight": 1,
-        "factor_scores": {
-          "structure": 1,
-          "ob": 1,
-          "fvg": 1,
-          "swing": 1
-        }
-      },
-      "5m": {
-        "raw_score": -1,
-        "weighted_score": -1,
-        "weight": 1,
-        "factor_scores": {
-          "structure": 0,
-          "ob": -1,
-          "fvg": -1,
-          "swing": 1
-        }
-      },
       "15m": {
-        "raw_score": -1,
-        "weighted_score": -2,
+        "raw_score": 1,
+        "weighted_score": 2,
         "weight": 2,
         "factor_scores": {
           "structure": 0,
-          "ob": -1,
+          "ob": 1,
           "fvg": -1,
           "swing": 1
         }
       },
       "1H": {
-        "raw_score": -3,
-        "weighted_score": -6,
+        "raw_score": 0,
+        "weighted_score": 0,
         "weight": 2,
         "factor_scores": {
           "structure": 0,
+          "ob": 1,
+          "fvg": -1,
+          "swing": 0
+        }
+      },
+      "4H": {
+        "raw_score": -4,
+        "weighted_score": -8,
+        "weight": 2,
+        "factor_scores": {
+          "structure": -1,
           "ob": -1,
           "fvg": -1,
           "swing": -1
         }
       },
-      "4H": {
-        "raw_score": -2,
-        "weighted_score": -4,
-        "weight": 2,
-        "factor_scores": {
-          "structure": -1,
-          "ob": -1,
-          "fvg": -1,
-          "swing": 1
-        }
-      },
       "1D": {
-        "raw_score": 1,
-        "weighted_score": 3,
+        "raw_score": 0,
+        "weighted_score": 0,
         "weight": 3,
         "factor_scores": {
           "structure": 0,
           "ob": 1,
           "fvg": -1,
-          "swing": 1
+          "swing": 0
         }
       },
       "1W": {
-        "raw_score": 0,
-        "weighted_score": 0,
+        "raw_score": -1,
+        "weighted_score": -4,
         "weight": 4,
         "factor_scores": {
           "structure": -1,
           "ob": 1,
           "fvg": -1,
-          "swing": 1
+          "swing": 0
         }
       }
     },
-    "overall_agreement": 0.738,
-    "strongest_factor": "fvg",
-    "weakest_factor": "ob"
+    "overall_agreement": 0.825,
+    "strongest_factor": "structure",
+    "weakest_factor": "swing"
   }
 }

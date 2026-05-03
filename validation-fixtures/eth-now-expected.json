@@ -14,12 +14,19 @@
     "ob_fvg_distance": "0.05% relative",
     "bias_percentage": "2 absolute"
   },
+  "bias": {
+    "label": "NEUTRAL",
+    "score": 6,
+    "max_score": 52,
+    "percentage": 55.77,
+    "direction": 0
+  },
   "session": {
     "session": "LONDON",
     "killzone": "NONE"
   },
-  "current_volume_state": 1,
   "current_volatility_state": 1,
+  "current_volume_state": 1,
   "timeframe_analyses": {
     "1m": {
       "ema": {
@@ -30,7 +37,7 @@
       "swing": {
         "high": 2309.07,
         "low": 2308.5,
-        "bias": 1,
+        "bias": -1,
         "reclaim_low": false,
         "reclaim_high": false,
         "position_pct": 826.3158
@@ -42,12 +49,12 @@
         "labels": [
           "LL",
           "LL",
-          "LL"
+          "HH"
         ]
       },
       "nearest_ob": {
         "direction": -1,
-        "distance": 0.0,
+        "distance": -0.68,
         "is_inside": true
       },
       "nearest_fvg": {
@@ -123,7 +130,7 @@
       "swing": {
         "high": 2314.01,
         "low": 2307.49,
-        "bias": 1,
+        "bias": -1,
         "reclaim_low": false,
         "reclaim_high": false,
         "position_pct": 87.7301
@@ -133,9 +140,9 @@
         "low_type": -1,
         "bias": 0,
         "labels": [
-          "HL",
           "LL",
-          "LL"
+          "LL",
+          "HH"
         ]
       },
       "nearest_ob": {
@@ -220,8 +227,8 @@
         "low_type": 1,
         "bias": 1,
         "labels": [
-          "LH",
           "HL",
+          "HH",
           "HH"
         ]
       },
@@ -319,9 +326,9 @@
         "low_type": 1,
         "bias": 1,
         "labels": [
-          "LH",
           "HH",
-          "HL"
+          "HL",
+          "HH"
         ]
       },
       "nearest_ob": {
@@ -523,9 +530,9 @@
         "low_type": 1,
         "bias": 1,
         "labels": [
-          "HL",
           "HH",
-          "HL"
+          "HL",
+          "HH"
         ]
       },
       "nearest_ob": {
@@ -616,8 +623,8 @@
         "low_type": -1,
         "bias": 0,
         "labels": [
-          "HH",
           "HL",
+          "LL",
           "LL"
         ]
       },
@@ -697,19 +704,10 @@
       ]
     }
   },
-  "bias": {
-    "label": "NEUTRAL",
-    "score": 0,
-    "max_score": 60,
-    "percentage": 50.0,
-    "direction": 0
-  },
   "confluence_matrix": {
     "factors": {
       "structure": {
         "scores": {
-          "1m": 0,
-          "5m": 0,
           "15m": 1,
           "1H": 1,
           "4H": -1,
@@ -729,39 +727,33 @@
       },
       "ob": {
         "scores": {
-          "1m": -1,
-          "5m": -1,
           "15m": -1,
           "1H": 1,
           "4H": -1,
           "1D": 1,
           "1W": 1
         },
-        "agreement": 0.571,
-        "majority_direction": -1,
+        "agreement": 0.6,
+        "majority_direction": 1,
         "agreeing_tfs": [
-          "1m",
-          "5m",
-          "15m",
-          "4H"
-        ],
-        "dissenting_tfs": [
           "1H",
           "1D",
           "1W"
+        ],
+        "dissenting_tfs": [
+          "15m",
+          "4H"
         ]
       },
       "fvg": {
         "scores": {
-          "1m": 1,
-          "5m": 1,
           "15m": -1,
           "1H": -1,
           "4H": -1,
           "1D": 1,
           "1W": -1
         },
-        "agreement": 0.571,
+        "agreement": 0.8,
         "majority_direction": -1,
         "agreeing_tfs": [
           "15m",
@@ -770,117 +762,88 @@
           "1W"
         ],
         "dissenting_tfs": [
-          "1m",
-          "5m",
           "1D"
         ]
       },
       "swing": {
         "scores": {
-          "1m": 1,
-          "5m": 1,
-          "15m": 1,
-          "1H": -1,
-          "4H": 1,
-          "1D": -1,
-          "1W": -1
+          "15m": -1,
+          "1H": 0,
+          "4H": -1,
+          "1D": 1,
+          "1W": 1
         },
-        "agreement": 0.571,
+        "agreement": 0.5,
         "majority_direction": 1,
         "agreeing_tfs": [
-          "1m",
-          "5m",
-          "15m",
-          "4H"
-        ],
-        "dissenting_tfs": [
-          "1H",
           "1D",
           "1W"
+        ],
+        "dissenting_tfs": [
+          "15m",
+          "4H"
         ]
       }
     },
     "timeframes": {
-      "1m": {
-        "raw_score": 1,
-        "weighted_score": 1,
-        "weight": 1,
-        "factor_scores": {
-          "structure": 0,
-          "ob": -1,
-          "fvg": 1,
-          "swing": 1
-        }
-      },
-      "5m": {
-        "raw_score": 1,
-        "weighted_score": 1,
-        "weight": 1,
-        "factor_scores": {
-          "structure": 0,
-          "ob": -1,
-          "fvg": 1,
-          "swing": 1
-        }
-      },
       "15m": {
-        "raw_score": 0,
-        "weighted_score": 0,
+        "raw_score": -2,
+        "weighted_score": -4,
         "weight": 2,
         "factor_scores": {
           "structure": 1,
           "ob": -1,
           "fvg": -1,
-          "swing": 1
+          "swing": -1
         }
       },
       "1H": {
-        "raw_score": 0,
-        "weighted_score": 0,
+        "raw_score": 1,
+        "weighted_score": 2,
         "weight": 2,
         "factor_scores": {
           "structure": 1,
           "ob": 1,
           "fvg": -1,
-          "swing": -1
+          "swing": 0
         }
       },
       "4H": {
-        "raw_score": -2,
-        "weighted_score": -4,
+        "raw_score": -4,
+        "weighted_score": -8,
         "weight": 2,
         "factor_scores": {
           "structure": -1,
           "ob": -1,
           "fvg": -1,
-          "swing": 1
+          "swing": -1
         }
       },
       "1D": {
-        "raw_score": 2,
-        "weighted_score": 6,
+        "raw_score": 4,
+        "weighted_score": 12,
         "weight": 3,
         "factor_scores": {
           "structure": 1,
           "ob": 1,
           "fvg": 1,
-          "swing": -1
+          "swing": 1
         }
       },
       "1W": {
-        "raw_score": -1,
-        "weighted_score": -4,
+        "raw_score": 1,
+        "weighted_score": 4,
         "weight": 4,
         "factor_scores": {
           "structure": 0,
           "ob": 1,
           "fvg": -1,
-          "swing": -1
+          "swing": 1
         }
       }
     },
-    "overall_agreement": 0.616,
-    "strongest_factor": "structure",
+    "overall_agreement": 0.662,
+    "strongest_factor": "fvg",
     "weakest_factor": "swing"
   }
 }

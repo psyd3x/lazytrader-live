@@ -1,10 +1,11 @@
 {
   "captured_at": "2026-05-03",
-  "engine_version": "smc-engine-validated-v1",
+  "engine_version": "smc-engine-validated-v1.1",
   "fixtures": [
     "btc-now",
     "eth-now",
     "sol-now"
   ],
-  "purpose": "Golden fixtures for TS port validation in M2"
+  "purpose": "Golden fixtures for TS port validation in M2",
+  "regenerated_note": "Re-captured from Python engine matching the archived branch HEAD"
 }
