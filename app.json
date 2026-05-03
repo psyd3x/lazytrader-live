@@ -17,6 +17,7 @@
     ],
     "android": {
       "package": "live.lazytrader",
+      "allowBackup": false,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -30,7 +31,8 @@
       ]
     },
     "plugins": [
-      "expo-dev-client"
+      "expo-dev-client",
+      "expo-secure-store"
     ],
     "extra": {
       "eas": {
