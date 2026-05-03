@@ -268,6 +268,15 @@ This is the most important milestone. If the engine is wrong, everything downstr
 - M9.7 Devpost / Colosseum submission write-up
 - M9.8 GitHub repo polish: README, screenshots, demo gif
 - M9.9 Decide: devnet demo (safe) or mainnet demo (impact). Have both paths ready
+- M9.10 **TradingView Flux Charts live-spot comparison** — Flux Charts only renders on the current bar (no historical replay), so the comparison must be done in real time. Procedure:
+  1. Open TradingView in browser with the Flux Charts "Market Structure Dashboard" indicator on `BINANCE:BTCUSDT` (any TF view).
+  2. Trigger our engine in parallel: `python -m validation.dashboard BTCUSDT` (or equivalent on phone) at the same wall-clock moment.
+  3. Screenshot both and place side by side.
+  4. Walk each dashboard cell: structure label, OB direction, FVG direction, EMA trend, swing H/L, session, killzone, bias label/score.
+  5. Apply documented tolerances from `SMC-ENGINE-VALIDATION.md`. Discrepancies inside tolerance = pass.
+  6. If a delta exceeds tolerance: capture the candle data at that moment, file as a regression case, fix in engine, re-run.
+
+  Repeat once per pair (BTC/ETH/SOL) to widen confidence. Single live snapshot per pair is the goal — not a battery of historical fixtures.
 
 **Exit criteria**:
 - Submission live before deadline
