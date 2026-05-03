@@ -1,0 +1,10 @@
+{
+  "captured_at": "2026-05-03",
+  "engine_version": "smc-engine-validated-v1",
+  "fixtures": [
+    "btc-now",
+    "eth-now",
+    "sol-now"
+  ],
+  "purpose": "Golden fixtures for TS port validation in M2"
+}

@@ -1,0 +1,872 @@
+{
+  "fixture_id": "btc-now",
+  "pair": "BTCUSDT",
+  "captured_at_ts": 1777800240000,
+  "current_price": 78472.36,
+  "tolerance": {
+    "structure_label": "exact",
+    "ob_fvg_direction": "exact",
+    "bias_label": "exact",
+    "bias_score": "exact",
+    "ema_direction": "exact",
+    "ema_value": "0.001 absolute",
+    "swing_position_pct": "0.5 absolute",
+    "ob_fvg_distance": "0.05% relative",
+    "bias_percentage": "2 absolute"
+  },
+  "session": {
+    "session": "LONDON",
+    "killzone": "NONE"
+  },
+  "current_volume_state": 1,
+  "current_volatility_state": 1,
+  "timeframe_analyses": {
+    "1m": {
+      "ema": {
+        "direction": 1,
+        "distance": 36.656974,
+        "value": 78435.703026
+      },
+      "swing": {
+        "high": 78440.49,
+        "low": 78402.78,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 184.5134
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": -1,
+        "bias": 0,
+        "labels": [
+          "LL",
+          "LL",
+          "LL"
+        ]
+      },
+      "nearest_ob": {
+        "direction": 1,
+        "distance": -64.05,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": 1,
+        "distance": -60.46,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 78151.77,
+          "bottom": 78129.38,
+          "bar_idx": 336
+        },
+        {
+          "direction": 1,
+          "top": 78283.85,
+          "bottom": 78273.21,
+          "bar_idx": 351
+        },
+        {
+          "direction": 1,
+          "top": 78361.34,
+          "bottom": 78343.51,
+          "bar_idx": 371
+        },
+        {
+          "direction": 1,
+          "top": 78408.31,
+          "bottom": 78402.78,
+          "bar_idx": 489
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 78411.9,
+          "bottom": 78402.79,
+          "bar_idx": 494
+        }
+      ]
+    },
+    "5m": {
+      "ema": {
+        "direction": 1,
+        "distance": 47.225598,
+        "value": 78425.134402
+      },
+      "swing": {
+        "high": 78505.92,
+        "low": 78084.08,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 92.0444
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": -1,
+        "bias": 0,
+        "labels": [
+          "LL",
+          "HH",
+          "HH"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 185.23,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": 1,
+        "distance": -69.58,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": -1,
+          "top": 78872.39,
+          "bottom": 78807.35,
+          "bar_idx": 374
+        },
+        {
+          "direction": -1,
+          "top": 78677.0,
+          "bottom": 78657.59,
+          "bar_idx": 394
+        },
+        {
+          "direction": 1,
+          "top": 78135.76,
+          "bottom": 78109.94,
+          "bar_idx": 428
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 78163.21,
+          "bottom": 78151.77,
+          "bar_idx": 468
+        },
+        {
+          "direction": 1,
+          "top": 78273.21,
+          "bottom": 78164.78,
+          "bar_idx": 469
+        },
+        {
+          "direction": 1,
+          "top": 78354.33,
+          "bottom": 78330.6,
+          "bar_idx": 471
+        },
+        {
+          "direction": 1,
+          "top": 78402.78,
+          "bottom": 78390.0,
+          "bar_idx": 496
+        }
+      ]
+    },
+    "15m": {
+      "ema": {
+        "direction": 1,
+        "distance": 75.774577,
+        "value": 78396.595423
+      },
+      "swing": {
+        "high": 78505.92,
+        "low": 78084.08,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 92.0467
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": -1,
+        "bias": 0,
+        "labels": [
+          "LH",
+          "LL",
+          "HH"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 21.6,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 69.96,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 76373.16,
+          "bottom": 76206.02,
+          "bar_idx": 265
+        },
+        {
+          "direction": 1,
+          "top": 76615.01,
+          "bottom": 76533.74,
+          "bar_idx": 281
+        },
+        {
+          "direction": 1,
+          "top": 77268.56,
+          "bottom": 77146.48,
+          "bar_idx": 310
+        },
+        {
+          "direction": 1,
+          "top": 78169.01,
+          "bottom": 78094.43,
+          "bar_idx": 413
+        },
+        {
+          "direction": -1,
+          "top": 79199.48,
+          "bottom": 78493.97,
+          "bar_idx": 452
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 78021.45,
+          "bottom": 77979.99,
+          "bar_idx": 355
+        },
+        {
+          "direction": -1,
+          "top": 78620.63,
+          "bottom": 78542.33,
+          "bar_idx": 465
+        },
+        {
+          "direction": 1,
+          "top": 78288.29,
+          "bottom": 78166.76,
+          "bar_idx": 489
+        },
+        {
+          "direction": 1,
+          "top": 78343.51,
+          "bottom": 78337.26,
+          "bar_idx": 490
+        }
+      ]
+    },
+    "1H": {
+      "ema": {
+        "direction": 1,
+        "distance": 106.435544,
+        "value": 78365.934456
+      },
+      "swing": {
+        "high": 79199.48,
+        "low": 78094.43,
+        "bias": -1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 34.2012
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": 1,
+        "bias": 1,
+        "labels": [
+          "HL",
+          "HL",
+          "HH"
+        ]
+      },
+      "nearest_ob": {
+        "direction": 1,
+        "distance": -237.12,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 69.96,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 71367.85,
+          "bottom": 70505.88,
+          "bar_idx": 8
+        },
+        {
+          "direction": 1,
+          "top": 74016.67,
+          "bottom": 73514.0,
+          "bar_idx": 65
+        },
+        {
+          "direction": 1,
+          "top": 75919.5,
+          "bottom": 74821.57,
+          "bar_idx": 221
+        },
+        {
+          "direction": -1,
+          "top": 79485.66,
+          "bottom": 78730.71,
+          "bar_idx": 347
+        },
+        {
+          "direction": 1,
+          "top": 76597.51,
+          "bottom": 76093.81,
+          "bar_idx": 432
+        },
+        {
+          "direction": 1,
+          "top": 78235.25,
+          "bottom": 78040.0,
+          "bar_idx": 471
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 76449.5,
+          "bottom": 76380.2,
+          "bar_idx": 442
+        },
+        {
+          "direction": 1,
+          "top": 77200.15,
+          "bottom": 77140.36,
+          "bar_idx": 450
+        },
+        {
+          "direction": 1,
+          "top": 77896.0,
+          "bottom": 77600.0,
+          "bar_idx": 454
+        },
+        {
+          "direction": -1,
+          "top": 78631.9,
+          "bottom": 78542.33,
+          "bar_idx": 490
+        },
+        {
+          "direction": 1,
+          "top": 78288.29,
+          "bottom": 78260.75,
+          "bar_idx": 496
+        },
+        {
+          "direction": 1,
+          "top": 78363.24,
+          "bottom": 78337.26,
+          "bar_idx": 497
+        }
+      ]
+    },
+    "4H": {
+      "ema": {
+        "direction": 1,
+        "distance": 199.224148,
+        "value": 78292.145852
+      },
+      "swing": {
+        "high": 78914.12,
+        "low": 74937.52,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 89.3691
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": -1,
+        "bias": 0,
+        "labels": [
+          "LH",
+          "LL",
+          "HH"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 0.0,
+        "is_inside": true
+      },
+      "nearest_fvg": {
+        "direction": 1,
+        "distance": -360.35,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 67188.51,
+          "bottom": 66611.66,
+          "bar_idx": 330
+        },
+        {
+          "direction": 1,
+          "top": 68633.87,
+          "bottom": 67732.01,
+          "bar_idx": 344
+        },
+        {
+          "direction": 1,
+          "top": 71198.8,
+          "bottom": 70466.0,
+          "bar_idx": 353
+        },
+        {
+          "direction": 1,
+          "top": 75030.39,
+          "bottom": 73309.85,
+          "bar_idx": 398
+        },
+        {
+          "direction": -1,
+          "top": 79485.66,
+          "bottom": 78400.03,
+          "bar_idx": 461
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 71240.99,
+          "bottom": 69098.44,
+          "bar_idx": 346
+        },
+        {
+          "direction": 1,
+          "top": 71679.8,
+          "bottom": 70997.12,
+          "bar_idx": 380
+        },
+        {
+          "direction": 1,
+          "top": 73007.08,
+          "bottom": 72464.28,
+          "bar_idx": 381
+        },
+        {
+          "direction": 1,
+          "top": 76653.6,
+          "bottom": 76568.9,
+          "bar_idx": 485
+        },
+        {
+          "direction": 1,
+          "top": 77408.73,
+          "bottom": 77206.38,
+          "bar_idx": 487
+        },
+        {
+          "direction": 1,
+          "top": 78131.02,
+          "bottom": 77600.0,
+          "bar_idx": 488
+        }
+      ]
+    },
+    "1D": {
+      "ema": {
+        "direction": 1,
+        "distance": 952.042768,
+        "value": 77539.327232
+      },
+      "swing": {
+        "high": 79485.66,
+        "low": 65000.0,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 93.136
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": -1,
+        "bias": 0,
+        "labels": [
+          "LH",
+          "LL",
+          "HH"
+        ]
+      },
+      "nearest_ob": {
+        "direction": 1,
+        "distance": -10291.37,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": 1,
+        "distance": -451.37,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": -1,
+          "top": 116400.0,
+          "bottom": 113830.01,
+          "bar_idx": 311
+        },
+        {
+          "direction": -1,
+          "top": 107500.0,
+          "bottom": 102476.09,
+          "bar_idx": 326
+        },
+        {
+          "direction": -1,
+          "top": 97924.49,
+          "bottom": 94559.28,
+          "bar_idx": 390
+        },
+        {
+          "direction": 1,
+          "top": 65026.75,
+          "bottom": 62510.28,
+          "bar_idx": 431
+        },
+        {
+          "direction": 1,
+          "top": 68200.0,
+          "bottom": 65618.49,
+          "bar_idx": 443
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": -1,
+          "top": 88833.65,
+          "bottom": 84735.75,
+          "bar_idx": 405
+        },
+        {
+          "direction": -1,
+          "top": 81118.0,
+          "bottom": 79424.0,
+          "bar_idx": 407
+        },
+        {
+          "direction": 1,
+          "top": 68300.0,
+          "bottom": 67562.93,
+          "bar_idx": 471
+        },
+        {
+          "direction": 1,
+          "top": 70707.23,
+          "bottom": 70351.46,
+          "bar_idx": 473
+        },
+        {
+          "direction": 1,
+          "top": 73795.47,
+          "bottom": 73137.24,
+          "bar_idx": 479
+        },
+        {
+          "direction": 1,
+          "top": 78040.0,
+          "bottom": 76669.14,
+          "bar_idx": 497
+        }
+      ]
+    },
+    "1W": {
+      "ema": {
+        "direction": 1,
+        "distance": 4461.672624,
+        "value": 74029.697376
+      },
+      "swing": {
+        "high": 97924.49,
+        "low": 60000.0,
+        "bias": -1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 48.7584
+      },
+      "structure": {
+        "high_type": -1,
+        "low_type": -1,
+        "bias": -1,
+        "labels": [
+          "LL",
+          "LH",
+          "LL"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 11637.07,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 868.63,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 12050.85,
+          "bottom": 9825.0,
+          "bar_idx": 159
+        },
+        {
+          "direction": 1,
+          "top": 16812.63,
+          "bottom": 15476.0,
+          "bar_idx": 275
+        },
+        {
+          "direction": 1,
+          "top": 26888.0,
+          "bottom": 24901.0,
+          "bar_idx": 317
+        },
+        {
+          "direction": 1,
+          "top": 62745.14,
+          "bottom": 49000.0,
+          "bar_idx": 364
+        },
+        {
+          "direction": -1,
+          "top": 126199.63,
+          "bottom": 102000.0,
+          "bar_idx": 425
+        },
+        {
+          "direction": -1,
+          "top": 97924.49,
+          "bottom": 90128.44,
+          "bar_idx": 439
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 50521.0,
+          "bottom": 48592.66,
+          "bar_idx": 339
+        },
+        {
+          "direction": -1,
+          "top": 98944.36,
+          "bottom": 96043.0,
+          "bar_idx": 430
+        },
+        {
+          "direction": -1,
+          "top": 86074.72,
+          "bottom": 79360.0,
+          "bar_idx": 441
+        },
+        {
+          "direction": 1,
+          "top": 70566.99,
+          "bottom": 69310.0,
+          "bar_idx": 451
+        }
+      ]
+    }
+  },
+  "bias": {
+    "label": "NEUTRAL",
+    "score": -3,
+    "max_score": 60,
+    "percentage": 47.5,
+    "direction": 0
+  },
+  "confluence_matrix": {
+    "factors": {
+      "structure": {
+        "scores": {
+          "1m": 0,
+          "5m": 0,
+          "15m": 0,
+          "1H": 1,
+          "4H": 0,
+          "1D": 0,
+          "1W": -1
+        },
+        "agreement": 0.5,
+        "majority_direction": 1,
+        "agreeing_tfs": [
+          "1H"
+        ],
+        "dissenting_tfs": [
+          "1W"
+        ]
+      },
+      "ob": {
+        "scores": {
+          "1m": 1,
+          "5m": -1,
+          "15m": -1,
+          "1H": 1,
+          "4H": -1,
+          "1D": 1,
+          "1W": -1
+        },
+        "agreement": 0.571,
+        "majority_direction": -1,
+        "agreeing_tfs": [
+          "5m",
+          "15m",
+          "4H",
+          "1W"
+        ],
+        "dissenting_tfs": [
+          "1m",
+          "1H",
+          "1D"
+        ]
+      },
+      "fvg": {
+        "scores": {
+          "1m": 1,
+          "5m": 1,
+          "15m": -1,
+          "1H": -1,
+          "4H": 1,
+          "1D": 1,
+          "1W": -1
+        },
+        "agreement": 0.571,
+        "majority_direction": 1,
+        "agreeing_tfs": [
+          "1m",
+          "5m",
+          "4H",
+          "1D"
+        ],
+        "dissenting_tfs": [
+          "15m",
+          "1H",
+          "1W"
+        ]
+      },
+      "swing": {
+        "scores": {
+          "1m": 1,
+          "5m": 1,
+          "15m": 1,
+          "1H": -1,
+          "4H": 1,
+          "1D": 1,
+          "1W": -1
+        },
+        "agreement": 0.714,
+        "majority_direction": 1,
+        "agreeing_tfs": [
+          "1m",
+          "5m",
+          "15m",
+          "4H",
+          "1D"
+        ],
+        "dissenting_tfs": [
+          "1H",
+          "1W"
+        ]
+      }
+    },
+    "timeframes": {
+      "1m": {
+        "raw_score": 3,
+        "weighted_score": 3,
+        "weight": 1,
+        "factor_scores": {
+          "structure": 0,
+          "ob": 1,
+          "fvg": 1,
+          "swing": 1
+        }
+      },
+      "5m": {
+        "raw_score": 1,
+        "weighted_score": 1,
+        "weight": 1,
+        "factor_scores": {
+          "structure": 0,
+          "ob": -1,
+          "fvg": 1,
+          "swing": 1
+        }
+      },
+      "15m": {
+        "raw_score": -1,
+        "weighted_score": -2,
+        "weight": 2,
+        "factor_scores": {
+          "structure": 0,
+          "ob": -1,
+          "fvg": -1,
+          "swing": 1
+        }
+      },
+      "1H": {
+        "raw_score": 0,
+        "weighted_score": 0,
+        "weight": 2,
+        "factor_scores": {
+          "structure": 1,
+          "ob": 1,
+          "fvg": -1,
+          "swing": -1
+        }
+      },
+      "4H": {
+        "raw_score": 1,
+        "weighted_score": 2,
+        "weight": 2,
+        "factor_scores": {
+          "structure": 0,
+          "ob": -1,
+          "fvg": 1,
+          "swing": 1
+        }
+      },
+      "1D": {
+        "raw_score": 3,
+        "weighted_score": 9,
+        "weight": 3,
+        "factor_scores": {
+          "structure": 0,
+          "ob": 1,
+          "fvg": 1,
+          "swing": 1
+        }
+      },
+      "1W": {
+        "raw_score": -4,
+        "weighted_score": -16,
+        "weight": 4,
+        "factor_scores": {
+          "structure": -1,
+          "ob": -1,
+          "fvg": -1,
+          "swing": -1
+        }
+      }
+    },
+    "overall_agreement": 0.589,
+    "strongest_factor": "swing",
+    "weakest_factor": "structure"
+  }
+}

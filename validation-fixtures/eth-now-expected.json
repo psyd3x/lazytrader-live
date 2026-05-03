@@ -1,0 +1,886 @@
+{
+  "fixture_id": "eth-now",
+  "pair": "ETHUSDT",
+  "captured_at_ts": 1777800300000,
+  "current_price": 2313.21,
+  "tolerance": {
+    "structure_label": "exact",
+    "ob_fvg_direction": "exact",
+    "bias_label": "exact",
+    "bias_score": "exact",
+    "ema_direction": "exact",
+    "ema_value": "0.001 absolute",
+    "swing_position_pct": "0.5 absolute",
+    "ob_fvg_distance": "0.05% relative",
+    "bias_percentage": "2 absolute"
+  },
+  "session": {
+    "session": "LONDON",
+    "killzone": "NONE"
+  },
+  "current_volume_state": 1,
+  "current_volatility_state": 1,
+  "timeframe_analyses": {
+    "1m": {
+      "ema": {
+        "direction": 1,
+        "distance": 2.647355,
+        "value": 2310.562645
+      },
+      "swing": {
+        "high": 2309.07,
+        "low": 2308.5,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 826.3158
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": -1,
+        "bias": 0,
+        "labels": [
+          "LL",
+          "LL",
+          "LL"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 0.0,
+        "is_inside": true
+      },
+      "nearest_fvg": {
+        "direction": 1,
+        "distance": -3.06,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 2304.61,
+          "bottom": 2304.4,
+          "bar_idx": 352
+        },
+        {
+          "direction": 1,
+          "top": 2308.01,
+          "bottom": 2307.05,
+          "bar_idx": 367
+        },
+        {
+          "direction": -1,
+          "top": 2314.01,
+          "bottom": 2312.53,
+          "bar_idx": 397
+        },
+        {
+          "direction": 1,
+          "top": 2308.67,
+          "bottom": 2308.5,
+          "bar_idx": 488
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 2307.94,
+          "bottom": 2307.85,
+          "bar_idx": 481
+        },
+        {
+          "direction": 1,
+          "top": 2308.79,
+          "bottom": 2307.95,
+          "bar_idx": 482
+        },
+        {
+          "direction": 1,
+          "top": 2308.79,
+          "bottom": 2308.52,
+          "bar_idx": 493
+        },
+        {
+          "direction": 1,
+          "top": 2309.94,
+          "bottom": 2309.55,
+          "bar_idx": 496
+        },
+        {
+          "direction": 1,
+          "top": 2310.15,
+          "bottom": 2310.05,
+          "bar_idx": 497
+        }
+      ]
+    },
+    "5m": {
+      "ema": {
+        "direction": 1,
+        "distance": 3.055094,
+        "value": 2310.154906
+      },
+      "swing": {
+        "high": 2314.01,
+        "low": 2307.49,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 87.7301
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": -1,
+        "bias": 0,
+        "labels": [
+          "HL",
+          "LL",
+          "LL"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 2.44,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": 1,
+        "distance": -4.71,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 2298.67,
+          "bottom": 2297.09,
+          "bar_idx": 175
+        },
+        {
+          "direction": -1,
+          "top": 2328.36,
+          "bottom": 2325.54,
+          "bar_idx": 373
+        },
+        {
+          "direction": -1,
+          "top": 2317.2,
+          "bottom": 2315.65,
+          "bar_idx": 393
+        },
+        {
+          "direction": 1,
+          "top": 2301.27,
+          "bottom": 2299.69,
+          "bar_idx": 463
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 2302.18,
+          "bottom": 2301.95,
+          "bar_idx": 467
+        },
+        {
+          "direction": 1,
+          "top": 2304.4,
+          "bottom": 2302.19,
+          "bar_idx": 468
+        },
+        {
+          "direction": 1,
+          "top": 2307.66,
+          "bottom": 2306.11,
+          "bar_idx": 470
+        },
+        {
+          "direction": 1,
+          "top": 2308.5,
+          "bottom": 2308.31,
+          "bar_idx": 495
+        }
+      ]
+    },
+    "15m": {
+      "ema": {
+        "direction": 1,
+        "distance": 3.646805,
+        "value": 2309.263195
+      },
+      "swing": {
+        "high": 2314.01,
+        "low": 2299.69,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 92.3184
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": 1,
+        "bias": 1,
+        "labels": [
+          "LH",
+          "HL",
+          "HH"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 0.22,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 4.78,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 2257.28,
+          "bottom": 2252.42,
+          "bar_idx": 265
+        },
+        {
+          "direction": 1,
+          "top": 2280.83,
+          "bottom": 2272.09,
+          "bar_idx": 297
+        },
+        {
+          "direction": 1,
+          "top": 2293.61,
+          "bottom": 2289.0,
+          "bar_idx": 363
+        },
+        {
+          "direction": -1,
+          "top": 2343.6,
+          "bottom": 2313.13,
+          "bar_idx": 452
+        },
+        {
+          "direction": 1,
+          "top": 2301.75,
+          "bottom": 2299.69,
+          "bar_idx": 487
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 2279.52,
+          "bottom": 2270.68,
+          "bar_idx": 283
+        },
+        {
+          "direction": -1,
+          "top": 2321.42,
+          "bottom": 2318.57,
+          "bar_idx": 460
+        },
+        {
+          "direction": -1,
+          "top": 2317.8,
+          "bottom": 2317.69,
+          "bar_idx": 461
+        },
+        {
+          "direction": 1,
+          "top": 2304.42,
+          "bottom": 2302.44,
+          "bar_idx": 489
+        },
+        {
+          "direction": 1,
+          "top": 2307.58,
+          "bottom": 2306.38,
+          "bar_idx": 490
+        }
+      ]
+    },
+    "1H": {
+      "ema": {
+        "direction": 1,
+        "distance": 4.513816,
+        "value": 2308.396184
+      },
+      "swing": {
+        "high": 2343.6,
+        "low": 2297.59,
+        "bias": -1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 33.2971
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": 1,
+        "bias": 1,
+        "labels": [
+          "LH",
+          "HH",
+          "HL"
+        ]
+      },
+      "nearest_ob": {
+        "direction": 1,
+        "distance": -11.39,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 4.78,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 2200.0,
+          "bottom": 2175.68,
+          "bar_idx": 22
+        },
+        {
+          "direction": -1,
+          "top": 2413.75,
+          "bottom": 2384.17,
+          "bar_idx": 242
+        },
+        {
+          "direction": -1,
+          "top": 2346.95,
+          "bottom": 2330.01,
+          "bar_idx": 404
+        },
+        {
+          "direction": 1,
+          "top": 2260.47,
+          "bottom": 2251.62,
+          "bar_idx": 435
+        },
+        {
+          "direction": 1,
+          "top": 2295.0,
+          "bottom": 2266.25,
+          "bar_idx": 445
+        },
+        {
+          "direction": 1,
+          "top": 2301.52,
+          "bottom": 2296.62,
+          "bar_idx": 471
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": -1,
+          "top": 2390.57,
+          "bottom": 2383.46,
+          "bar_idx": 350
+        },
+        {
+          "direction": -1,
+          "top": 2380.45,
+          "bottom": 2329.13,
+          "bar_idx": 351
+        },
+        {
+          "direction": 1,
+          "top": 2260.0,
+          "bottom": 2259.01,
+          "bar_idx": 442
+        },
+        {
+          "direction": 1,
+          "top": 2277.56,
+          "bottom": 2270.0,
+          "bar_idx": 445
+        },
+        {
+          "direction": -1,
+          "top": 2317.88,
+          "bottom": 2317.69,
+          "bar_idx": 489
+        },
+        {
+          "direction": 1,
+          "top": 2307.65,
+          "bottom": 2306.38,
+          "bar_idx": 497
+        }
+      ]
+    },
+    "4H": {
+      "ema": {
+        "direction": 1,
+        "distance": 6.707642,
+        "value": 2306.202358
+      },
+      "swing": {
+        "high": 2325.28,
+        "low": 2220.36,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 88.2101
+      },
+      "structure": {
+        "high_type": -1,
+        "low_type": -1,
+        "bias": -1,
+        "labels": [
+          "LH",
+          "LL",
+          "LH"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 8.2,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 12.61,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 1990.07,
+          "bottom": 1929.56,
+          "bar_idx": 134
+        },
+        {
+          "direction": 1,
+          "top": 2069.89,
+          "bottom": 2021.5,
+          "bar_idx": 332
+        },
+        {
+          "direction": 1,
+          "top": 2208.22,
+          "bottom": 2175.0,
+          "bar_idx": 374
+        },
+        {
+          "direction": -1,
+          "top": 2464.91,
+          "bottom": 2415.41,
+          "bar_idx": 405
+        },
+        {
+          "direction": -1,
+          "top": 2404.37,
+          "bottom": 2359.46,
+          "bar_idx": 461
+        },
+        {
+          "direction": -1,
+          "top": 2346.95,
+          "bottom": 2321.11,
+          "bar_idx": 475
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 2200.0,
+          "bottom": 2195.34,
+          "bar_idx": 380
+        },
+        {
+          "direction": -1,
+          "top": 2359.46,
+          "bottom": 2325.52,
+          "bar_idx": 462
+        },
+        {
+          "direction": 1,
+          "top": 2272.09,
+          "bottom": 2267.32,
+          "bar_idx": 485
+        }
+      ]
+    },
+    "1D": {
+      "ema": {
+        "direction": 1,
+        "distance": 10.140138,
+        "value": 2302.769862
+      },
+      "swing": {
+        "high": 2464.91,
+        "low": 2252.72,
+        "bias": -1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 28.3661
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": 1,
+        "bias": 1,
+        "labels": [
+          "HL",
+          "HH",
+          "HL"
+        ]
+      },
+      "nearest_ob": {
+        "direction": 1,
+        "distance": -333.11,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": 1,
+        "distance": -20.0,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": -1,
+          "top": 4769.36,
+          "bottom": 4605.0,
+          "bar_idx": 267
+        },
+        {
+          "direction": -1,
+          "top": 4253.72,
+          "bottom": 4095.0,
+          "bar_idx": 311
+        },
+        {
+          "direction": -1,
+          "top": 3658.98,
+          "bottom": 3507.3,
+          "bar_idx": 325
+        },
+        {
+          "direction": -1,
+          "top": 3402.89,
+          "bottom": 3280.48,
+          "bar_idx": 390
+        },
+        {
+          "direction": 1,
+          "top": 1979.8,
+          "bottom": 1916.14,
+          "bar_idx": 443
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": -1,
+          "top": 2983.67,
+          "bottom": 2828.65,
+          "bar_idx": 405
+        },
+        {
+          "direction": -1,
+          "top": 2754.53,
+          "bottom": 2714.64,
+          "bar_idx": 406
+        },
+        {
+          "direction": -1,
+          "top": 2636.01,
+          "bottom": 2475.98,
+          "bar_idx": 407
+        },
+        {
+          "direction": 1,
+          "top": 2292.91,
+          "bottom": 2279.0,
+          "bar_idx": 497
+        }
+      ]
+    },
+    "1W": {
+      "ema": {
+        "direction": 1,
+        "distance": 71.108746,
+        "value": 2241.801254
+      },
+      "swing": {
+        "high": 4956.78,
+        "low": 1747.8,
+        "bias": -1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 17.6103
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": -1,
+        "bias": 0,
+        "labels": [
+          "HH",
+          "HL",
+          "LL"
+        ]
+      },
+      "nearest_ob": {
+        "direction": 1,
+        "distance": -704.87,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 83.71,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 249.24,
+          "bottom": 216.0,
+          "bar_idx": 149
+        },
+        {
+          "direction": 1,
+          "top": 488.84,
+          "bottom": 308.42,
+          "bar_idx": 159
+        },
+        {
+          "direction": -1,
+          "top": 4868.0,
+          "bottom": 4461.93,
+          "bar_idx": 221
+        },
+        {
+          "direction": 1,
+          "top": 1608.04,
+          "bottom": 1073.53,
+          "bar_idx": 273
+        },
+        {
+          "direction": -1,
+          "top": 3447.44,
+          "bottom": 3024.44,
+          "bar_idx": 434
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 1731.7,
+          "bottom": 1691.5,
+          "bar_idx": 401
+        },
+        {
+          "direction": -1,
+          "top": 3680.0,
+          "bottom": 3658.98,
+          "bar_idx": 429
+        },
+        {
+          "direction": -1,
+          "top": 3065.55,
+          "bottom": 3045.78,
+          "bar_idx": 440
+        },
+        {
+          "direction": -1,
+          "top": 2787.0,
+          "bottom": 2396.62,
+          "bar_idx": 441
+        },
+        {
+          "direction": 1,
+          "top": 2175.68,
+          "bottom": 2167.85,
+          "bar_idx": 451
+        }
+      ]
+    }
+  },
+  "bias": {
+    "label": "NEUTRAL",
+    "score": 0,
+    "max_score": 60,
+    "percentage": 50.0,
+    "direction": 0
+  },
+  "confluence_matrix": {
+    "factors": {
+      "structure": {
+        "scores": {
+          "1m": 0,
+          "5m": 0,
+          "15m": 1,
+          "1H": 1,
+          "4H": -1,
+          "1D": 1,
+          "1W": 0
+        },
+        "agreement": 0.75,
+        "majority_direction": 1,
+        "agreeing_tfs": [
+          "15m",
+          "1H",
+          "1D"
+        ],
+        "dissenting_tfs": [
+          "4H"
+        ]
+      },
+      "ob": {
+        "scores": {
+          "1m": -1,
+          "5m": -1,
+          "15m": -1,
+          "1H": 1,
+          "4H": -1,
+          "1D": 1,
+          "1W": 1
+        },
+        "agreement": 0.571,
+        "majority_direction": -1,
+        "agreeing_tfs": [
+          "1m",
+          "5m",
+          "15m",
+          "4H"
+        ],
+        "dissenting_tfs": [
+          "1H",
+          "1D",
+          "1W"
+        ]
+      },
+      "fvg": {
+        "scores": {
+          "1m": 1,
+          "5m": 1,
+          "15m": -1,
+          "1H": -1,
+          "4H": -1,
+          "1D": 1,
+          "1W": -1
+        },
+        "agreement": 0.571,
+        "majority_direction": -1,
+        "agreeing_tfs": [
+          "15m",
+          "1H",
+          "4H",
+          "1W"
+        ],
+        "dissenting_tfs": [
+          "1m",
+          "5m",
+          "1D"
+        ]
+      },
+      "swing": {
+        "scores": {
+          "1m": 1,
+          "5m": 1,
+          "15m": 1,
+          "1H": -1,
+          "4H": 1,
+          "1D": -1,
+          "1W": -1
+        },
+        "agreement": 0.571,
+        "majority_direction": 1,
+        "agreeing_tfs": [
+          "1m",
+          "5m",
+          "15m",
+          "4H"
+        ],
+        "dissenting_tfs": [
+          "1H",
+          "1D",
+          "1W"
+        ]
+      }
+    },
+    "timeframes": {
+      "1m": {
+        "raw_score": 1,
+        "weighted_score": 1,
+        "weight": 1,
+        "factor_scores": {
+          "structure": 0,
+          "ob": -1,
+          "fvg": 1,
+          "swing": 1
+        }
+      },
+      "5m": {
+        "raw_score": 1,
+        "weighted_score": 1,
+        "weight": 1,
+        "factor_scores": {
+          "structure": 0,
+          "ob": -1,
+          "fvg": 1,
+          "swing": 1
+        }
+      },
+      "15m": {
+        "raw_score": 0,
+        "weighted_score": 0,
+        "weight": 2,
+        "factor_scores": {
+          "structure": 1,
+          "ob": -1,
+          "fvg": -1,
+          "swing": 1
+        }
+      },
+      "1H": {
+        "raw_score": 0,
+        "weighted_score": 0,
+        "weight": 2,
+        "factor_scores": {
+          "structure": 1,
+          "ob": 1,
+          "fvg": -1,
+          "swing": -1
+        }
+      },
+      "4H": {
+        "raw_score": -2,
+        "weighted_score": -4,
+        "weight": 2,
+        "factor_scores": {
+          "structure": -1,
+          "ob": -1,
+          "fvg": -1,
+          "swing": 1
+        }
+      },
+      "1D": {
+        "raw_score": 2,
+        "weighted_score": 6,
+        "weight": 3,
+        "factor_scores": {
+          "structure": 1,
+          "ob": 1,
+          "fvg": 1,
+          "swing": -1
+        }
+      },
+      "1W": {
+        "raw_score": -1,
+        "weighted_score": -4,
+        "weight": 4,
+        "factor_scores": {
+          "structure": 0,
+          "ob": 1,
+          "fvg": -1,
+          "swing": -1
+        }
+      }
+    },
+    "overall_agreement": 0.616,
+    "strongest_factor": "structure",
+    "weakest_factor": "swing"
+  }
+}

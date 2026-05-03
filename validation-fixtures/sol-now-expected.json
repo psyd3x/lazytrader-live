@@ -1,0 +1,831 @@
+{
+  "fixture_id": "sol-now",
+  "pair": "SOLUSDT",
+  "captured_at_ts": 1777800300000,
+  "current_price": 84.03,
+  "tolerance": {
+    "structure_label": "exact",
+    "ob_fvg_direction": "exact",
+    "bias_label": "exact",
+    "bias_score": "exact",
+    "ema_direction": "exact",
+    "ema_value": "0.001 absolute",
+    "swing_position_pct": "0.5 absolute",
+    "ob_fvg_distance": "0.05% relative",
+    "bias_percentage": "2 absolute"
+  },
+  "session": {
+    "session": "LONDON",
+    "killzone": "NONE"
+  },
+  "current_volume_state": 1,
+  "current_volatility_state": 1,
+  "timeframe_analyses": {
+    "1m": {
+      "ema": {
+        "direction": 1,
+        "distance": 0.061496,
+        "value": 83.968504
+      },
+      "swing": {
+        "high": 83.97,
+        "low": 83.89,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 175.0
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": 1,
+        "bias": 1,
+        "labels": [
+          "LH",
+          "LH",
+          "HL"
+        ]
+      },
+      "nearest_ob": {
+        "direction": 1,
+        "distance": -0.11,
+        "is_inside": false
+      },
+      "nearest_fvg": {
+        "direction": 1,
+        "distance": -0.14,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 83.61,
+          "bottom": 83.58,
+          "bar_idx": 138
+        },
+        {
+          "direction": 1,
+          "top": 83.66,
+          "bottom": 83.64,
+          "bar_idx": 335
+        },
+        {
+          "direction": 1,
+          "top": 83.77,
+          "bottom": 83.75,
+          "bar_idx": 352
+        },
+        {
+          "direction": 1,
+          "top": 83.86,
+          "bottom": 83.82,
+          "bar_idx": 367
+        },
+        {
+          "direction": 1,
+          "top": 83.92,
+          "bottom": 83.89,
+          "bar_idx": 454
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 83.89,
+          "bottom": 83.87,
+          "bar_idx": 449
+        }
+      ]
+    },
+    "5m": {
+      "ema": {
+        "direction": 1,
+        "distance": 0.075175,
+        "value": 83.954825
+      },
+      "swing": {
+        "high": 84.03,
+        "low": 83.83,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 100.0
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": -1,
+        "bias": 0,
+        "labels": [
+          "HL",
+          "HH",
+          "LL"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 0.0,
+        "is_inside": true
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 0.07,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 83.7,
+          "bottom": 83.44,
+          "bar_idx": 105
+        },
+        {
+          "direction": -1,
+          "top": 84.55,
+          "bottom": 84.44,
+          "bar_idx": 373
+        },
+        {
+          "direction": -1,
+          "top": 84.19,
+          "bottom": 84.11,
+          "bar_idx": 392
+        },
+        {
+          "direction": -1,
+          "top": 84.03,
+          "bottom": 83.97,
+          "bar_idx": 485
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": -1,
+          "top": 84.15,
+          "bottom": 84.1,
+          "bar_idx": 394
+        },
+        {
+          "direction": 1,
+          "top": 83.75,
+          "bottom": 83.7,
+          "bar_idx": 468
+        }
+      ]
+    },
+    "15m": {
+      "ema": {
+        "direction": 1,
+        "distance": 0.113493,
+        "value": 83.916507
+      },
+      "swing": {
+        "high": 83.86,
+        "low": 83.6,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 165.3846
+      },
+      "structure": {
+        "high_type": -1,
+        "low_type": 1,
+        "bias": 0,
+        "labels": [
+          "LL",
+          "LH",
+          "HL"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 0.0,
+        "is_inside": true
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 0.1,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": -1,
+          "top": 85.56,
+          "bottom": 83.2,
+          "bar_idx": 117
+        },
+        {
+          "direction": 1,
+          "top": 82.94,
+          "bottom": 82.78,
+          "bar_idx": 265
+        },
+        {
+          "direction": 1,
+          "top": 83.76,
+          "bottom": 83.44,
+          "bar_idx": 368
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 82.95,
+          "bottom": 82.94,
+          "bar_idx": 266
+        },
+        {
+          "direction": 1,
+          "top": 83.23,
+          "bottom": 83.09,
+          "bar_idx": 270
+        },
+        {
+          "direction": -1,
+          "top": 84.37,
+          "bottom": 84.31,
+          "bar_idx": 461
+        },
+        {
+          "direction": -1,
+          "top": 84.22,
+          "bottom": 84.13,
+          "bar_idx": 462
+        },
+        {
+          "direction": 1,
+          "top": 83.75,
+          "bottom": 83.69,
+          "bar_idx": 489
+        }
+      ]
+    },
+    "1H": {
+      "ema": {
+        "direction": 1,
+        "distance": 0.123123,
+        "value": 83.896877
+      },
+      "swing": {
+        "high": 84.97,
+        "low": 83.58,
+        "bias": -1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 31.6547
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": -1,
+        "bias": 0,
+        "labels": [
+          "HH",
+          "HL",
+          "LL"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 0.0,
+        "is_inside": true
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 0.06,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 81.97,
+          "bottom": 81.64,
+          "bar_idx": 20
+        },
+        {
+          "direction": -1,
+          "top": 90.73,
+          "bottom": 89.63,
+          "bar_idx": 120
+        },
+        {
+          "direction": -1,
+          "top": 88.08,
+          "bottom": 87.36,
+          "bar_idx": 348
+        },
+        {
+          "direction": -1,
+          "top": 85.56,
+          "bottom": 83.2,
+          "bar_idx": 403
+        },
+        {
+          "direction": 1,
+          "top": 83.04,
+          "bottom": 82.78,
+          "bar_idx": 440
+        },
+        {
+          "direction": 1,
+          "top": 83.94,
+          "bottom": 83.52,
+          "bar_idx": 477
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": -1,
+          "top": 87.41,
+          "bottom": 86.06,
+          "bar_idx": 351
+        },
+        {
+          "direction": -1,
+          "top": 85.13,
+          "bottom": 84.92,
+          "bar_idx": 405
+        },
+        {
+          "direction": 1,
+          "top": 83.08,
+          "bottom": 83.04,
+          "bar_idx": 441
+        },
+        {
+          "direction": 1,
+          "top": 83.19,
+          "bottom": 83.09,
+          "bar_idx": 442
+        },
+        {
+          "direction": -1,
+          "top": 84.22,
+          "bottom": 84.08,
+          "bar_idx": 490
+        }
+      ]
+    },
+    "4H": {
+      "ema": {
+        "direction": 1,
+        "distance": 0.105925,
+        "value": 83.934075
+      },
+      "swing": {
+        "high": 84.86,
+        "low": 81.4,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 76.3006
+      },
+      "structure": {
+        "high_type": -1,
+        "low_type": -1,
+        "bias": -1,
+        "labels": [
+          "LH",
+          "LL",
+          "LH"
+        ]
+      },
+      "nearest_ob": {
+        "direction": -1,
+        "distance": 0.0,
+        "is_inside": true
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 0.0,
+        "is_inside": true
+      },
+      "active_obs": [
+        {
+          "direction": -1,
+          "top": 93.47,
+          "bottom": 91.82,
+          "bar_idx": 265
+        },
+        {
+          "direction": 1,
+          "top": 79.39,
+          "bottom": 78.38,
+          "bar_idx": 344
+        },
+        {
+          "direction": 1,
+          "top": 82.56,
+          "bottom": 81.27,
+          "bar_idx": 374
+        },
+        {
+          "direction": -1,
+          "top": 90.73,
+          "bottom": 87.91,
+          "bar_idx": 404
+        },
+        {
+          "direction": -1,
+          "top": 85.56,
+          "bottom": 83.2,
+          "bar_idx": 475
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 81.63,
+          "bottom": 79.39,
+          "bar_idx": 345
+        },
+        {
+          "direction": -1,
+          "top": 86.53,
+          "bottom": 85.63,
+          "bar_idx": 462
+        },
+        {
+          "direction": 1,
+          "top": 83.67,
+          "bottom": 83.19,
+          "bar_idx": 485
+        },
+        {
+          "direction": -1,
+          "top": 84.07,
+          "bottom": 84.02,
+          "bar_idx": 497
+        }
+      ]
+    },
+    "1D": {
+      "ema": {
+        "direction": -1,
+        "distance": -0.305099,
+        "value": 84.345099
+      },
+      "swing": {
+        "high": 90.73,
+        "low": 76.7,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 52.3165
+      },
+      "structure": {
+        "high_type": 1,
+        "low_type": -1,
+        "bias": 0,
+        "labels": [
+          "LL",
+          "LH",
+          "HH"
+        ]
+      },
+      "nearest_ob": {
+        "direction": 1,
+        "distance": 0.0,
+        "is_inside": true
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 0.89,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": -1,
+          "top": 237.79,
+          "bottom": 227.55,
+          "bar_idx": 290
+        },
+        {
+          "direction": -1,
+          "top": 224.46,
+          "bottom": 168.79,
+          "bar_idx": 294
+        },
+        {
+          "direction": -1,
+          "top": 146.91,
+          "bottom": 137.8,
+          "bar_idx": 349
+        },
+        {
+          "direction": -1,
+          "top": 97.68,
+          "bottom": 91.18,
+          "bar_idx": 451
+        },
+        {
+          "direction": 1,
+          "top": 87.02,
+          "bottom": 78.38,
+          "bar_idx": 473
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": -1,
+          "top": 137.74,
+          "bottom": 134.63,
+          "bar_idx": 395
+        },
+        {
+          "direction": -1,
+          "top": 124.78,
+          "bottom": 119.12,
+          "bar_idx": 405
+        },
+        {
+          "direction": -1,
+          "top": 112.14,
+          "bottom": 106.69,
+          "bar_idx": 407
+        },
+        {
+          "direction": -1,
+          "top": 85.84,
+          "bottom": 84.93,
+          "bar_idx": 493
+        }
+      ]
+    },
+    "1W": {
+      "ema": {
+        "direction": -1,
+        "distance": -2.66311,
+        "value": 86.70311
+      },
+      "swing": {
+        "high": 97.68,
+        "low": 67.5,
+        "bias": 1,
+        "reclaim_low": false,
+        "reclaim_high": false,
+        "position_pct": 54.8045
+      },
+      "structure": {
+        "high_type": -1,
+        "low_type": -1,
+        "bias": -1,
+        "labels": [
+          "LH",
+          "LL",
+          "LH"
+        ]
+      },
+      "nearest_ob": {
+        "direction": 1,
+        "distance": 0.0,
+        "is_inside": true
+      },
+      "nearest_fvg": {
+        "direction": -1,
+        "distance": 22.08,
+        "is_inside": false
+      },
+      "active_obs": [
+        {
+          "direction": 1,
+          "top": 22.06,
+          "bottom": 12.8,
+          "bar_idx": 147
+        },
+        {
+          "direction": 1,
+          "top": 99.44,
+          "bottom": 79.0,
+          "bar_idx": 180
+        },
+        {
+          "direction": -1,
+          "top": 295.83,
+          "bottom": 168.88,
+          "bar_idx": 231
+        },
+        {
+          "direction": -1,
+          "top": 148.74,
+          "bottom": 137.74,
+          "bar_idx": 283
+        }
+      ],
+      "active_fvgs": [
+        {
+          "direction": 1,
+          "top": 39.66,
+          "bottom": 33.9,
+          "bar_idx": 168
+        },
+        {
+          "direction": 1,
+          "top": 51.12,
+          "bottom": 46.9,
+          "bar_idx": 169
+        },
+        {
+          "direction": -1,
+          "top": 178.65,
+          "bottom": 171.94,
+          "bar_idx": 273
+        },
+        {
+          "direction": -1,
+          "top": 137.74,
+          "bottom": 128.34,
+          "bar_idx": 284
+        },
+        {
+          "direction": -1,
+          "top": 117.15,
+          "bottom": 106.12,
+          "bar_idx": 285
+        }
+      ]
+    }
+  },
+  "bias": {
+    "label": "NEUTRAL",
+    "score": -6,
+    "max_score": 60,
+    "percentage": 45.0,
+    "direction": 0
+  },
+  "confluence_matrix": {
+    "factors": {
+      "structure": {
+        "scores": {
+          "1m": 1,
+          "5m": 0,
+          "15m": 0,
+          "1H": 0,
+          "4H": -1,
+          "1D": 0,
+          "1W": -1
+        },
+        "agreement": 0.667,
+        "majority_direction": -1,
+        "agreeing_tfs": [
+          "4H",
+          "1W"
+        ],
+        "dissenting_tfs": [
+          "1m"
+        ]
+      },
+      "ob": {
+        "scores": {
+          "1m": 1,
+          "5m": -1,
+          "15m": -1,
+          "1H": -1,
+          "4H": -1,
+          "1D": 1,
+          "1W": 1
+        },
+        "agreement": 0.571,
+        "majority_direction": -1,
+        "agreeing_tfs": [
+          "5m",
+          "15m",
+          "1H",
+          "4H"
+        ],
+        "dissenting_tfs": [
+          "1m",
+          "1D",
+          "1W"
+        ]
+      },
+      "fvg": {
+        "scores": {
+          "1m": 1,
+          "5m": -1,
+          "15m": -1,
+          "1H": -1,
+          "4H": -1,
+          "1D": -1,
+          "1W": -1
+        },
+        "agreement": 0.857,
+        "majority_direction": -1,
+        "agreeing_tfs": [
+          "5m",
+          "15m",
+          "1H",
+          "4H",
+          "1D",
+          "1W"
+        ],
+        "dissenting_tfs": [
+          "1m"
+        ]
+      },
+      "swing": {
+        "scores": {
+          "1m": 1,
+          "5m": 1,
+          "15m": 1,
+          "1H": -1,
+          "4H": 1,
+          "1D": 1,
+          "1W": 1
+        },
+        "agreement": 0.857,
+        "majority_direction": 1,
+        "agreeing_tfs": [
+          "1m",
+          "5m",
+          "15m",
+          "4H",
+          "1D",
+          "1W"
+        ],
+        "dissenting_tfs": [
+          "1H"
+        ]
+      }
+    },
+    "timeframes": {
+      "1m": {
+        "raw_score": 4,
+        "weighted_score": 4,
+        "weight": 1,
+        "factor_scores": {
+          "structure": 1,
+          "ob": 1,
+          "fvg": 1,
+          "swing": 1
+        }
+      },
+      "5m": {
+        "raw_score": -1,
+        "weighted_score": -1,
+        "weight": 1,
+        "factor_scores": {
+          "structure": 0,
+          "ob": -1,
+          "fvg": -1,
+          "swing": 1
+        }
+      },
+      "15m": {
+        "raw_score": -1,
+        "weighted_score": -2,
+        "weight": 2,
+        "factor_scores": {
+          "structure": 0,
+          "ob": -1,
+          "fvg": -1,
+          "swing": 1
+        }
+      },
+      "1H": {
+        "raw_score": -3,
+        "weighted_score": -6,
+        "weight": 2,
+        "factor_scores": {
+          "structure": 0,
+          "ob": -1,
+          "fvg": -1,
+          "swing": -1
+        }
+      },
+      "4H": {
+        "raw_score": -2,
+        "weighted_score": -4,
+        "weight": 2,
+        "factor_scores": {
+          "structure": -1,
+          "ob": -1,
+          "fvg": -1,
+          "swing": 1
+        }
+      },
+      "1D": {
+        "raw_score": 1,
+        "weighted_score": 3,
+        "weight": 3,
+        "factor_scores": {
+          "structure": 0,
+          "ob": 1,
+          "fvg": -1,
+          "swing": 1
+        }
+      },
+      "1W": {
+        "raw_score": 0,
+        "weighted_score": 0,
+        "weight": 4,
+        "factor_scores": {
+          "structure": -1,
+          "ob": 1,
+          "fvg": -1,
+          "swing": 1
+        }
+      }
+    },
+    "overall_agreement": 0.738,
+    "strongest_factor": "fvg",
+    "weakest_factor": "ob"
+  }
+}
