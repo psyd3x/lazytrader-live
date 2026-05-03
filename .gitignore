@@ -58,3 +58,22 @@ models/
 
 # Tailscale / dev
 .dev-server-pid
+
+# Expo / RN additions (merged from create-expo-app template)
+web-build/
+expo-env.d.ts
+.metro-health-check*
+.kotlin/
+*.orig.*
+
+# Native signing / certs (do not commit)
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.pem
+
+# Generated native folders (Expo prebuild output)
+/ios
+/android
