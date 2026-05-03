@@ -156,15 +156,82 @@ Not for: total beginners with no wallet, futures-illiterate retail, copy-traders
 
 **FR-SMC-6**: Engine output must match the Flux Charts "Market Structure Dashboard" Pine Script indicator on the same data within an acceptable tolerance (see SMC-ENGINE-VALIDATION.md).
 
-### 6.3 Position sizing
+### 6.3 Position sizing & risk management
 
-**FR-SIZE-1**: User configures account balance, max risk per trade %, default leverage in settings.
+The position sizing module is the safety net of the entire app. It enforces that no single trade can risk more than the user's configured percentage of their wallet balance, regardless of the signal's leverage or TP targets. It is calculated **from the stop-loss outward**, never from the leverage inward.
 
-**FR-SIZE-2**: For each verified signal, app calculates suggested position size: `(balance * max_risk_pct) / SL_distance * score_multiplier`.
+#### Wallet balance source
 
-**FR-SIZE-3**: User can override suggested size and leverage before approving.
+**FR-SIZE-1**: App reads the user's available USDC balance directly from the connected Solana wallet (or Drift collateral account, where applicable) on every signal verification. No manual balance entry. Refreshed each time the user opens a signal for verification.
 
-**FR-SIZE-4**: TP split defaults to 50% TP1, 30% TP2, 20% TP3 (configurable).
+**FR-SIZE-1a**: User can override the "active capital" the app sizes against — useful when the wallet holds funds the user doesn't want to trade with. Default = 100% of available USDC balance.
+
+#### Max-risk per trade
+
+**FR-SIZE-2**: User selects max-risk-per-trade as a percentage of active capital. Default **1%**. Selectable presets: **0.5%, 1%, 2%, 3%**. Custom value allowed (any value 0.1% to 10%, hard-capped at 10% to prevent obvious mistakes; warning shown above 3%).
+
+**FR-SIZE-2a**: This setting is the user's **maximum loss on stop-out**. The app must size every trade so that if SL hits, the user loses no more than `active_capital * max_risk_pct`.
+
+#### Suggested size & leverage calculation
+
+**FR-SIZE-3**: For each verified signal, the app calculates and **pre-fills** the order with:
+
+```
+risk_dollars      = active_capital × max_risk_pct × score_multiplier
+sl_distance_pct   = |entry − SL| / entry
+position_notional = risk_dollars / sl_distance_pct
+suggested_lev     = ceil(position_notional / active_capital)   // capped at signal.leverage if specified
+                                                                // and at user's max_leverage setting
+position_size     = position_notional                           // in quote currency
+margin_required   = position_notional / suggested_lev
+```
+
+`score_multiplier` comes from the SMC engine's signal rating (A+=1.5, A=1.25, B=1.0, C=0.75, D=0.5).
+
+**FR-SIZE-3a**: Suggested leverage is the **minimum leverage** required to open the calculated notional given the user's active capital. The app prefers lower leverage. The app never increases position size to "use more leverage" — leverage is an output, not an input.
+
+**FR-SIZE-3b**: If the signal source specifies a leverage value, it is used as a **ceiling**, not a target. The app sizes for the SL-bounded risk first, then verifies suggested leverage ≤ signal leverage ≤ user's `max_leverage` setting.
+
+**FR-SIZE-3c**: User can override suggested size and leverage before approving. Override UI shows the resulting **risk in dollars + as % of capital** in real time so the user always sees what they're about to risk.
+
+#### Pre-trade visibility
+
+**FR-SIZE-4**: The Confirm screen MUST clearly display, before the wallet sign step:
+
+- **Position size** (in quote currency, e.g. "$1,000 BTC-PERP")
+- **Leverage** (e.g. "5x")
+- **Margin required** (in USDC)
+- **Stop-loss price** + **distance from entry** (% and absolute)
+- **Maximum loss if SL hits** — both **as a $ amount** and **as % of active capital**, in **prominent type**
+- **Take-profit levels** + weighted reward at each
+- **R:R ratio** computed against the weighted TP split
+- **Liquidation price** (for transparency on margin trades)
+
+Example display:
+```
+  POSITION:    $1,000 BTC-PERP   5x leverage
+  ENTRY:       67,500          MARGIN: $200 USDC
+  STOP LOSS:   66,800  (-1.04%)
+  ⚠ MAX LOSS:  $10.00  (1.0% of $1,000 capital)
+  TP1: 68,200 (50%)  TP2: 69,000 (30%)  TP3: 70,500 (20%)
+  R:R:         2.4
+  LIQ:         53,800  (price needs to drop -20.3%)
+```
+
+**FR-SIZE-4a**: If the user adjusts size/leverage on the Confirm screen, the "MAX LOSS" line updates live before any signing happens.
+
+#### TP split
+
+**FR-SIZE-5**: TP split defaults to 50% TP1, 30% TP2, 20% TP3 when 3 TPs are specified. For 1 TP: 100%. For 2 TPs: 60/40. Configurable per-user in settings.
+
+#### Hard guards
+
+**FR-SIZE-6**: App refuses to construct a transaction if any of the following are true:
+- Resulting margin > active capital
+- Suggested leverage > user's `max_leverage` setting
+- SL distance is 0 or invalid (would mean infinite size)
+- Computed position size is below Drift's minimum order size for the market
+In each case, the user sees a clear explanation, never a silent failure.
 
 ### 6.4 Execution
 
@@ -184,7 +251,7 @@ Not for: total beginners with no wallet, futures-illiterate retail, copy-traders
 
 **FR-SET-1**: Wallet management — connect, disconnect, view connected address.
 
-**FR-SET-2**: Risk management — account balance (manual entry MVP), max risk per trade %, default leverage, default TP split.
+**FR-SET-2**: Risk management — active capital % override (default 100% of wallet USDC), max-risk-per-trade preset (0.5/1/2/3% with custom override, default 1%), max leverage cap, default TP split.
 
 **FR-SET-3**: Network — Drift devnet vs mainnet, RPC endpoint override.
 
