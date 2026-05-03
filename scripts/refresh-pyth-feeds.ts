@@ -37,8 +37,8 @@ async function main() {
 
   const out: SnapshotEntry[] = [];
   for (const f of feeds) {
-    const sym = f.attributes.symbol;
-    if (!sym.startsWith("Crypto.")) continue;
+    const sym = f.attributes?.symbol;
+    if (!sym || !sym.startsWith("Crypto.")) continue;
     // "Crypto.BTC/USD" → ["BTC","USD"]
     const tail = sym.slice("Crypto.".length);
     const slash = tail.indexOf("/");
