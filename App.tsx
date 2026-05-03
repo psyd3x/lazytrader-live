@@ -1,28 +1,32 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar } from 'expo-status-bar';
+// App.tsx
+import "react-native-gesture-handler";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import CaptureScreen from './src/screens/CaptureScreen';
-import HomeScreen from './src/screens/HomeScreen';
-import SettingsScreen from './src/screens/SettingsScreen';
+import { AppTabs } from "./src/navigation/AppTabs";
+import { colors } from "./src/theme";
 
-export type RootStackParamList = {
-  Home: undefined;
-  Capture: undefined;
-  Settings: undefined;
+const navTheme = {
+  ...DefaultTheme,
+  dark: true,
+  colors: {
+    ...DefaultTheme.colors,
+    background: colors.bg,
+    card: colors.surface,
+    text: colors.text,
+    border: colors.border,
+    primary: colors.primary,
+  },
 };
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <StatusBar style="auto" />
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Capture" component={CaptureScreen} />
-        <Stack.Screen name="Settings" component={SettingsScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer theme={navTheme}>
+        <StatusBar style="light" />
+        <AppTabs />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
