@@ -1,57 +1,71 @@
 // src/screens/CaptureScreen.tsx
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
 import { DetailsAccordion, type DetailFactor } from "../components/DetailsAccordion";
 import { FactorChips, type FactorChip, type FactorSeverity } from "../components/FactorChips";
 import { MultiTimeframeDashboard, type DashboardRow } from "../components/MultiTimeframeDashboard";
 import { NetBadge } from "../components/NetBadge";
+import { PairInput } from "../components/PairInput";
 import { PrimaryCTA } from "../components/PrimaryCTA";
 import { RatingHeroCard } from "../components/RatingHeroCard";
 import { ScreenBackdrop } from "../components/ScreenBackdrop";
 import { SizingStrip } from "../components/SizingStrip";
 import { UploadScreenshotButton } from "../components/UploadScreenshotButton";
 import { WalletChip } from "../components/WalletChip";
-import { makeBtcDemo } from "../data/demoData";
+import { fetchCandlesForEngine, latestClose, NoCandlesError } from "../data/feed";
+import type { ResolvedPair } from "../data/pairs";
 import { generateSignalVerification } from "../smc";
-import type { SignalVerificationReport } from "../smc";
+import type { SignalInput, SignalVerificationReport } from "../smc";
 import { colors, fonts, fontSize, fontWeight, radius, space } from "../theme";
 
 /**
- * Capture screen — paste OR upload screenshot → SMC engine → branded
- * verify view (hybrid C composition: hero + dashboard + chips +
- * sizing strip + expandable details).
+ * Capture screen — paste/upload signal → SMC engine → branded verify view.
  *
- * Engine call path is unchanged from the M2 stub. Demo signal still
- * comes from `makeBtcDemo()` — live data feed lands in M3.
+ * M3: live OHLCV via fetchCandlesForEngine (Pyth primary, optional Birdeye
+ * fallback). Pair from PairInput. Signal entry/SL/TPs still stubbed —
+ * structured parser lands in M4.
  */
 export function CaptureScreen() {
-  const demo = useMemo(() => makeBtcDemo(), []);
-  const [signalText, setSignalText] = useState(demo.signalText);
+  const [pairText, setPairText] = useState("");
+  const [resolvedPair, setResolvedPair] = useState<ResolvedPair | null>(null);
+  const [signalText, setSignalText] = useState("");
   const [report, setReport] = useState<SignalVerificationReport | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const verify = () => {
+  const verifyDisabled =
+    analyzing ||
+    resolvedPair === null ||
+    resolvedPair.pyth === null ||
+    signalText.trim().length === 0;
+
+  const verify = async () => {
+    if (resolvedPair === null || resolvedPair.pyth === null) return;
     setAnalyzing(true);
     setErrorMsg(null);
     setReport(null);
-    setTimeout(() => {
-      try {
-        const result = generateSignalVerification({
-          signal: demo.signal,
-          candleData: demo.candleData,
-          currentPrice: demo.currentPrice,
-          accountBalance: 1000,
-          riskRules: { maxRiskPct: 1.0, maxLeverage: 25 },
-        });
-        setReport(result);
-      } catch (err) {
-        setErrorMsg(err instanceof Error ? err.message : String(err));
-      } finally {
-        setAnalyzing(false);
+    try {
+      const candleData = await fetchCandlesForEngine({ pair: resolvedPair });
+      const currentPrice = latestClose(candleData);
+      if (currentPrice === null) {
+        setErrorMsg("Couldn't compute current price — no candles returned.");
+        return;
       }
-    }, 0);
+      const stub: SignalInput = makeStubbedSignal(resolvedPair, currentPrice);
+      const result = generateSignalVerification({
+        signal: stub,
+        candleData,
+        currentPrice,
+        accountBalance: 1000,
+        riskRules: { maxRiskPct: 1.0, maxLeverage: 25 },
+      });
+      setReport(result);
+    } catch (e) {
+      setErrorMsg(toErrorMessage(e));
+    } finally {
+      setAnalyzing(false);
+    }
   };
 
   return (
@@ -65,10 +79,12 @@ export function CaptureScreen() {
           <>
             <Text style={styles.h1}>Capture</Text>
             <Text style={styles.subtitle}>
-              Paste a signal or upload a screenshot. The SMC engine will rate it before you trade.
+              Type a pair, paste a signal. SMC engine rates it against live Pyth data.
             </Text>
 
             <View style={styles.inputCard}>
+              <PairInput value={pairText} onChangeText={setPairText} onResolve={setResolvedPair} />
+              <View style={styles.spacer} />
               <Text style={styles.inputLabel}>Signal text</Text>
               <TextInput
                 style={styles.input}
@@ -89,7 +105,12 @@ export function CaptureScreen() {
               </View>
             )}
 
-            <PrimaryCTA label="Verify with SMC engine" onPress={verify} loading={analyzing} />
+            <PrimaryCTA
+              label={analyzing ? "Fetching candles…" : "Verify with SMC engine"}
+              onPress={verify}
+              loading={analyzing}
+              disabled={verifyDisabled}
+            />
           </>
         )}
 
@@ -97,6 +118,26 @@ export function CaptureScreen() {
       </ScrollView>
     </ScreenBackdrop>
   );
+}
+
+/** Stubbed signal — entry/SL/TPs derived from live price. M4 replaces with parser. */
+function makeStubbedSignal(pair: ResolvedPair, currentPrice: number): SignalInput {
+  return {
+    pair: `${pair.base}${pair.quote}`,
+    direction: "long",
+    entry: currentPrice * 0.998,
+    stopLoss: currentPrice * 0.985,
+    takeProfits: [currentPrice * 1.012, currentPrice * 1.028, currentPrice * 1.05],
+    leverage: 5,
+  };
+}
+
+function toErrorMessage(e: unknown): string {
+  if (e instanceof NoCandlesError) {
+    return "Couldn't fetch data — Pyth failed and no Birdeye fallback configured. Add a Birdeye key in Settings to enable fallback.";
+  }
+  if (e instanceof Error) return e.message;
+  return String(e);
 }
 
 function ReportView({ report, onReset }: { report: SignalVerificationReport; onReset: () => void }) {
@@ -119,18 +160,15 @@ function ReportView({ report, onReset }: { report: SignalVerificationReport; onR
   );
 }
 
-// ─── Engine → component adapters ─────────────────────────────────────────
+// ─── Engine → component adapters (unchanged from prior visual-layer pass) ──
 
 function toHeroProps(r: SignalVerificationReport) {
-  // Session tag: pull session label from the LTF analysis if present.
-  // Engine doesn't expose a top-level session; fall back to OB hint.
   const ltfAnalysis = r.timeframeAnalyses["1m"] ?? r.timeframeAnalyses["5m"] ?? null;
   const obHint = ltfAnalysis?.nearestOb?.isInside === true ? "OB" : null;
   const tag = obHint !== null ? `INSIDE · ${obHint}` : undefined;
-
   return {
     rating: r.scoring.rating,
-    scorePct: r.scoring.score,                 // already 0-100
+    scorePct: r.scoring.score,
     verdict: r.scoring.justification,
     side: (r.signal.direction === "long" ? "LONG" : "SHORT") as "LONG" | "SHORT",
     sizeMult: r.scoring.scoreMultiplier,
@@ -150,7 +188,6 @@ function toDashboardRows(r: SignalVerificationReport): DashboardRow[] {
 }
 
 function toFactorChips(r: SignalVerificationReport): FactorChip[] {
-  // Engine factor names → short display labels
   const labels: Record<string, string> = {
     timeframe_alignment: "TF",
     entry_quality: "entry",
@@ -171,10 +208,7 @@ function toSizingStats(r: SignalVerificationReport) {
   const ps = r.positionSizing;
   if (ps === null) return null;
   return {
-    size: ps.positionSize,
-    risk: ps.riskAmount,
-    riskPct: ps.riskPct,
-    slPct: ps.slDistancePct,
+    size: ps.positionSize, risk: ps.riskAmount, riskPct: ps.riskPct, slPct: ps.slDistancePct,
   };
 }
 
@@ -189,10 +223,9 @@ function toDetailFactors(r: SignalVerificationReport): DetailFactor[] {
 const styles = StyleSheet.create({
   topbar: { flexDirection: "row", justifyContent: "space-between", paddingHorizontal: space.lg, paddingTop: space.sm, paddingBottom: space.xs },
   body: { padding: space.md, paddingBottom: 80, gap: space.md },
-
   h1: { fontSize: 22, fontWeight: fontWeight.bold, color: colors.text, letterSpacing: -0.4 },
   subtitle: { color: colors.muted, fontSize: fontSize.sm, lineHeight: 18 },
-
+  spacer: { height: space.md },
   inputCard: {
     borderRadius: radius.md, borderWidth: 1, borderColor: colors.border,
     backgroundColor: colors.surface, padding: space.md,
@@ -207,7 +240,6 @@ const styles = StyleSheet.create({
     fontFamily: fonts.mono, fontSize: fontSize.sm, lineHeight: 18,
     textAlignVertical: "top",
   },
-
   errorBox: {
     borderRadius: radius.sm, borderWidth: 1, borderColor: colors.danger,
     backgroundColor: colors.dangerBg, padding: space.md,
