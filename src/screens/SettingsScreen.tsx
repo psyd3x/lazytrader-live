@@ -63,10 +63,14 @@ export function SettingsScreen() {
   };
 
   const handleClear = async () => {
-    await clearBirdeyeApiKey();
-    setSavedKey(null);
-    setDraftKey("");
-    setStatus("Cleared");
+    try {
+      await clearBirdeyeApiKey();
+      setSavedKey(null);
+      setDraftKey("");
+      setStatus("Cleared");
+    } catch (e) {
+      setStatus(`Couldn't clear: ${(e as Error).message.slice(0, 60)}`);
+    }
   };
 
   const fallbackEnabled = savedKey !== null && savedKey.length > 0;
