@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LazyTrader — Verify layout options</title>
+<style>
+  :root {
+    --bg: #081018;
+    --surface: #0d1721;
+    --surface-2: #131e2a;
+    --border: rgba(143, 161, 179, 0.18);
+    --text: #eaf1f7;
+    --muted: #9fb0bf;
+    --primary: #9945ff;
+    --primary-bg: rgba(153, 69, 255, 0.14);
+    --secondary: #14f195;
+    --success: #37df91;
+    --success-bg: rgba(55, 223, 145, 0.12);
+    --danger: #ff6478;
+    --danger-bg: rgba(255, 100, 120, 0.12);
+    --warning: #ffb44b;
+    --warning-bg: rgba(255, 180, 75, 0.12);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #04070b;
+    color: var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    padding: 32px 24px 80px;
+  }
+  .page-title { max-width: 1500px; margin: 0 auto 24px; }
+  .page-title h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.02em; }
+  .page-title p { margin: 0; color: var(--muted); font-size: 14px; }
+
+  .grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+    max-width: 1500px; margin: 0 auto;
+  }
+  .col h2 {
+    font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text); margin: 0 0 4px;
+  }
+  .col h2 .key {
+    display: inline-block; padding: 2px 8px; margin-right: 8px;
+    background: var(--primary-bg); color: var(--primary); border-radius: 4px;
+    font-family: ui-monospace, monospace; font-size: 12px;
+  }
+  .col .tagline { color: var(--muted); font-size: 12px; margin: 0 0 12px; }
+
+  .phone {
+    border-radius: 32px; padding: 16px; border: 1px solid rgba(255,255,255,0.06);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.2));
+  }
+  .screen {
+    border-radius: 24px; aspect-ratio: 9 / 19;
+    background:
+      radial-gradient(circle at top left, rgba(153, 69, 255, 0.18), transparent 35%),
+      radial-gradient(circle at 80% 20%, rgba(20, 241, 149, 0.10), transparent 25%),
+      linear-gradient(180deg, #060b11 0%, var(--bg) 100%);
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .topbar {
+    display: flex; justify-content: space-between; padding: 14px 16px 8px;
+    font-size: 11px;
+  }
+  .wallet-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 999px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    font-family: ui-monospace, monospace; color: var(--muted);
+  }
+  .wallet-chip::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--success);
+  }
+  .net-badge { font-family: ui-monospace, monospace; color: var(--muted); }
+  .body {
+    flex: 1; padding: 4px 12px 12px; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .body::-webkit-scrollbar { width: 4px; }
+  .body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  /* Hero */
+  .hero {
+    border-radius: 18px; padding: 16px; border: 1px solid var(--border); background: var(--surface);
+  }
+  .hero .grade-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+  .hero .grade { font-size: 52px; line-height: 1; font-weight: 800; color: var(--success); letter-spacing: -0.04em; }
+  .hero .pct { font-family: ui-monospace, monospace; font-size: 18px; color: var(--text); font-weight: 600; }
+  .hero .verdict { font-size: 12px; color: var(--muted); margin-bottom: 10px; line-height: 1.4; }
+  .hero .meta-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .pill { font-size: 10px; padding: 4px 8px; border-radius: 999px; font-weight: 600; }
+  .pill.long { background: var(--success-bg); color: var(--success); }
+  .pill.size { background: var(--primary-bg); color: var(--primary); }
+  .pill.session { background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); }
+
+  /* Multi-TF dashboard */
+  .dashboard {
+    border-radius: 14px; border: 1px solid var(--border); background: var(--surface); overflow: hidden;
+  }
+  .dashboard-header {
+    padding: 10px 12px 8px; font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between;
+  }
+  .dashboard-header .pair { color: var(--text); font-family: ui-monospace, monospace; }
+  table.tf {
+    width: 100%; border-collapse: collapse; font-family: ui-monospace, monospace; font-size: 10px;
+  }
+  table.tf th, table.tf td {
+    padding: 5px 4px; text-align: center;
+    border-bottom: 1px solid rgba(143,161,179,0.06);
+  }
+  table.tf th {
+    font-weight: 600; color: var(--muted); font-size: 9px;
+    letter-spacing: 0.06em; text-transform: uppercase; background: var(--surface-2);
+  }
+  table.tf td.tf-label {
+    color: var(--text); font-weight: 700; text-align: left; padding-left: 12px; font-size: 10px;
+  }
+  .cell-bull { color: var(--success); font-weight: 600; }
+  .cell-bear { color: var(--danger); font-weight: 600; }
+  .cell-neutral { color: var(--muted); }
+  .cell-strong-bull { color: var(--success); background: var(--success-bg); font-weight: 700; }
+  .cell-strong-bear { color: var(--danger); background: var(--danger-bg); font-weight: 700; }
+
+  /* Factor breakdown */
+  .factors {
+    border-radius: 14px; border: 1px solid var(--border); background: var(--surface);
+    padding: 12px;
+  }
+  .factors-title {
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px;
+  }
+  .factor-row { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px solid rgba(143,161,179,0.06); font-size: 11px; }
+  .factor-row:last-child { border-bottom: none; }
+  .factor-name { flex: 1; color: var(--text); text-transform: capitalize; }
+  .factor-bar { width: 50px; height: 5px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+  .factor-bar > span { display: block; height: 100%; background: var(--primary); }
+  .factor-score { font-family: ui-monospace, monospace; color: var(--muted); width: 24px; text-align: right; font-size: 10px; }
+
+  /* Compact factor chips (option C) */
+  .factor-chips { display: flex; flex-wrap: wrap; gap: 4px; padding: 12px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .factor-chips-title { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); width: 100%; margin-bottom: 6px; }
+  .fchip { display: inline-flex; align-items: center; gap: 4px; padding: 3px 7px; border-radius: 999px; font-size: 10px; background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+  .fchip .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .fchip .dot.g { background: var(--success); }
+  .fchip .dot.y { background: var(--warning); }
+  .fchip .dot.r { background: var(--danger); }
+
+  /* Position sizing */
+  .sizing {
+    border-radius: 14px; border: 1px solid var(--border); background: var(--surface);
+    padding: 12px; display: flex; gap: 12px; justify-content: space-between;
+  }
+  .sizing .stat { flex: 1; }
+  .sizing .stat-label { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+  .sizing .stat-val { font-family: ui-monospace, monospace; font-size: 13px; color: var(--text); font-weight: 700; }
+
+  .sizing-strip {
+    border-radius: 10px; border: 1px solid var(--border); background: var(--surface-2);
+    padding: 8px 10px; display: flex; justify-content: space-between; font-size: 10px;
+    font-family: ui-monospace, monospace; color: var(--muted);
+  }
+  .sizing-strip strong { color: var(--text); }
+
+  /* CTA */
+  .cta {
+    text-align: center; padding: 12px;
+    border-radius: 12px; background: var(--primary); color: #fff;
+    font-weight: 700; font-size: 13px; margin-top: auto;
+  }
+  .details-toggle {
+    text-align: center; padding: 8px;
+    color: var(--muted); font-size: 11px;
+    border: 1px dashed var(--border); border-radius: 10px;
+    background: rgba(255,255,255,0.01);
+  }
+  .details-toggle::before { content: '▾  '; }
+
+  /* Bottom nav */
+  .navbar { display: flex; justify-content: space-around; padding: 10px 8px 14px; border-top: 1px solid var(--border); font-size: 10px; }
+  .nav-item { display: flex; flex-direction: column; align-items: center; gap: 3px; opacity: 0.5; }
+  .nav-item.active { opacity: 1; }
+  .nav-dot { width: 18px; height: 18px; border-radius: 5px; background: var(--surface-2); }
+  .nav-item.active .nav-dot { background: var(--primary); }
+</style>
+</head>
+<body>
+
+<div class="page-title">
+  <h1>Verify screen — composition options</h1>
+  <p>Same engine output, three layouts. Pick A / B / C.</p>
+</div>
+
+<div class="grid">
+
+  <!-- ============= OPTION A — minimal ============= -->
+  <div class="col">
+    <h2><span class="key">A</span>Minimal</h2>
+    <p class="tagline">Hero + dashboard only. Drop factor breakdown + sizing detail. Tap CTA → next screen has the rest.</p>
+    <div class="phone">
+      <div class="screen">
+        <div class="topbar">
+          <span class="wallet-chip">7xKp…aR8q</span>
+          <span class="net-badge">DEVNET</span>
+        </div>
+        <div class="body">
+          <div class="hero">
+            <div class="grade-row"><div class="grade">A+</div><div class="pct">87%</div></div>
+            <div class="verdict">Strong long confluence — 5 of 7 timeframes aligned, Asia killzone OB respected.</div>
+            <div class="meta-row">
+              <span class="pill long">LONG</span>
+              <span class="pill size">1.5× SIZE</span>
+              <span class="pill session">ASIA · OB</span>
+            </div>
+          </div>
+          <div class="dashboard">
+            <div class="dashboard-header"><span>Multi-TF</span><span class="pair">BTCUSDT</span></div>
+            <table class="tf">
+              <thead><tr><th>TF</th><th>Struct</th><th>OB</th><th>FVG</th><th>EMA</th></tr></thead>
+              <tbody>
+                <tr><td class="tf-label">1W</td><td class="cell-strong-bull">BULL</td><td class="cell-bull">↑</td><td class="cell-neutral">—</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">1D</td><td class="cell-strong-bull">BULL</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">4H</td><td class="cell-bull">BULL</td><td class="cell-neutral">—</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">1H</td><td class="cell-bull">BULL</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">15m</td><td class="cell-neutral">RANGE</td><td class="cell-neutral">—</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">5m</td><td class="cell-bear">BEAR</td><td class="cell-bear">↓</td><td class="cell-neutral">—</td><td class="cell-neutral">→</td></tr>
+                <tr><td class="tf-label">1m</td><td class="cell-strong-bear">BEAR</td><td class="cell-bear">↓</td><td class="cell-bear">↓</td><td class="cell-bear">↓</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <a class="cta">Confirm trade →</a>
+        </div>
+        <div class="navbar">
+          <div class="nav-item"><div class="nav-dot"></div>Home</div>
+          <div class="nav-item active"><div class="nav-dot"></div>Capture</div>
+          <div class="nav-item"><div class="nav-dot"></div>Settings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============= OPTION B — full ============= -->
+  <div class="col">
+    <h2><span class="key">B</span>Full</h2>
+    <p class="tagline">Hero + dashboard + factor bars + sizing card. Everything visible, scrollable.</p>
+    <div class="phone">
+      <div class="screen">
+        <div class="topbar">
+          <span class="wallet-chip">7xKp…aR8q</span>
+          <span class="net-badge">DEVNET</span>
+        </div>
+        <div class="body">
+          <div class="hero">
+            <div class="grade-row"><div class="grade">A+</div><div class="pct">87%</div></div>
+            <div class="verdict">Strong long confluence — 5 of 7 timeframes aligned.</div>
+            <div class="meta-row">
+              <span class="pill long">LONG</span>
+              <span class="pill size">1.5× SIZE</span>
+              <span class="pill session">ASIA · OB</span>
+            </div>
+          </div>
+          <div class="dashboard">
+            <div class="dashboard-header"><span>Multi-TF</span><span class="pair">BTCUSDT</span></div>
+            <table class="tf">
+              <thead><tr><th>TF</th><th>Struct</th><th>OB</th><th>FVG</th><th>EMA</th></tr></thead>
+              <tbody>
+                <tr><td class="tf-label">1W</td><td class="cell-strong-bull">BULL</td><td class="cell-bull">↑</td><td class="cell-neutral">—</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">1D</td><td class="cell-strong-bull">BULL</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">4H</td><td class="cell-bull">BULL</td><td class="cell-neutral">—</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">1H</td><td class="cell-bull">BULL</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">15m</td><td class="cell-neutral">RANGE</td><td class="cell-neutral">—</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">5m</td><td class="cell-bear">BEAR</td><td class="cell-bear">↓</td><td class="cell-neutral">—</td><td class="cell-neutral">→</td></tr>
+                <tr><td class="tf-label">1m</td><td class="cell-strong-bear">BEAR</td><td class="cell-bear">↓</td><td class="cell-bear">↓</td><td class="cell-bear">↓</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="factors">
+            <div class="factors-title">Factor breakdown</div>
+            <div class="factor-row"><span class="factor-name">structure</span><div class="factor-bar"><span style="width:90%"></span></div><span class="factor-score">90</span></div>
+            <div class="factor-row"><span class="factor-name">order block</span><div class="factor-bar"><span style="width:85%"></span></div><span class="factor-score">85</span></div>
+            <div class="factor-row"><span class="factor-name">FVG</span><div class="factor-bar"><span style="width:70%"></span></div><span class="factor-score">70</span></div>
+            <div class="factor-row"><span class="factor-name">EMA trend</span><div class="factor-bar"><span style="width:95%"></span></div><span class="factor-score">95</span></div>
+            <div class="factor-row"><span class="factor-name">session</span><div class="factor-bar"><span style="width:80%"></span></div><span class="factor-score">80</span></div>
+            <div class="factor-row"><span class="factor-name">volume</span><div class="factor-bar"><span style="width:65%"></span></div><span class="factor-score">65</span></div>
+            <div class="factor-row"><span class="factor-name">R:R</span><div class="factor-bar"><span style="width:75%"></span></div><span class="factor-score">75</span></div>
+          </div>
+          <div class="sizing">
+            <div class="stat"><div class="stat-label">Size</div><div class="stat-val">$1,500</div></div>
+            <div class="stat"><div class="stat-label">Risk</div><div class="stat-val">$10 · 1%</div></div>
+            <div class="stat"><div class="stat-label">SL dist</div><div class="stat-val">0.66%</div></div>
+          </div>
+          <a class="cta">Confirm trade →</a>
+        </div>
+        <div class="navbar">
+          <div class="nav-item"><div class="nav-dot"></div>Home</div>
+          <div class="nav-item active"><div class="nav-dot"></div>Capture</div>
+          <div class="nav-item"><div class="nav-dot"></div>Settings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============= OPTION C — hybrid ============= -->
+  <div class="col">
+    <h2><span class="key">C</span>Hybrid</h2>
+    <p class="tagline">Hero + dashboard primary. Factors as compact chips. Sizing as a single bottom strip. Details expandable.</p>
+    <div class="phone">
+      <div class="screen">
+        <div class="topbar">
+          <span class="wallet-chip">7xKp…aR8q</span>
+          <span class="net-badge">DEVNET</span>
+        </div>
+        <div class="body">
+          <div class="hero">
+            <div class="grade-row"><div class="grade">A+</div><div class="pct">87%</div></div>
+            <div class="verdict">Strong long confluence — 5 of 7 timeframes aligned, Asia killzone OB respected.</div>
+            <div class="meta-row">
+              <span class="pill long">LONG</span>
+              <span class="pill size">1.5× SIZE</span>
+              <span class="pill session">ASIA · OB</span>
+            </div>
+          </div>
+          <div class="dashboard">
+            <div class="dashboard-header"><span>Multi-TF</span><span class="pair">BTCUSDT</span></div>
+            <table class="tf">
+              <thead><tr><th>TF</th><th>Struct</th><th>OB</th><th>FVG</th><th>EMA</th></tr></thead>
+              <tbody>
+                <tr><td class="tf-label">1W</td><td class="cell-strong-bull">BULL</td><td class="cell-bull">↑</td><td class="cell-neutral">—</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">1D</td><td class="cell-strong-bull">BULL</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">4H</td><td class="cell-bull">BULL</td><td class="cell-neutral">—</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">1H</td><td class="cell-bull">BULL</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">15m</td><td class="cell-neutral">RANGE</td><td class="cell-neutral">—</td><td class="cell-bull">↑</td><td class="cell-bull">↑</td></tr>
+                <tr><td class="tf-label">5m</td><td class="cell-bear">BEAR</td><td class="cell-bear">↓</td><td class="cell-neutral">—</td><td class="cell-neutral">→</td></tr>
+                <tr><td class="tf-label">1m</td><td class="cell-strong-bear">BEAR</td><td class="cell-bear">↓</td><td class="cell-bear">↓</td><td class="cell-bear">↓</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="factor-chips">
+            <div class="factor-chips-title">Factors</div>
+            <span class="fchip"><span class="dot g"></span>struct 90</span>
+            <span class="fchip"><span class="dot g"></span>OB 85</span>
+            <span class="fchip"><span class="dot y"></span>FVG 70</span>
+            <span class="fchip"><span class="dot g"></span>EMA 95</span>
+            <span class="fchip"><span class="dot g"></span>sess 80</span>
+            <span class="fchip"><span class="dot y"></span>vol 65</span>
+            <span class="fchip"><span class="dot y"></span>R:R 75</span>
+          </div>
+          <div class="sizing-strip">
+            <span><strong>$1,500</strong> size</span>
+            <span><strong>$10</strong> risk · 1%</span>
+            <span><strong>0.66%</strong> SL</span>
+          </div>
+          <div class="details-toggle">Per-factor detail · justification</div>
+          <a class="cta">Confirm trade →</a>
+        </div>
+        <div class="navbar">
+          <div class="nav-item"><div class="nav-dot"></div>Home</div>
+          <div class="nav-item active"><div class="nav-dot"></div>Capture</div>
+          <div class="nav-item"><div class="nav-dot"></div>Settings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
