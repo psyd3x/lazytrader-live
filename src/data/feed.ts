@@ -93,3 +93,18 @@ export async function fetchCandlesForEngine(
   for (const [tf, candles] of pairs) out[tf] = candles;
   return out;
 }
+
+const PREFERRED_TFS_FOR_PRICE: readonly string[] = ["1m", "5m", "15m", "1H", "4H", "1D", "1W"];
+
+/** Return the most-recent close from the lowest-TF non-empty array, or null. */
+export function latestClose(bundle: Record<string, Candle[]>): number | null {
+  for (const tf of PREFERRED_TFS_FOR_PRICE) {
+    const arr = bundle[tf];
+    if (arr && arr.length > 0) return arr[arr.length - 1].close;
+  }
+  // Fallback — any non-empty TF
+  for (const arr of Object.values(bundle)) {
+    if (arr && arr.length > 0) return arr[arr.length - 1].close;
+  }
+  return null;
+}
