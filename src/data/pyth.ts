@@ -53,8 +53,10 @@ export interface FetchPythOpts {
   toUnix: number;
 }
 
-/** Fetch OHLCV from Pyth for a single TF + time window. */
-export async function fetchPythCandles(opts: FetchPythOpts): Promise<Candle[]> {
+const ONE_YEAR_SEC = 365 * 24 * 3600;
+
+/** Internal: fetch a single window without pagination logic. */
+async function fetchOneWindow(opts: FetchPythOpts): Promise<Candle[]> {
   const { pair, tf, fromUnix, toUnix } = opts;
   if (!pair.pyth) throw new PythError(`no Pyth feed for ${pair.base}/${pair.quote}`);
 
@@ -69,12 +71,10 @@ export async function fetchPythCandles(opts: FetchPythOpts): Promise<Candle[]> {
   } catch (e) {
     throw new PythError(`Pyth network error: ${(e as Error).message}`);
   }
-
   if (!res.ok) {
     const body = await res.text().catch(() => "");
     throw new PythError(`Pyth HTTP ${res.status}: ${body.slice(0, 200)}`, res.status);
   }
-
   const json = (await res.json()) as PythResponse;
   if (json.s === "no_data") return [];
   if (json.s !== "ok") throw new PythError(`Pyth status=${json.s}: ${json.errmsg ?? ""}`);
@@ -92,7 +92,7 @@ export async function fetchPythCandles(opts: FetchPythOpts): Promise<Candle[]> {
   const out: Candle[] = new Array(t.length);
   for (let i = 0; i < t.length; i++) {
     out[i] = {
-      timestamp: t[i] * 1000, // sec → ms (Candle.timestamp is ms)
+      timestamp: t[i] * 1000,
       open: o[i],
       high: h[i],
       low: l[i],
@@ -101,4 +101,26 @@ export async function fetchPythCandles(opts: FetchPythOpts): Promise<Candle[]> {
     };
   }
   return out;
+}
+
+/** Public: fetch OHLCV with automatic 1-year pagination for 1W. */
+export async function fetchPythCandles(opts: FetchPythOpts): Promise<Candle[]> {
+  const { fromUnix, toUnix, tf } = opts;
+  const span = toUnix - fromUnix;
+
+  // Only 1W needs pagination — other TFs fit in a single 1-year window even
+  // for 120-bar history.
+  if (tf !== "1W" || span <= ONE_YEAR_SEC) {
+    return fetchOneWindow(opts);
+  }
+
+  const all: Candle[] = [];
+  let cursor = fromUnix;
+  while (cursor < toUnix) {
+    const next = Math.min(cursor + ONE_YEAR_SEC, toUnix);
+    const chunk = await fetchOneWindow({ ...opts, fromUnix: cursor, toUnix: next });
+    all.push(...chunk);
+    cursor = next;
+  }
+  return all;
 }

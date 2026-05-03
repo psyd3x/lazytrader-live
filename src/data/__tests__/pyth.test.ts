@@ -91,3 +91,57 @@ describe("fetchPythCandles", () => {
     ).rejects.toThrow(/no Pyth feed/);
   });
 });
+
+describe("fetchPythCandles pagination", () => {
+  beforeEach(() => {
+    vi.stubGlobal("fetch", vi.fn());
+  });
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it("makes a single request for 1H even over 1-year span", async () => {
+    const mock = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve({ s: "no_data" }),
+    });
+    vi.stubGlobal("fetch", mock);
+    const from = 0;
+    const to = 2 * 365 * 24 * 3600; // 2 years
+    await fetchPythCandles({ pair: btcPair, tf: "1H", fromUnix: from, toUnix: to });
+    expect(mock).toHaveBeenCalledTimes(1);
+  });
+
+  it("paginates 1W in 1-year chunks when span > 1 year", async () => {
+    const mock = vi.fn();
+    // span = ~2.5 years → 3 chunks
+    mock.mockResolvedValueOnce({ ok: true, json: () => Promise.resolve({
+      s: "ok", t: [100], o: [1], h: [1], l: [1], c: [1], v: [0],
+    }) });
+    mock.mockResolvedValueOnce({ ok: true, json: () => Promise.resolve({
+      s: "ok", t: [200], o: [2], h: [2], l: [2], c: [2], v: [0],
+    }) });
+    mock.mockResolvedValueOnce({ ok: true, json: () => Promise.resolve({
+      s: "ok", t: [300], o: [3], h: [3], l: [3], c: [3], v: [0],
+    }) });
+    vi.stubGlobal("fetch", mock);
+
+    const from = 0;
+    const to = Math.floor(2.5 * 365 * 24 * 3600);
+    const out = await fetchPythCandles({ pair: btcPair, tf: "1W", fromUnix: from, toUnix: to });
+    expect(mock).toHaveBeenCalledTimes(3);
+    expect(out.map((c) => c.close)).toEqual([1, 2, 3]);
+  });
+
+  it("does not paginate 1W when span <= 1 year", async () => {
+    const mock = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve({ s: "no_data" }),
+    });
+    vi.stubGlobal("fetch", mock);
+    await fetchPythCandles({
+      pair: btcPair, tf: "1W", fromUnix: 0, toUnix: 365 * 24 * 3600 - 1,
+    });
+    expect(mock).toHaveBeenCalledTimes(1);
+  });
+});
