@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { normalizePairInput } from "../pairs";
+import { normalizePairInput, resolveToPythFeed } from "../pairs";
 
 describe("normalizePairInput", () => {
   it("treats bare ticker as USD-quoted", () => {
@@ -52,5 +52,47 @@ describe("normalizePairInput", () => {
   });
   it("returns null for too-long base (>6 chars)", () => {
     expect(normalizePairInput("TOOLONGBASE")).toBeNull();
+  });
+});
+
+describe("resolveToPythFeed", () => {
+  it("resolves BTC to Crypto.BTC/USD", () => {
+    const r = resolveToPythFeed("BTC");
+    expect(r).not.toBeNull();
+    expect(r!.base).toBe("BTC");
+    expect(r!.pyth).not.toBeNull();
+    expect(r!.pyth!.pythSymbol).toBe("Crypto.BTC/USD");
+    expect(r!.pyth!.pythFeedId).toMatch(/^[0-9a-fx]+$/i);
+  });
+  it("resolves $BTC same as BTC", () => {
+    const a = resolveToPythFeed("$BTC");
+    const b = resolveToPythFeed("BTC");
+    expect(a?.pyth?.pythSymbol).toBe(b?.pyth?.pythSymbol);
+  });
+  it("collapses USDT/USDC quote to USD-quoted Pyth feed", () => {
+    const r = resolveToPythFeed("BTCUSDT");
+    expect(r?.pyth?.pythSymbol).toBe("Crypto.BTC/USD");
+  });
+  it("attaches birdeyeTokenAddress for SOL", () => {
+    const r = resolveToPythFeed("SOL");
+    expect(r?.birdeyeTokenAddress).toBe("So11111111111111111111111111111111111111112");
+  });
+  it("leaves birdeyeTokenAddress undefined for BTC (no SPL mint)", () => {
+    const r = resolveToPythFeed("BTC");
+    expect(r?.birdeyeTokenAddress).toBeUndefined();
+  });
+  it("returns null when normalizer fails", () => {
+    expect(resolveToPythFeed("!!!")).toBeNull();
+  });
+  it("returns ResolvedPair with pyth=null when base not in catalog", () => {
+    const r = resolveToPythFeed("ZZZNOTAREALCOINPLZ");
+    // Normalizer rejects >6 chars, so this is null
+    expect(r).toBeNull();
+  });
+  it("returns ResolvedPair with pyth=null for valid-shape but unknown base", () => {
+    // 4-char base passes normalizer but unlikely to be on Pyth
+    const r = resolveToPythFeed("ZZZZ");
+    expect(r).not.toBeNull();
+    expect(r!.pyth).toBeNull();
   });
 });
