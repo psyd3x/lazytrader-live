@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "platforms": ["android"],
+    "platforms": [
+      "android"
+    ],
     "android": {
       "package": "live.lazytrader",
       "adaptiveIcon": {
@@ -29,6 +31,12 @@
     },
     "plugins": [
       "expo-dev-client"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "c0c01c8e-232d-4e52-a49f-17a8cf8ecff3"
+      }
+    },
+    "owner": "psyd3x"
   }
 }
