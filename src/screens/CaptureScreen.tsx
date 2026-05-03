@@ -1,30 +1,31 @@
+// src/screens/CaptureScreen.tsx
 import { useMemo, useState } from "react";
-import {
-  ActivityIndicator,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
+import { DetailsAccordion, type DetailFactor } from "../components/DetailsAccordion";
+import { FactorChips, type FactorChip, type FactorSeverity } from "../components/FactorChips";
+import { MultiTimeframeDashboard, type DashboardRow } from "../components/MultiTimeframeDashboard";
+import { NetBadge } from "../components/NetBadge";
+import { PrimaryCTA } from "../components/PrimaryCTA";
+import { RatingHeroCard } from "../components/RatingHeroCard";
+import { ScreenBackdrop } from "../components/ScreenBackdrop";
+import { SizingStrip } from "../components/SizingStrip";
+import { UploadScreenshotButton } from "../components/UploadScreenshotButton";
+import { WalletChip } from "../components/WalletChip";
+import { makeBtcDemo } from "../data/demoData";
 import { generateSignalVerification } from "../smc";
 import type { SignalVerificationReport } from "../smc";
-import { makeBtcDemo } from "../data/demoData";
+import { colors, fonts, fontSize, fontWeight, radius, space } from "../theme";
 
 /**
- * Capture screen — stub flow that wires the SMC engine end-to-end.
+ * Capture screen — paste OR upload screenshot → SMC engine → branded
+ * verify view (hybrid C composition: hero + dashboard + chips +
+ * sizing strip + expandable details).
  *
- * For now we feed the engine **synthetic** candles + a hard-coded BTC long
- * signal. The TextInput shows the signal in a human-readable form (will be
- * replaced by OCR/parser output in M4). Pressing "Verify" runs the full
- * pipeline (analyze 7 TFs → confluence → score → position size).
- *
- * No styling polish — that's M8. Just enough to confirm the engine works
- * inside the RN runtime and renders results.
+ * Engine call path is unchanged from the M2 stub. Demo signal still
+ * comes from `makeBtcDemo()` — live data feed lands in M3.
  */
-export default function CaptureScreen() {
+export function CaptureScreen() {
   const demo = useMemo(() => makeBtcDemo(), []);
   const [signalText, setSignalText] = useState(demo.signalText);
   const [report, setReport] = useState<SignalVerificationReport | null>(null);
@@ -35,9 +36,6 @@ export default function CaptureScreen() {
     setAnalyzing(true);
     setErrorMsg(null);
     setReport(null);
-    // Run on next tick so the spinner has a chance to render. The engine
-    // itself is sync — for these demo sizes (~120 bars × 7 TFs) it finishes
-    // in <100 ms even on a phone-class CPU.
     setTimeout(() => {
       try {
         const result = generateSignalVerification({
@@ -57,270 +55,163 @@ export default function CaptureScreen() {
   };
 
   return (
-    <ScrollView style={styles.scroll} contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Capture</Text>
-      <Text style={styles.subtitle}>
-        Stub: synthetic candles + hard-coded BTC long. Real OCR + live data
-        feed land in M3/M4.
-      </Text>
+    <ScreenBackdrop>
+      <View style={styles.topbar}>
+        <WalletChip state="disconnected" />
+        <NetBadge network="devnet" />
+      </View>
+      <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">
+        {report === null && (
+          <>
+            <Text style={styles.h1}>Capture</Text>
+            <Text style={styles.subtitle}>
+              Paste a signal or upload a screenshot. The SMC engine will rate it before you trade.
+            </Text>
 
-      <Text style={styles.label}>Signal text</Text>
-      <TextInput
-        style={styles.input}
-        multiline
-        value={signalText}
-        onChangeText={setSignalText}
-        placeholder="Paste signal here..."
-        placeholderTextColor="#999"
-      />
+            <View style={styles.inputCard}>
+              <Text style={styles.inputLabel}>Signal text</Text>
+              <TextInput
+                style={styles.input}
+                multiline
+                value={signalText}
+                onChangeText={setSignalText}
+                placeholder="$BTC LONG&#10;Entry: 67,500&#10;SL: 67,050&#10;TP1: 68,200"
+                placeholderTextColor={`${colors.muted}80`}
+              />
+            </View>
 
-      <Pressable
-        onPress={verify}
-        disabled={analyzing}
-        style={({ pressed }) => [
-          styles.button,
-          pressed && styles.buttonPressed,
-          analyzing && styles.buttonDisabled,
-        ]}
-      >
-        {analyzing ? (
-          <ActivityIndicator color="#fff" />
-        ) : (
-          <Text style={styles.buttonText}>Verify with SMC engine</Text>
+            <UploadScreenshotButton onText={setSignalText} />
+
+            {errorMsg !== null && (
+              <View style={styles.errorBox}>
+                <Text style={styles.errorTitle}>Engine error</Text>
+                <Text style={styles.errorBody}>{errorMsg}</Text>
+              </View>
+            )}
+
+            <PrimaryCTA label="Verify with SMC engine" onPress={verify} loading={analyzing} />
+          </>
         )}
-      </Pressable>
 
-      {errorMsg !== null && (
-        <View style={styles.errorBox}>
-          <Text style={styles.errorTitle}>Engine error</Text>
-          <Text style={styles.errorBody}>{errorMsg}</Text>
-        </View>
-      )}
-
-      {report !== null && <ReportPanel report={report} />}
-    </ScrollView>
+        {report !== null && <ReportView report={report} onReset={() => setReport(null)} />}
+      </ScrollView>
+    </ScreenBackdrop>
   );
 }
 
-function ReportPanel({ report }: { report: SignalVerificationReport }) {
-  const { scoring, confluence, positionSizing } = report;
-  const ratingColor = ratingToColor(scoring.rating);
+function ReportView({ report, onReset }: { report: SignalVerificationReport; onReset: () => void }) {
+  const heroProps = toHeroProps(report);
+  const rows = toDashboardRows(report);
+  const chips = toFactorChips(report);
+  const sizing = toSizingStats(report);
+  const detailFactors = toDetailFactors(report);
 
   return (
-    <View style={styles.report}>
-      <View style={styles.headlineRow}>
-        <View style={[styles.ratingChip, { backgroundColor: ratingColor }]}>
-          <Text style={styles.ratingText}>{scoring.rating}</Text>
-        </View>
-        <View style={styles.headlineMeta}>
-          <Text style={styles.bias}>{confluence.bias.label}</Text>
-          <Text style={styles.metaLine}>
-            Score {scoring.score} / 100  ·  Bias {confluence.bias.percentage.toFixed(1)}%
-          </Text>
-          <Text style={styles.metaLine}>
-            Entry: {scoring.entryStatus}  ·  R:R {scoring.riskReward.toFixed(2)}
-          </Text>
-        </View>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Justification</Text>
-        <Text style={styles.body}>{scoring.justification}</Text>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Per-factor breakdown</Text>
-        {Object.entries(scoring.factors).map(([name, factor]) => (
-          <View key={name} style={styles.factorRow}>
-            <View style={styles.factorHeader}>
-              <Text style={styles.factorName}>{name.replace(/_/g, " ")}</Text>
-              <Text style={styles.factorScore}>
-                {(factor.score * 100).toFixed(0)}
-              </Text>
-            </View>
-            <Text style={styles.factorDetail}>{factor.detail}</Text>
-          </View>
-        ))}
-      </View>
-
-      {positionSizing !== null && (
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Position sizing</Text>
-          <Text style={styles.body}>
-            Size: ${positionSizing.positionSize.toFixed(2)}  (with leverage){"\n"}
-            Risk: ${positionSizing.riskAmount.toFixed(2)}  ({positionSizing.riskPct.toFixed(2)}% of capital){"\n"}
-            SL distance: {positionSizing.slDistancePct.toFixed(2)}%
-          </Text>
-        </View>
-      )}
+    <View style={{ gap: space.md }}>
+      <RatingHeroCard {...heroProps} />
+      <MultiTimeframeDashboard rows={rows} pair={report.signal.pair} />
+      <FactorChips chips={chips} />
+      {sizing !== null && <SizingStrip {...sizing} />}
+      <DetailsAccordion justification={report.scoring.justification} factors={detailFactors} />
+      <PrimaryCTA label="Confirm trade →" onPress={() => { /* wired in M5/M6 */ }} />
+      <PrimaryCTA label="Verify another signal" variant="secondary" onPress={onReset} />
     </View>
   );
 }
 
-function ratingToColor(rating: string): string {
-  switch (rating) {
-    case "A+":
-      return "#22c55e";
-    case "A":
-      return "#84cc16";
-    case "B":
-      return "#eab308";
-    case "C":
-      return "#f97316";
-    default:
-      return "#ef4444";
-  }
+// ─── Engine → component adapters ─────────────────────────────────────────
+
+function toHeroProps(r: SignalVerificationReport) {
+  // Session tag: pull session label from the LTF analysis if present.
+  // Engine doesn't expose a top-level session; fall back to OB hint.
+  const ltfAnalysis = r.timeframeAnalyses["1m"] ?? r.timeframeAnalyses["5m"] ?? null;
+  const obHint = ltfAnalysis?.nearestOb?.isInside === true ? "OB" : null;
+  const tag = obHint !== null ? `INSIDE · ${obHint}` : undefined;
+
+  return {
+    rating: r.scoring.rating,
+    scorePct: r.scoring.score,                 // already 0-100
+    verdict: r.scoring.justification,
+    side: (r.signal.direction === "long" ? "LONG" : "SHORT") as "LONG" | "SHORT",
+    sizeMult: r.scoring.scoreMultiplier,
+    sessionTag: tag,
+  };
+}
+
+function toDashboardRows(r: SignalVerificationReport): DashboardRow[] {
+  return Object.entries(r.timeframeAnalyses).map(([tf, a]) => ({
+    tf,
+    struct: a.structure.bias,
+    structStrong: a.structure.bias !== 0 && (a.structure.labels.length >= 2),
+    ob: a.nearestOb?.direction ?? 0,
+    fvg: a.nearestFvg?.direction ?? 0,
+    ema: a.ema.direction,
+  }));
+}
+
+function toFactorChips(r: SignalVerificationReport): FactorChip[] {
+  // Engine factor names → short display labels
+  const labels: Record<string, string> = {
+    timeframe_alignment: "TF",
+    entry_quality: "entry",
+    structure: "struct",
+    risk_reward_quality: "R:R",
+    htf_trend: "HTF",
+    swing_position: "swing",
+    zone_confluence: "zone",
+  };
+  return Object.entries(r.scoring.factors).map(([name, f]) => {
+    const score = Math.round(f.score * 100);
+    const sev: FactorSeverity = score >= 75 ? "good" : score >= 50 ? "ok" : "bad";
+    return { label: labels[name] ?? name, score, severity: sev };
+  });
+}
+
+function toSizingStats(r: SignalVerificationReport) {
+  const ps = r.positionSizing;
+  if (ps === null) return null;
+  return {
+    size: ps.positionSize,
+    risk: ps.riskAmount,
+    riskPct: ps.riskPct,
+    slPct: ps.slDistancePct,
+  };
+}
+
+function toDetailFactors(r: SignalVerificationReport): DetailFactor[] {
+  return Object.entries(r.scoring.factors).map(([name, f]) => ({
+    name: name.replace(/_/g, " "),
+    score: Math.round(f.score * 100),
+    detail: f.detail,
+  }));
 }
 
 const styles = StyleSheet.create({
-  scroll: {
-    flex: 1,
-    backgroundColor: "#fff",
+  topbar: { flexDirection: "row", justifyContent: "space-between", paddingHorizontal: space.lg, paddingTop: space.sm, paddingBottom: space.xs },
+  body: { padding: space.md, paddingBottom: 80, gap: space.md },
+
+  h1: { fontSize: 22, fontWeight: fontWeight.bold, color: colors.text, letterSpacing: -0.4 },
+  subtitle: { color: colors.muted, fontSize: fontSize.sm, lineHeight: 18 },
+
+  inputCard: {
+    borderRadius: radius.md, borderWidth: 1, borderColor: colors.border,
+    backgroundColor: colors.surface, padding: space.md,
   },
-  container: {
-    padding: 24,
-    paddingBottom: 64,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: "700",
-    marginBottom: 4,
-  },
-  subtitle: {
-    fontSize: 13,
-    color: "#666",
-    marginBottom: 20,
-  },
-  label: {
-    fontSize: 12,
-    fontWeight: "600",
-    color: "#444",
-    textTransform: "uppercase",
-    letterSpacing: 0.5,
-    marginBottom: 6,
+  inputLabel: {
+    fontSize: fontSize.xs - 1, color: colors.muted, letterSpacing: 1,
+    textTransform: "uppercase", fontWeight: fontWeight.semibold, marginBottom: space.sm,
   },
   input: {
-    minHeight: 140,
-    borderWidth: 1,
-    borderColor: "#d4d4d8",
-    borderRadius: 8,
-    padding: 12,
-    fontSize: 14,
-    fontFamily: "Courier",
-    color: "#111",
+    backgroundColor: colors.bg, borderWidth: 1, borderColor: colors.border, borderRadius: radius.sm,
+    padding: space.sm, minHeight: 110, color: colors.text,
+    fontFamily: fonts.mono, fontSize: fontSize.sm, lineHeight: 18,
     textAlignVertical: "top",
   },
-  button: {
-    marginTop: 16,
-    backgroundColor: "#111",
-    paddingVertical: 14,
-    borderRadius: 8,
-    alignItems: "center",
-  },
-  buttonPressed: {
-    backgroundColor: "#333",
-  },
-  buttonDisabled: {
-    opacity: 0.6,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 15,
-    fontWeight: "600",
-  },
+
   errorBox: {
-    marginTop: 16,
-    backgroundColor: "#fee2e2",
-    borderColor: "#ef4444",
-    borderWidth: 1,
-    borderRadius: 8,
-    padding: 12,
+    borderRadius: radius.sm, borderWidth: 1, borderColor: colors.danger,
+    backgroundColor: colors.dangerBg, padding: space.md,
   },
-  errorTitle: {
-    fontWeight: "700",
-    color: "#991b1b",
-    marginBottom: 4,
-  },
-  errorBody: {
-    color: "#991b1b",
-    fontFamily: "Courier",
-    fontSize: 13,
-  },
-  report: {
-    marginTop: 24,
-  },
-  headlineRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 14,
-  },
-  ratingChip: {
-    width: 64,
-    height: 64,
-    borderRadius: 12,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  ratingText: {
-    fontSize: 24,
-    fontWeight: "800",
-    color: "#fff",
-  },
-  headlineMeta: {
-    flex: 1,
-  },
-  bias: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#111",
-  },
-  metaLine: {
-    fontSize: 13,
-    color: "#555",
-    marginTop: 2,
-  },
-  section: {
-    marginTop: 18,
-  },
-  sectionTitle: {
-    fontSize: 13,
-    fontWeight: "700",
-    color: "#444",
-    textTransform: "uppercase",
-    letterSpacing: 0.5,
-    marginBottom: 6,
-  },
-  body: {
-    fontSize: 14,
-    lineHeight: 20,
-    color: "#222",
-  },
-  factorRow: {
-    marginBottom: 10,
-    paddingBottom: 10,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: "#e4e4e7",
-  },
-  factorHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  factorName: {
-    fontSize: 14,
-    fontWeight: "600",
-    color: "#111",
-    textTransform: "capitalize",
-  },
-  factorScore: {
-    fontSize: 14,
-    fontWeight: "700",
-    color: "#111",
-    fontFamily: "Courier",
-  },
-  factorDetail: {
-    fontSize: 13,
-    color: "#666",
-    marginTop: 2,
-  },
+  errorTitle: { fontWeight: fontWeight.bold, color: colors.danger, marginBottom: 4 },
+  errorBody: { color: colors.danger, fontFamily: fonts.mono, fontSize: fontSize.sm },
 });
