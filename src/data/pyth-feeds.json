@@ -1,0 +1,3506 @@
+[
+  {
+    "base": "0G",
+    "quote": "USD",
+    "pythSymbol": "Crypto.0G/USD",
+    "pythFeedId": "fa9e8d4591613476ad0961732475dc08969d248faca270cc6c47efe009ea3070"
+  },
+  {
+    "base": "1INCH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.1INCH/USD",
+    "pythFeedId": "63f341689d98a12ef60a5cff1d7f85c70a9e17bf1575f0e7c0b2512d48b1c8b3"
+  },
+  {
+    "base": "2Z",
+    "quote": "USD",
+    "pythSymbol": "Crypto.2Z/USD",
+    "pythFeedId": "f2b3ab1c49e35e881003c3c0482d18b181a1560b697b844c24c8f85aba1cab95"
+  },
+  {
+    "base": "4",
+    "quote": "USD",
+    "pythSymbol": "Crypto.4/USD",
+    "pythFeedId": "a92ee5b5fdefab122adba627d07ff1720e5d65729f7a81b7d2d6244f869c9ea2"
+  },
+  {
+    "base": "A",
+    "quote": "USD",
+    "pythSymbol": "Crypto.A/USD",
+    "pythFeedId": "2cffc28ec4268805dbcb315bb122616059a1c200dda3d56f06ac150db8dfc370"
+  },
+  {
+    "base": "AAPLX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AAPLX/USD",
+    "pythFeedId": "978e6cc68a119ce066aa830017318563a9ed04ec3a0a6439010fc11296a58675"
+  },
+  {
+    "base": "AAVE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AAVE/USD",
+    "pythFeedId": "2b9ab1e972a281585084148ba1389800799bd4be63b957507db1349314e47445"
+  },
+  {
+    "base": "ACT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ACT/USD",
+    "pythFeedId": "4d716b908b470fabc1f9eeaf62ad32424b2388bf981401385df19ead98499c7c"
+  },
+  {
+    "base": "ADA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ADA/USD",
+    "pythFeedId": "2a01deaec9e51a579277b34b122399984d0bbf57e2458a7e42fecd2829867a0d"
+  },
+  {
+    "base": "AERGO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AERGO/USD",
+    "pythFeedId": "dd83d991ed72e3d688509ca349f29d2bd3d883af74a17b9515c310ff70e9d1e4"
+  },
+  {
+    "base": "AERO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AERO/USD",
+    "pythFeedId": "9db37f4d5654aad3e37e2e14ffd8d53265fb3026d1d8f91146539eebaa2ef45f"
+  },
+  {
+    "base": "AEVO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AEVO/USD",
+    "pythFeedId": "104e4d9ba218610b9af53c887f9fcb7396615259867a5a4b5983a65802aeee0b"
+  },
+  {
+    "base": "AFSUI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AFSUI/USD",
+    "pythFeedId": "17cd845b16e874485b2684f8b8d1517d744105dbb904eec30222717f4bc9ee0d"
+  },
+  {
+    "base": "AI16Z",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AI16Z/USD",
+    "pythFeedId": "2551eca7784671173def2c41e6f3e51e11cd87494863f1d208fdd8c64a1f85ae"
+  },
+  {
+    "base": "AIXBT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AIXBT/USD",
+    "pythFeedId": "0fc54579a29ba60a08fdb5c28348f22fd3bec18e221dd6b90369950db638a5a7"
+  },
+  {
+    "base": "AKT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AKT/USD",
+    "pythFeedId": "4ea5bb4d2f5900cc2e97ba534240950740b4d3b89fe712a94a7304fd2fd92702"
+  },
+  {
+    "base": "ALGO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ALGO/USD",
+    "pythFeedId": "fa17ceaf30d19ba51112fdcc750cc83454776f47fb0112e4af07f15f4bb1ebc0"
+  },
+  {
+    "base": "ALICE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ALICE/USD",
+    "pythFeedId": "ccca1d2b0d9a9ca72aa2c849329520a378aea0ec7ef14497e67da4050d6cf578"
+  },
+  {
+    "base": "ALKIMI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ALKIMI/USD",
+    "pythFeedId": "1b2deae525b02c52de4a411c4f37139931215d7cc754e57dd6c84387336ccc74"
+  },
+  {
+    "base": "ALT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ALT/USD",
+    "pythFeedId": "119ff2acf90f68582f5afd6f7d5f12dbae81e4423f165837169d6b94c27fb384"
+  },
+  {
+    "base": "AMI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AMI/USD",
+    "pythFeedId": "9074ab34363ea1aada15db169f4678c10117e48f1ad1a8ba9f69c2a939c3a377"
+  },
+  {
+    "base": "AMP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AMP/USD",
+    "pythFeedId": "d37e4513ebe235fff81e453d400debaf9a49a5df2b7faa11b3831d35d7e72cb7"
+  },
+  {
+    "base": "ANIME",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ANIME/USD",
+    "pythFeedId": "45b75908a1965a86080a26d9f31ab69d045d4dda73d1394e0d3693ce00d40e6f"
+  },
+  {
+    "base": "ANKR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ANKR/USD",
+    "pythFeedId": "89a58e1cab821118133d6831f5018fba5b354afb78b2d18f575b3cbf69a4f652"
+  },
+  {
+    "base": "ANON",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ANON/USD",
+    "pythFeedId": "7a36855b8a4a6efd701ed82688694bbf67602de9faae509ae28f91065013cb82"
+  },
+  {
+    "base": "APE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.APE/USD",
+    "pythFeedId": "15add95022ae13563a11992e727c91bdb6b55bc183d9d747436c80a483d8c864"
+  },
+  {
+    "base": "APEX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.APEX/USD",
+    "pythFeedId": "97b89f300a0d99a0f52e92b07e40180aa7639e58552ffd6a5a2382862aae81e0"
+  },
+  {
+    "base": "API3",
+    "quote": "USD",
+    "pythSymbol": "Crypto.API3/USD",
+    "pythFeedId": "95ea50020cf75a81a105d639fd74773ade522e12044600b52286ff5961c71412"
+  },
+  {
+    "base": "APT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.APT/USD",
+    "pythFeedId": "03ae4db29ed4ae33d323568895aa00337e658e348b37509f5372ae51f0af00d5"
+  },
+  {
+    "base": "AR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AR/USD",
+    "pythFeedId": "f610eae82767039ffc95eef8feaeddb7bbac0673cfe7773b2fde24fd1adb0aee"
+  },
+  {
+    "base": "ARB",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ARB/USD",
+    "pythFeedId": "3fa4252848f9f0a1480be62745a4629d9eb1322aebab8a791e344b3b9c1adcf5"
+  },
+  {
+    "base": "ARC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ARC/USD",
+    "pythFeedId": "ac3d02825eef9c311197bcdd3ef789b2c7db97739af8f6aeca8374c55b022572"
+  },
+  {
+    "base": "ARKM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ARKM/USD",
+    "pythFeedId": "7677dd124dee46cfcd46ff03cf405fb0ed94b1f49efbea3444aadbda939a7ad3"
+  },
+  {
+    "base": "ASTER",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ASTER/USD",
+    "pythFeedId": "a903b5a82cb572397e3d47595d2889cf80513f5b4cf7a36b513ae10cc8b1e338"
+  },
+  {
+    "base": "ASTR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ASTR/USD",
+    "pythFeedId": "89b814de1eb2afd3d3b498d296fca3a873e644bafb587e84d181a01edd682853"
+  },
+  {
+    "base": "ATH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ATH/USD",
+    "pythFeedId": "f6b551a947e7990089e2d5149b1e44b369fcc6ad3627cb822362a2b19d24ad4a"
+  },
+  {
+    "base": "ATLAS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ATLAS/USD",
+    "pythFeedId": "681e0eb7acf9a2a3384927684d932560fb6f67c6beb21baa0f110e993b265386"
+  },
+  {
+    "base": "ATOM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ATOM/USD",
+    "pythFeedId": "b00b60f88b03a6a625a8d1c048c3f66653edf217439983d037e7222c4e612819"
+  },
+  {
+    "base": "AUDD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AUDD/USD",
+    "pythFeedId": "ab7fce8eccc9b1ab1e1050efd235bbe53c61936698de3c4ad6f9ebd7814cfd8d"
+  },
+  {
+    "base": "AUDIO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AUDIO/USD",
+    "pythFeedId": "2ea070725c82f69be1a730c1730cb229dc3ab44459f41d6f06f0b9ab551e4ddb"
+  },
+  {
+    "base": "AURORA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AURORA/USD",
+    "pythFeedId": "2f7c4f738d498585065a4b87b637069ec99474597da7f0ca349ba8ac3ba9cac5"
+  },
+  {
+    "base": "AUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AUSD/USD",
+    "pythFeedId": "d9912df360b5b7f21a122f15bdd5e27f62ce5e72bd316c291f7c86620e07fb2a"
+  },
+  {
+    "base": "AVAIL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AVAIL/USD",
+    "pythFeedId": "e886cf22d4daa8b85beb7cdeff20261248c5337443cb388b521cde838ffcaf79"
+  },
+  {
+    "base": "AVAX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AVAX/USD",
+    "pythFeedId": "93da3352f9f1d105fdfe4971cfa80e9dd777bfc5d0f683ebb6e1294b92137bb7"
+  },
+  {
+    "base": "AVNT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AVNT/USD",
+    "pythFeedId": "c4aa2587b3d35cd526b8e7827f78399d16c7861f719331869c07e5fa499606d0"
+  },
+  {
+    "base": "AXL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AXL/USD",
+    "pythFeedId": "60144b1d5c9e9851732ad1d9760e3485ef80be39b984f6bf60f82b28a2b7f126"
+  },
+  {
+    "base": "AXS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.AXS/USD",
+    "pythFeedId": "b7e3904c08ddd9c0c10c6d207d390fd19e87eb6aab96304f571ed94caebdefa0"
+  },
+  {
+    "base": "B3",
+    "quote": "USD",
+    "pythSymbol": "Crypto.B3/USD",
+    "pythFeedId": "e9f7026d0e26b2643da0cc976bd6107d07092e11f2e4701f98a3c2ef45f0135a"
+  },
+  {
+    "base": "BABY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BABY/USD",
+    "pythFeedId": "89e10b4bdeda2633eb6bca10be1674f9e6bf312772510a2f604c4f55f45ff8d9"
+  },
+  {
+    "base": "BABYDOGE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BABYDOGE/USD",
+    "pythFeedId": "053e0a17cc9282f191a6e60165dabd4a4861a8847c06eb34f54e07155eebedba"
+  },
+  {
+    "base": "BAL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BAL/USD",
+    "pythFeedId": "07ad7b4a7662d19a6bc675f6b467172d2f3947fa653ca97555a9b20236406628"
+  },
+  {
+    "base": "BAN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BAN/USD",
+    "pythFeedId": "a6320c8329924601f4d092dd3f562376f657fa0b5d0cba9e4385a24aaf135384"
+  },
+  {
+    "base": "BAND",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BAND/USD",
+    "pythFeedId": "5ab188823c117b3ac791391752f95fd701d923ccffa3436ecf7ba5d4bb4bd678"
+  },
+  {
+    "base": "BAT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BAT/USD",
+    "pythFeedId": "8e860fb74e60e5736b455d82f60b3728049c348e94961add5f961b02fdee2535"
+  },
+  {
+    "base": "BBSOL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BBSOL/USD",
+    "pythFeedId": "2997d5f9e96563cef9151cffc4580803930826fa38c4af5062de2363720769ea"
+  },
+  {
+    "base": "BCH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BCH/USD",
+    "pythFeedId": "3dd2b63686a450ec7290df3a1e0b583c0481f651351edfa7636f39aed55cf8a3"
+  },
+  {
+    "base": "BEAM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BEAM/USD",
+    "pythFeedId": "3871d0ef1cf9e26005e4bbf7822f67a8883071a9d8a4e7a0125d2484cca7671f"
+  },
+  {
+    "base": "BELIEVE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BELIEVE/USD",
+    "pythFeedId": "c2b06e36d8676526e948c3add7506d61313b8890e97f8177f7fbe33d5b0d028f"
+  },
+  {
+    "base": "BENJI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BENJI/USD",
+    "pythFeedId": "cdeeb502653d7b57918b60014a9d753644b7458088a74d252d5fb36e755ee186"
+  },
+  {
+    "base": "BERA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BERA/USD",
+    "pythFeedId": "962088abcfdbdb6e30db2e340c8cf887d9efb311b1f2f17b155a63dbb6d40265"
+  },
+  {
+    "base": "BGB",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BGB/USD",
+    "pythFeedId": "708bfcf418ead52a408407b039f2c33ce24ddc80d6dcb6d1cffef91c156c80fa"
+  },
+  {
+    "base": "BIO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BIO/USD",
+    "pythFeedId": "d9d22050e7413a16129f1334cd4dd5a359975ce16389cdadae8f677cf46e2839"
+  },
+  {
+    "base": "BITCOIN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BITCOIN/USD",
+    "pythFeedId": "c5e0e0c92116c0c070a242b254270441a6201af680a33e0381561c59db3266c9"
+  },
+  {
+    "base": "BLAST",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BLAST/USD",
+    "pythFeedId": "057345a7e9ef0f36dca8ad1c4e5788808b85f3084cc7b0d8cb29ac5012d88f0d"
+  },
+  {
+    "base": "BLUE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BLUE/USD",
+    "pythFeedId": "04cfeb7b143eb9c48e9b074125c1a3447b85f59c31164dc20c1beaa6f21f2b6b"
+  },
+  {
+    "base": "BLUR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BLUR/USD",
+    "pythFeedId": "856aac602516addee497edf6f50d39e8c95ae5fb0da1ed434a8c2ab9c3e877e9"
+  },
+  {
+    "base": "BLZE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BLZE/USD",
+    "pythFeedId": "93c3def9b169f49eed14c9d73ed0e942c666cf0e1290657ec82038ebb792c2a8"
+  },
+  {
+    "base": "BMT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BMT/USD",
+    "pythFeedId": "a5fcd936b0178a425663f150dd87175bd8c374bff2ebc1e833ea73a67f721ca2"
+  },
+  {
+    "base": "BNB",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BNB/USD",
+    "pythFeedId": "2f95862b045670cd22bee3114c39763a4a08beeb663b145d283c31d7d1101c4f"
+  },
+  {
+    "base": "BNSOL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BNSOL/USD",
+    "pythFeedId": "55f8289be7450f1ae564dd9798e49e7d797d89adbc54fe4f8c906b1fcb94b0c3"
+  },
+  {
+    "base": "BOBA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BOBA/USD",
+    "pythFeedId": "d1e9cff9b8399f9867819a3bf1aa8c2598234eecfd36ddc3a7bc7848432184b5"
+  },
+  {
+    "base": "BODEN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BODEN/USD",
+    "pythFeedId": "7bd87c3390d2c88d4699c7621fd857e0982027723751ce6e98bcc7604a407976"
+  },
+  {
+    "base": "BOLD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BOLD/USD",
+    "pythFeedId": "d6134dbb0427240f901e3e596d6e63f7d85088f96cd4cd4ae2f89c0819b5d623"
+  },
+  {
+    "base": "BOME",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BOME/USD",
+    "pythFeedId": "30e4780570973e438fdb3f1b7ad22618b2fc7333b65c7853a7ca144c39052f7a"
+  },
+  {
+    "base": "BONK",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BONK/USD",
+    "pythFeedId": "72b021217ca3fe68922a19aaf990109cb9d84e9ad004b4d2025ad6f529314419"
+  },
+  {
+    "base": "BORG",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BORG/USD",
+    "pythFeedId": "ef3f94c52ecc3a624fa0fa51ab2b562f70d8f98ff505bb36cbc08c22b1aff628"
+  },
+  {
+    "base": "BRETT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BRETT/USD",
+    "pythFeedId": "9b5729efe3d68e537cdcb2ca70444dea5f06e1660b562632609757076d0b9448"
+  },
+  {
+    "base": "BROCCOLI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BROCCOLI/USD",
+    "pythFeedId": "1e59fcdb59fe2bc6b093dab0bf32a66bf2e8258d07fd14601230905810af97aa"
+  },
+  {
+    "base": "BSOL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BSOL/USD",
+    "pythFeedId": "89875379e70f8fbadc17aef315adf3a8d5d160b811435537e03c97e8aac97d9c"
+  },
+  {
+    "base": "BSV",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BSV/USD",
+    "pythFeedId": "b44565b8b9b39ab2f4ba792f1c8f8aa8ef7d780e709b191637ef886d96fd1472"
+  },
+  {
+    "base": "BTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BTC/USD",
+    "pythFeedId": "e62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43"
+  },
+  {
+    "base": "BTT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BTT/USD",
+    "pythFeedId": "097d687437374051c75160d648800f021086bc8edf469f11284491fda8192315"
+  },
+  {
+    "base": "BUCK",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BUCK/USD",
+    "pythFeedId": "fdf28a46570252b25fd31cb257973f865afc5ca2f320439e45d95e0394bc7382"
+  },
+  {
+    "base": "BUCKET.USDB",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BUCKET.USDB/USD",
+    "pythFeedId": "f85d863ce3b640bf85307be333dedc563aa3a27961c9042f89ed8300ebd3c855"
+  },
+  {
+    "base": "BUDDY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BUDDY/USD",
+    "pythFeedId": "ac2adf4571a391da22a2d39e8c5eb32ceecd6ab38c386a9194d669deece74dee"
+  },
+  {
+    "base": "BYUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.BYUSD/USD",
+    "pythFeedId": "00456705ae9007ea761e95c724035a23a62fe9e444bbc744e11af7f050ab53c3"
+  },
+  {
+    "base": "C98",
+    "quote": "USD",
+    "pythSymbol": "Crypto.C98/USD",
+    "pythFeedId": "2dd14c7c38aa7066c7a508aac299ebcde5165b07d5d9f2d94dfbfe41f0bc5f2e"
+  },
+  {
+    "base": "CAKE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CAKE/USD",
+    "pythFeedId": "2356af9529a1064d41e32d617e2ce1dca5733afa901daba9e2b68dee5d53ecf9"
+  },
+  {
+    "base": "CAMP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CAMP/USD",
+    "pythFeedId": "6b52828e0be26ba128cc12715e7b72bded8871736efd3f214cf1db86567fb755"
+  },
+  {
+    "base": "CARV",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CARV/USD",
+    "pythFeedId": "657367f1b841c536f173386991f725dd3f9e7f1ae028bb9f52e1e4d80ed829ec"
+  },
+  {
+    "base": "CASH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CASH/USD",
+    "pythFeedId": "df3320ef0f4617337b8dbb924f2aaa4f9db08f522a5435b44f9066c1ac4c7f95"
+  },
+  {
+    "base": "CAT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CAT/USD",
+    "pythFeedId": "df7b724fae4b9ecfd6081effb1ea3bb3b5c250c3641cf903b4d8fb10f4f452df"
+  },
+  {
+    "base": "CBBTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CBBTC/USD",
+    "pythFeedId": "2817d7bfe5c64b8ea956e9a26f573ef64e72e4d7891f2d6af9bcc93f7aff9a97"
+  },
+  {
+    "base": "CBDOGE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CBDOGE/USD",
+    "pythFeedId": "7eab5e260e42d81013207e623be60c66c9c55bfe0ace4797ad00d1c5a1335eae"
+  },
+  {
+    "base": "CBETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CBETH/USD",
+    "pythFeedId": "15ecddd26d49e1a8f1de9376ebebc03916ede873447c1255d2d5891b92ce5717"
+  },
+  {
+    "base": "CBXRP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CBXRP/USD",
+    "pythFeedId": "95fd9e16d4cfc5d1370f32bb0bf2346860ad9c92fec83acf4ca263baf16c961d"
+  },
+  {
+    "base": "CC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CC/USD",
+    "pythFeedId": "6ab14405cf8ba0c89d135ddb5ed4fc5c668c7458ff7ebe2f66f358a458e94196"
+  },
+  {
+    "base": "CELO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CELO/USD",
+    "pythFeedId": "7d669ddcdd23d9ef1fa9a9cc022ba055ec900e91c4cb960f3c20429d4447a411"
+  },
+  {
+    "base": "CELR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CELR/USD",
+    "pythFeedId": "20841878a1c4d3ea4587603e2cb55b32afae64402f281652f5a3b94155ff27e9"
+  },
+  {
+    "base": "CETUS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CETUS/USD",
+    "pythFeedId": "e5b274b2611143df055d6e7cd8d93fe1961716bcd4dca1cad87a83bc1e78c1ef"
+  },
+  {
+    "base": "CFX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CFX/USD",
+    "pythFeedId": "8879170230c9603342f3837cf9a8e76c61791198fb1271bb2552c9af7b33c933"
+  },
+  {
+    "base": "CHILLGUY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CHILLGUY/USD",
+    "pythFeedId": "d98869edbb4a0d2803dc1054405bceb1ddc546bfc9a3d0e31bb0e0448e6181e1"
+  },
+  {
+    "base": "CHR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CHR/USD",
+    "pythFeedId": "bd4dbcbfd90e6bc6c583e07ffcb5cb6d09a0c7b1221805211ace08c837859627"
+  },
+  {
+    "base": "CHZ",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CHZ/USD",
+    "pythFeedId": "e799f456b358a2534aa1b45141d454ac04b444ed23b1440b778549bb758f2b5c"
+  },
+  {
+    "base": "CLANKER",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CLANKER/USD",
+    "pythFeedId": "17392e15ef0b746ae7cfe25a97b0d66f4bb2792a39ebeb46bbffab8b1d2544d5"
+  },
+  {
+    "base": "CLOUD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CLOUD/USD",
+    "pythFeedId": "7358313661dcd4f842a1423aa4f7a05f009001c9113201c719621d3f1aa80a73"
+  },
+  {
+    "base": "COINX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.COINX/USD",
+    "pythFeedId": "641435d5dffb5311140b480517c79986d8488d5cf08a11eec53b83ad02cab33f"
+  },
+  {
+    "base": "COMP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.COMP/USD",
+    "pythFeedId": "4a8e42861cabc5ecb50996f92e7cfa2bce3fd0a2423b0c44c9b423fb2bd25478"
+  },
+  {
+    "base": "COOK",
+    "quote": "USD",
+    "pythSymbol": "Crypto.COOK/USD",
+    "pythFeedId": "961f0fab93a718a0798b0fcf119363457410642f1b0fe0bb4736c740fb14f656"
+  },
+  {
+    "base": "COOKIE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.COOKIE/USD",
+    "pythFeedId": "a73331cc6e723f807f1d522917abe43f843218f591f9a3d365695df29a7a0191"
+  },
+  {
+    "base": "COQ",
+    "quote": "USD",
+    "pythSymbol": "Crypto.COQ/USD",
+    "pythFeedId": "5cc87aaa7df22e5ac77f6a4bc50569129eb00396fd9fd68569e748e7e96fdf90"
+  },
+  {
+    "base": "CORE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CORE/USD",
+    "pythFeedId": "9b4503710cc8c53f75c30e6e4fda1a7064680ef2e0ee97acd2e3a7c37b3c830c"
+  },
+  {
+    "base": "COW",
+    "quote": "USD",
+    "pythSymbol": "Crypto.COW/USD",
+    "pythFeedId": "4e53c6ef1f2f9952facdcf64551edb6d2a550985484ccce6a0477cae4c1bca3e"
+  },
+  {
+    "base": "CRCLX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CRCLX/USD",
+    "pythFeedId": "c13184461c0c80d98ffcd89be627c2220b94a96c7c67f0c4b16bc12fd3b17758"
+  },
+  {
+    "base": "CRO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CRO/USD",
+    "pythFeedId": "23199c2bcb1303f667e733b9934db9eca5991e765b45f5ed18bc4b231415f2fe"
+  },
+  {
+    "base": "CRV",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CRV/USD",
+    "pythFeedId": "a19d04ac696c7a6616d291c7e5d1377cc8be437c327b75adb5dc1bad745fcae8"
+  },
+  {
+    "base": "CSPR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CSPR/USD",
+    "pythFeedId": "4871d73dd24d2c92a531ce571d48da9a5f22ff946bd5b37bc38c6f479c7df158"
+  },
+  {
+    "base": "CTSI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CTSI/USD",
+    "pythFeedId": "14eb6f846b84f37c841ce7a52a38706e54966df84b3a09cc40499b164af05672"
+  },
+  {
+    "base": "CVX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.CVX/USD",
+    "pythFeedId": "6aac625e125ada0d2a6b98316493256ca733a5808cd34ccef79b0e28c64d1e76"
+  },
+  {
+    "base": "DAI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DAI/USD",
+    "pythFeedId": "b0948a5e5313200c632b51bb5ca32f6de0d36e9950a942d19751e833f70dabfd"
+  },
+  {
+    "base": "DASH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DASH/USD",
+    "pythFeedId": "6147ae2020c6ff95f7c961f79660020f36fa72cea06452a866d5788cbedf61f3"
+  },
+  {
+    "base": "DBR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DBR/USD",
+    "pythFeedId": "f788488fe2df341b10a498e0a789f03209c0938d9ed04bc521f8224748d6d236"
+  },
+  {
+    "base": "DEEP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DEEP/USD",
+    "pythFeedId": "29bdd5248234e33bd93d3b81100b5fa32eaa5997843847e2c2cb16d7c6d9f7ff"
+  },
+  {
+    "base": "DEGEN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DEGEN/USD",
+    "pythFeedId": "9c93e4a22c56885af427ac4277437e756e7ec403fbc892f975d497383bb33560"
+  },
+  {
+    "base": "DEUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DEUSD/USD",
+    "pythFeedId": "14890ba9c221092cba3d6ce86846d61f8606cefaf3dfc20bf3e2ab99de2644c0"
+  },
+  {
+    "base": "DEXE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DEXE/USD",
+    "pythFeedId": "e0b2e998bbaa9b55f46905767a638ab6143a81713ac6f0406a4538a40b5c41de"
+  },
+  {
+    "base": "DIME",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DIME/USD",
+    "pythFeedId": "8ad25a03fe6642040b9ea3f6a32e370d5fe595c7e5acf1b5cb7c872bb968189e"
+  },
+  {
+    "base": "DMC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DMC/USD",
+    "pythFeedId": "8abfa63ae82ca2fbc271861375e497166d8792580fb7c2ffcf014d2a131433f0"
+  },
+  {
+    "base": "DODO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DODO/USD",
+    "pythFeedId": "688aa41b26a19db08855aaf87723a0eda91b8a830b782c3215bca3b208fad81a"
+  },
+  {
+    "base": "DOGE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DOGE/USD",
+    "pythFeedId": "dcef50dd0a4cd2dcc17e45df1676dcb336a11a61c69df7a0299b0150c672d25c"
+  },
+  {
+    "base": "DOGINME",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DOGINME/USD",
+    "pythFeedId": "5f30ff1377afb8cdbfd5ddba62312c77cc329557fde4b6aae2c29b5b6ef8908b"
+  },
+  {
+    "base": "DOGS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DOGS/USD",
+    "pythFeedId": "3b75dbeeb6310f6264c812dd8411a6b30dc6d02cec4bca2447c88335127564f4"
+  },
+  {
+    "base": "DOLO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DOLO/USD",
+    "pythFeedId": "ad92c3a160d0cff06d1490cf0701ee31666c337167ce3924865f3ffada785247"
+  },
+  {
+    "base": "DOT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DOT/USD",
+    "pythFeedId": "ca3eed9b267293f6595901c734c7525ce8ef49adafe8284606ceb307afa2ca5b"
+  },
+  {
+    "base": "DRIFT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DRIFT/USD",
+    "pythFeedId": "5c1690b27bb02446db17cdda13ccc2c1d609ad6d2ef5bf4983a85ea8b6f19d07"
+  },
+  {
+    "base": "DSOL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DSOL/USD",
+    "pythFeedId": "41f858bae36e7ee3f4a3a6d4f176f0893d4a261460a52763350d00f8648195ee"
+  },
+  {
+    "base": "DYDX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DYDX/USD",
+    "pythFeedId": "6489800bb8974169adfe35937bf6736507097d13c190d760c557108c7e93a81b"
+  },
+  {
+    "base": "DYM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.DYM/USD",
+    "pythFeedId": "a9f3b2a89c6f85a6c20a9518abde39b944e839ca49a0c92307c65974d3f14a57"
+  },
+  {
+    "base": "EBTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.EBTC/USD",
+    "pythFeedId": "be3dd0cf4a168f82e4912952b24420211ad52641b7365d49866d59e20c948288"
+  },
+  {
+    "base": "ECHO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ECHO/USD",
+    "pythFeedId": "20b242d5efefcba3d3bd7f3ab02fbdfc4fbda23a3809dd2f48a1f9cff9d5410e"
+  },
+  {
+    "base": "EDU",
+    "quote": "USD",
+    "pythSymbol": "Crypto.EDU/USD",
+    "pythFeedId": "c8593010ca5b82738a061887d22d42cd0b85861fa9d1677835070a43958090d0"
+  },
+  {
+    "base": "EGLD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.EGLD/USD",
+    "pythFeedId": "ee326a761a4b53629a29fc64bf47dda18cb2eea0bef22da7144dbdc130d112fc"
+  },
+  {
+    "base": "EIGEN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.EIGEN/USD",
+    "pythFeedId": "c65db025687356496e8653d0d6608eec64ce2d96e2e28c530e574f0e4f712380"
+  },
+  {
+    "base": "ELIZAOS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ELIZAOS/USD",
+    "pythFeedId": "0e0fe74b2bc91e867d7f46757faf64c5a497c11515956d7016ae97493f5f6ff4"
+  },
+  {
+    "base": "ELON",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ELON/USD",
+    "pythFeedId": "c9cf25cd0df326b7fb3548b37d38e1e5c6ba202188a44ad98b79335c2b202f7b"
+  },
+  {
+    "base": "ENA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ENA/USD",
+    "pythFeedId": "b7910ba7322db020416fcac28b48c01212fd9cc8fbcbaf7d30477ed8605f6bd4"
+  },
+  {
+    "base": "ENJ",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ENJ/USD",
+    "pythFeedId": "5cc254b7cb9532df39952aee2a6d5497b42ec2d2330c7b76147f695138dbd9f3"
+  },
+  {
+    "base": "ENS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ENS/USD",
+    "pythFeedId": "b98ab6023650bd2edc026b983fb7c2f8fa1020286f1ba6ecf3f4322cd83b72a6"
+  },
+  {
+    "base": "ES",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ES/USD",
+    "pythFeedId": "3b08cf7f0d8e30c5e42b505bc606c64ca64eb1f40126f310e169e3aba1fa4595"
+  },
+  {
+    "base": "ETC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ETC/USD",
+    "pythFeedId": "7f5cc8d963fc5b3d2ae41fe5685ada89fd4f14b435f8050f28c7fd409f40c2d8"
+  },
+  {
+    "base": "ETH",
+    "quote": "BTC",
+    "pythSymbol": "Crypto.ETH/BTC",
+    "pythFeedId": "c96458d393fe9deb7a7d63a0ac41e2898a67a7750dbd166673279e06c868df0a"
+  },
+  {
+    "base": "ETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ETH/USD",
+    "pythFeedId": "ff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace"
+  },
+  {
+    "base": "ETHFI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ETHFI/USD",
+    "pythFeedId": "b27578a9654246cb0a2950842b92330e9ace141c52b63829cc72d5c45a5a595a"
+  },
+  {
+    "base": "ETHW",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ETHW/USD",
+    "pythFeedId": "340026843400fee2ed3944f2d37278f5ff76aa6acd174d3c81ce70fd0224794e"
+  },
+  {
+    "base": "EUL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.EUL/USD",
+    "pythFeedId": "a7adc417fe7e862494b488e89d88ab23f468661b63542d8f719da8f77e34c51f"
+  },
+  {
+    "base": "EURC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.EURC/USD",
+    "pythFeedId": "76fa85158bf14ede77087fe3ae472f66213f6ea2f5b411cb2de472794990fa5c"
+  },
+  {
+    "base": "EURCV",
+    "quote": "USD",
+    "pythSymbol": "Crypto.EURCV/USD",
+    "pythFeedId": "61162fa272ef591637241b80887bad05a3aac7590424541707171cc1dbea6e74"
+  },
+  {
+    "base": "EVAA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.EVAA/USD",
+    "pythFeedId": "df89fc55c23f1e58d9485181a9034ad141ff7dbeac05e80b6a8a9d7c5e5ff88e"
+  },
+  {
+    "base": "EZETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.EZETH/USD",
+    "pythFeedId": "06c217a791f5c4f988b36629af4cb88fad827b2485400a358f3b02886b54de92"
+  },
+  {
+    "base": "F",
+    "quote": "USD",
+    "pythSymbol": "Crypto.F/USD",
+    "pythFeedId": "e5b8a1be5220a1e044b987a0adbbd68ed8f5347af0c2c8295bebc3e0ce9b71cc"
+  },
+  {
+    "base": "FAI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FAI/USD",
+    "pythFeedId": "81bc3ac40b619e00f82c440c5a48f1809773f5015e2181f4c03e30997599fccd"
+  },
+  {
+    "base": "FARTCOIN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FARTCOIN/USD",
+    "pythFeedId": "58cd29ef0e714c5affc44f269b2c1899a52da4169d7acc147b9da692e6953608"
+  },
+  {
+    "base": "FDIT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FDIT/USD",
+    "pythFeedId": "11726bd2ac3b355408e1d5ea8e2ae5b3c4961f72ac8444f0d400b5d7e69813c1"
+  },
+  {
+    "base": "FDUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FDUSD/USD",
+    "pythFeedId": "ccdc1a08923e2e4f4b1e6ea89de6acbc5fe1948e9706f5604b8cb50bc1ed3979"
+  },
+  {
+    "base": "FET",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FET/USD",
+    "pythFeedId": "7da003ada32eabbac855af3d22fcf0fe692cc589f0cfd5ced63cf0bdcc742efe"
+  },
+  {
+    "base": "FEUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FEUSD/USD",
+    "pythFeedId": "7f2e9a7365eb634c543e9ca72683a9cf778cdc16ee5b8bca73abe6d08c1410d5"
+  },
+  {
+    "base": "FF",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FF/USD",
+    "pythFeedId": "f9597faf41a8d91fcc4dc95e9b4f408ea391cf17ec26955ae2055b6dbda5ec89"
+  },
+  {
+    "base": "FIDA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FIDA/USD",
+    "pythFeedId": "c80657b7f6f3eac27218d09d5a4e54e47b25768d9f5e10ac15fe2cf900881400"
+  },
+  {
+    "base": "FIL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FIL/USD",
+    "pythFeedId": "150ac9b959aee0051e4091f0ef5216d941f590e1c5e7f91cf7635b5c11628c0e"
+  },
+  {
+    "base": "FLOKI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FLOKI/USD",
+    "pythFeedId": "6b1381ce7e874dc5410b197ac8348162c0dd6c0d4c9cd6322672d6c2b1d58293"
+  },
+  {
+    "base": "FLOW",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FLOW/USD",
+    "pythFeedId": "2fb245b9a84554a0f15aa123cbb5f64cd263b59e9a87d80148cbffab50c69f30"
+  },
+  {
+    "base": "FLR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FLR/USD",
+    "pythFeedId": "035aa8d0a2d74e19438f2c1440edff9f3b95f915ca65f681a25ed0bad3dc228d"
+  },
+  {
+    "base": "FLUID",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FLUID/USD",
+    "pythFeedId": "47d462d8bac4c29b6ae1792029b9b92c8adea12ed22155bfc22f481287f1e349"
+  },
+  {
+    "base": "FOGO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FOGO/USD",
+    "pythFeedId": "245f89fb8084840bd098d661a026032ee21062270003426797c9196d2d8d4e43"
+  },
+  {
+    "base": "FORM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FORM/USD",
+    "pythFeedId": "fc7bd01c2dbe679c7d75619b943cece74b6e9c2e7681f67ad63bc3504caeb499"
+  },
+  {
+    "base": "FOXY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FOXY/USD",
+    "pythFeedId": "cef3865c498dd400d74e69995c1cff0c3ef0987e277858883a28802b94e2476f"
+  },
+  {
+    "base": "FRAG",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FRAG/USD",
+    "pythFeedId": "c901e5966162def3cad9f6c385b5c6f65fbd4faee77ac6f0f6ab4a21b2e2e03c"
+  },
+  {
+    "base": "FRAX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FRAX/USD",
+    "pythFeedId": "735f591e4fed988cd38df74d8fcedecf2fe8d9111664e0fd500db9aa78b316b1"
+  },
+  {
+    "base": "FRXETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FRXETH/USD",
+    "pythFeedId": "29240ee3a9024d107888eb1d4c527216f06bd64cee030c6b5575b1a8d77cb659"
+  },
+  {
+    "base": "FRXUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FRXUSD/USD",
+    "pythFeedId": "7c53208632935ba5122c3cf65a0f4b3e72ba4955b49ad6ba0acf3d9ba405aef3"
+  },
+  {
+    "base": "FTT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FTT/USD",
+    "pythFeedId": "6c75e52531ec5fd3ef253f6062956a8508a2f03fa0a209fb7fbc51efd9d35f88"
+  },
+  {
+    "base": "FUEL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FUEL/USD",
+    "pythFeedId": "8a757d54e5d34c7ff1aea8502a2d968686027a304d00418092aaf7e60ed98d95"
+  },
+  {
+    "base": "FWOG",
+    "quote": "USD",
+    "pythSymbol": "Crypto.FWOG/USD",
+    "pythFeedId": "656cc2a39dd795bdecb59de810d4f4d1e74c25fe4c42d0bf1c65a38d74df48e9"
+  },
+  {
+    "base": "G",
+    "quote": "USD",
+    "pythSymbol": "Crypto.G/USD",
+    "pythFeedId": "0f6539d2f188eef5cb9dfba796f4c40407e55df14bb668a81a9ba3678d5a625c"
+  },
+  {
+    "base": "GALA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GALA/USD",
+    "pythFeedId": "0781209c28fda797616212b7f94d77af3a01f3e94a5d421760aef020cf2bcb51"
+  },
+  {
+    "base": "GHO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GHO/USD",
+    "pythFeedId": "2a0e948f637a8c251d9f06055e72eb4b3880dd57848bbdb02993c8165d7df4ee"
+  },
+  {
+    "base": "GIGA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GIGA/USD",
+    "pythFeedId": "7bc1234d6195d67c317d59c1e5841128eac2ace68922fa202111309c30059a74"
+  },
+  {
+    "base": "GLM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GLM/USD",
+    "pythFeedId": "01a09cbc99b1894271cfd90d6e5aab527cafa66b19d651b441b84e84f671de33"
+  },
+  {
+    "base": "GLMR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GLMR/USD",
+    "pythFeedId": "309d39a65343d45824f63dc6caa75dbf864834f48cfaa6deb122c62239e06474"
+  },
+  {
+    "base": "GMT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GMT/USD",
+    "pythFeedId": "baa284eaf23edf975b371ba2818772f93dbae72836bbdea28b07d40f3cf8b485"
+  },
+  {
+    "base": "GMX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GMX/USD",
+    "pythFeedId": "b962539d0fcb272a494d65ea56f94851c2bcf8823935da05bd628916e2e9edbf"
+  },
+  {
+    "base": "GNO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GNO/USD",
+    "pythFeedId": "c5f60d00d926ee369ded32a38a6bd5c1e0faa936f91b987a5d0dcf3c5d8afab0"
+  },
+  {
+    "base": "GNS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GNS/USD",
+    "pythFeedId": "5a5d5f7fb72cc84b579d74d1c06d258d751962e9a010c0b1cce7e6023aacb71b"
+  },
+  {
+    "base": "GOAT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GOAT/USD",
+    "pythFeedId": "f7731dc812590214d3eb4343bfb13d1b4cfa9b1d4e020644b5d5d8e07d60c66c"
+  },
+  {
+    "base": "GOGLZ",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GOGLZ/USD",
+    "pythFeedId": "82465d1155ddbb2c73bf3491457163000f8e8d02dea90c548b1b7e56ae9fe4b1"
+  },
+  {
+    "base": "GOLD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GOLD/USD",
+    "pythFeedId": "b9f33a89ac0ae219f25b66b0a9e9ae32ae498dfad9f6d30ab96654372e431640"
+  },
+  {
+    "base": "GOOGLX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GOOGLX/USD",
+    "pythFeedId": "b911b0329028cd0283e4259c33809d62942bd2716a58084e5f31d64c00b5424e"
+  },
+  {
+    "base": "GORK",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GORK/USD",
+    "pythFeedId": "203e5001cbcdc6c00b6a02e8a15851870250bd171cea24cfa93c86f0d5bb7641"
+  },
+  {
+    "base": "GP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GP/USD",
+    "pythFeedId": "c95f6155a9f2ab5b80f20be5de07f02fb6f217abf9ce5fe060c803b170c2efd1"
+  },
+  {
+    "base": "GPS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GPS/USD",
+    "pythFeedId": "053eeb0c51e45a1553e0987860688209b939d826ddccf7c31d0e35d590097fb1"
+  },
+  {
+    "base": "GRAIL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GRAIL/USD",
+    "pythFeedId": "48f3736d94693aa73c11214c4176ba7f997a8329f4dbc3854c4b2686861132ce"
+  },
+  {
+    "base": "GRASS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GRASS/USD",
+    "pythFeedId": "299ac948742a799d27a1649c76035b26577ad0eb6585a5ae2a691d31f2ee90c4"
+  },
+  {
+    "base": "GRIFFAIN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GRIFFAIN/USD",
+    "pythFeedId": "159b86e6ca1a2a6bd613953d1cd46008bd1200284bebc3e4c7cc36c3aa3edda9"
+  },
+  {
+    "base": "GRT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GRT/USD",
+    "pythFeedId": "4d1f8dae0d96236fb98e8f47471a366ec3b1732b47041781934ca3a9bb2f35e7"
+  },
+  {
+    "base": "GT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GT/USD",
+    "pythFeedId": "051ee6cdd581106d0291dfd9b0ee13e6b4dde8fb251afd262c2ba5444257daa8"
+  },
+  {
+    "base": "GUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.GUSD/USD",
+    "pythFeedId": "e186e116f2c7642d0d8aa89c32345d83ebeb350242b2274c46a19ea82e04fb8d"
+  },
+  {
+    "base": "H",
+    "quote": "USD",
+    "pythSymbol": "Crypto.H/USD",
+    "pythFeedId": "807df1ed343907c4d97790334338c5df6e360036b3c95f880450d078569b5481"
+  },
+  {
+    "base": "HAEDAL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HAEDAL/USD",
+    "pythFeedId": "e67d98cc1fbd94f569d5ba6c3c3c759eb3ffc5d2b28e64538a53ae13efad8fd1"
+  },
+  {
+    "base": "HASUI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HASUI/USD",
+    "pythFeedId": "6120ffcf96395c70aa77e72dcb900bf9d40dccab228efca59a17b90ce423d5e8"
+  },
+  {
+    "base": "HBAR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HBAR/USD",
+    "pythFeedId": "3728e591097635310e6341af53db8b7ee42da9b3a8d918f9463ce9cca886dfbd"
+  },
+  {
+    "base": "HEMI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HEMI/USD",
+    "pythFeedId": "25a9be2a62a2269ce401b0ec5d5ae4a7e567a536cefb3153faae949316cbb7e6"
+  },
+  {
+    "base": "HFT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HFT/USD",
+    "pythFeedId": "fa2d39b681f3cef5fa87432a8dbd05113917fffb1b6829a37395c88396522a4e"
+  },
+  {
+    "base": "HFUN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HFUN/USD",
+    "pythFeedId": "61db931fcfd322223fb84dc4bfc9c6481bd5610a31403782bc396df213e3ce12"
+  },
+  {
+    "base": "HIPPO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HIPPO/USD",
+    "pythFeedId": "f2c5249856da2fbe0221e163b3fed678dd6f76515ab933292dfb4f15a1de8f8c"
+  },
+  {
+    "base": "HNT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HNT/USD",
+    "pythFeedId": "649fdd7ec08e8e2a20f425729854e90293dcbe2376abc47197a14da6ff339756"
+  },
+  {
+    "base": "HOLO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HOLO/USD",
+    "pythFeedId": "a5a9a994b8f1296604b1fd92dcd63997e54dbd06ca31a4fb96b7f0890f1f9d80"
+  },
+  {
+    "base": "HONEY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HONEY/USD",
+    "pythFeedId": "f67b033925d73d43ba4401e00308d9b0f26ab4fbd1250e8b5407b9eaade7e1f4"
+  },
+  {
+    "base": "HOODX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HOODX/USD",
+    "pythFeedId": "dd49a9ac6df5cbfa9d8fc6371f7ae927a74d5c6763c1c01b4220d70314c647f9"
+  },
+  {
+    "base": "HT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HT/USD",
+    "pythFeedId": "38e91ba416e6010735d7580472784a3e0821ab559aacdf73f5aba9d661e687ab"
+  },
+  {
+    "base": "HUMA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HUMA/USD",
+    "pythFeedId": "86f6576c0ddc8577b9d1bb12c712ae04ebd56070826ec042c93595d6b17a013b"
+  },
+  {
+    "base": "HYPE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HYPE/USD",
+    "pythFeedId": "4279e31cc369bbcc2faf022b382b080e32a8e689ff20fbc530d2a603eb6cd98b"
+  },
+  {
+    "base": "HYPER",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HYPER/USD",
+    "pythFeedId": "752f22bbcdd24a1c5e0b0149e0196c076b8e1f088cdb60b6d7d7cd41787e7631"
+  },
+  {
+    "base": "HYPERSTABLE.USH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.HYPERSTABLE.USH/USD",
+    "pythFeedId": "eaa30c1ef2d9f4fde45d6e699bfda5187b3de200ea4cbab25d676b260ab728c1"
+  },
+  {
+    "base": "IBERA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.IBERA/USD",
+    "pythFeedId": "eb943c0b5c9e02a529f799ac91070c3b7046f9412f3e5b0a90ba00267b838f34"
+  },
+  {
+    "base": "IBGT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.IBGT/USD",
+    "pythFeedId": "c929105a1af143cbfc887c4573947f54422a9ca88a9e622d151b8abdf5c2962f"
+  },
+  {
+    "base": "ICP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ICP/USD",
+    "pythFeedId": "c9907d786c5821547777780a1e4f89484f3417cb14dd244f2b0a34ea7a554d67"
+  },
+  {
+    "base": "ICX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ICX/USD",
+    "pythFeedId": "843bb7ab4846e3f233f34082ef188a94f79517f66c224bd85b2b5cb34d10d745"
+  },
+  {
+    "base": "IDEX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.IDEX/USD",
+    "pythFeedId": "6fdf9f1b31f6212aad9125dbc9d85ae6cfac3939fd914f6a8c397f01272eca8f"
+  },
+  {
+    "base": "IKA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.IKA/USD",
+    "pythFeedId": "2b529621fa6e2c8429f623ba705572aa64175d7768365ef829df6a12c9f365f4"
+  },
+  {
+    "base": "ILV",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ILV/USD",
+    "pythFeedId": "e1cb28de6139b40cf03e15f42a89921c0650fb1c75cabfc94877830c28de30cb"
+  },
+  {
+    "base": "IMX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.IMX/USD",
+    "pythFeedId": "941320a8989414874de5aa2fc340a75d5ed91fdff1613dd55f83844d52ea63a2"
+  },
+  {
+    "base": "INF",
+    "quote": "USD",
+    "pythSymbol": "Crypto.INF/USD",
+    "pythFeedId": "f51570985c642c49c2d6e50156390fdba80bb6d5f7fa389d2f012ced4f7d208f"
+  },
+  {
+    "base": "INIT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.INIT/USD",
+    "pythFeedId": "b86ddb07a6163b55cdee9a676131dc28d2faea445060ac3a28c687ed42db6e84"
+  },
+  {
+    "base": "INJ",
+    "quote": "USD",
+    "pythSymbol": "Crypto.INJ/USD",
+    "pythFeedId": "7a5bc1d2b56ad029048cd63964b3ad2776eadf812edc1a43a31406cb54bff592"
+  },
+  {
+    "base": "INX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.INX/USD",
+    "pythFeedId": "6b75aedad18490630c33d14a1d64d7b420bf9cc8f72d97482a5f6de43fa8999f"
+  },
+  {
+    "base": "IO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.IO/USD",
+    "pythFeedId": "82595d1509b770fa52681e260af4dda9752b87316d7c048535d8ead3fa856eb1"
+  },
+  {
+    "base": "IOTA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.IOTA/USD",
+    "pythFeedId": "c7b72e5d860034288c9335d4d325da4272fe50c92ab72249d58f6cbba30e4c44"
+  },
+  {
+    "base": "IOTX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.IOTX/USD",
+    "pythFeedId": "a83103141916013b5679001e273281303a6c05f4cebd94da00a785bd74d1e6d8"
+  },
+  {
+    "base": "IP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.IP/USD",
+    "pythFeedId": "b620ba83044577029da7e4ded7a2abccf8e6afc2a0d4d26d89ccdd39ec109025"
+  },
+  {
+    "base": "JASMY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.JASMY/USD",
+    "pythFeedId": "2b386bdca7fda5cf3c3975f70318593bf144104cb00742592ecff60dd798972f"
+  },
+  {
+    "base": "JITOSOL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.JITOSOL/USD",
+    "pythFeedId": "67be9f519b95cf24338801051f9a808eff0a578ccb388db73b7f6fe1de019ffb"
+  },
+  {
+    "base": "JLP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.JLP/USD",
+    "pythFeedId": "c811abc82b4bad1f9bd711a2773ccaa935b03ecef974236942cec5e0eb845a3a"
+  },
+  {
+    "base": "JOE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.JOE/USD",
+    "pythFeedId": "a3f37baf54dbd24e1d67040d566a762e62be3edbf8ef423038b091afc1722915"
+  },
+  {
+    "base": "JTO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.JTO/USD",
+    "pythFeedId": "b43660a5f790c69354b0729a5ef9d50d68f1df92107540210b9cccba1f947cc2"
+  },
+  {
+    "base": "JUP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.JUP/USD",
+    "pythFeedId": "0a0408d619e9380abad35060f9192039ed5042fa6f82301d0e48bb52be830996"
+  },
+  {
+    "base": "JUPUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.JUPUSD/USD",
+    "pythFeedId": "8ed858a2214e892c9371694fb6c8a9037b6ed4052c4edf209f8cb988484e81d9"
+  },
+  {
+    "base": "KAIA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KAIA/USD",
+    "pythFeedId": "452d40e01473f95aa9930911b4392197b3551b37ac92a049e87487b654b4ebbe"
+  },
+  {
+    "base": "KAITO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KAITO/USD",
+    "pythFeedId": "7302dee641a08507c297a7b0c8b3efa74a48a3baa6c040acab1e5209692b7e59"
+  },
+  {
+    "base": "KAPT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KAPT/USD",
+    "pythFeedId": "a44d307a13145b84938740c93155fbea926e9fbdd46d50b67859b8fc47552959"
+  },
+  {
+    "base": "KAS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KAS/USD",
+    "pythFeedId": "dfd3cb51a9d39fde35a3ff6177b426def03ed48d45008248f22827d8bf50cab4"
+  },
+  {
+    "base": "KAVA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KAVA/USD",
+    "pythFeedId": "a6e905d4e85ab66046def2ef0ce66a7ea2a60871e68ae54aed50ec2fd96d8584"
+  },
+  {
+    "base": "KBONK",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KBONK/USD",
+    "pythFeedId": "a007ed7f4e98f90b585aaecafa2bef88c28af6f0e6f601268c17530e5dfb462d"
+  },
+  {
+    "base": "KBTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KBTC/USD",
+    "pythFeedId": "b04edaa5eba1fb048c18b727466681894f0ab21dd89643432af0277162dedb6d"
+  },
+  {
+    "base": "KCS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KCS/USD",
+    "pythFeedId": "c8acad81438490d4ebcac23b3e93f31cdbcb893fcba746ea1c66b89684faae2f"
+  },
+  {
+    "base": "KERNEL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KERNEL/USD",
+    "pythFeedId": "e2edcd30b8c2a5350461de233fd3aabca97d3a54fcc6fde930921eebeb8e3ec9"
+  },
+  {
+    "base": "KHYPE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KHYPE/USD",
+    "pythFeedId": "2837a61ae8165c018b0e406ac32b1527270e57b81f0069260afbef71b9cf8ffe"
+  },
+  {
+    "base": "KMNO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KMNO/USD",
+    "pythFeedId": "b17e5bc5de742a8a378b54c9c75442b7d51e30ada63f28d9bd28d3c0e26511a0"
+  },
+  {
+    "base": "KNC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KNC/USD",
+    "pythFeedId": "b9ccc817bfeded3926af791f09f76c5ffbc9b789cac6e9699ec333a79cacbe2a"
+  },
+  {
+    "base": "KNTQ",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KNTQ/USD",
+    "pythFeedId": "28d8b5b2f29bf1cdfd3721c587e0cef8405553b237364c72f547d562aa2b267e"
+  },
+  {
+    "base": "KPEPE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KPEPE/USD",
+    "pythFeedId": "7f3febb69d47fd18c6e29697fc2c19ee70b9877111410238d8587f2cffacb232"
+  },
+  {
+    "base": "KSM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KSM/USD",
+    "pythFeedId": "dedebc9e4d916d10b76cfbc21ccaacaf622ab1fc7f7ba586a0de0eba76f12f3f"
+  },
+  {
+    "base": "KTA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.KTA/USD",
+    "pythFeedId": "61fb0189252a49fa08a0f1db3b4c8a4195edd994ed8934b971d62c9d34c74084"
+  },
+  {
+    "base": "LA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LA/USD",
+    "pythFeedId": "b2c7a2a935f77a8903c03943e5cb001581a25223b8978baffbac0d3c801897fb"
+  },
+  {
+    "base": "LAYER",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LAYER/USD",
+    "pythFeedId": "3c987d95da67ceb12705b22448200568c15b6242796cacc21c11f622e74cfffb"
+  },
+  {
+    "base": "LBGT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LBGT/USD",
+    "pythFeedId": "7d80a0d7344c6632c5ed2b85016f32aed4f831294e274739d92bb9e32df5b22f"
+  },
+  {
+    "base": "LBTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LBTC/USD",
+    "pythFeedId": "8f257aab6e7698bb92b15511915e593d6f8eae914452f781874754b03d0c612b"
+  },
+  {
+    "base": "LDO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LDO/USD",
+    "pythFeedId": "c63e2a7f37a04e5e614c07238bedb25dcc38927fba8fe890597a593c0b2fa4ad"
+  },
+  {
+    "base": "LEO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LEO/USD",
+    "pythFeedId": "19e4e2b451406cf99311bb5127b12a948db17f30b69c323c8657d71119a58619"
+  },
+  {
+    "base": "LHYPE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LHYPE/USD",
+    "pythFeedId": "9e3cadc2a8a0ebfd765b34d5ee5de77a4add3114672fc0b8d3ad09ac56940069"
+  },
+  {
+    "base": "LINEA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LINEA/USD",
+    "pythFeedId": "49e50653755fbf8018ab65a07be2f208ac8c4bdfc43200934304ca17ee663cab"
+  },
+  {
+    "base": "LINK",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LINK/USD",
+    "pythFeedId": "8ac0c70fff57e9aefdf5edf44b51d62c2d433653cbb2cf5cc06bb115af04d221"
+  },
+  {
+    "base": "LION",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LION/USD",
+    "pythFeedId": "a57e29fe0a3e6165a55a42675d94aaf27e1b0183e7dfa1b7e9e3514c70f622d0"
+  },
+  {
+    "base": "LIT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LIT/USD",
+    "pythFeedId": "c0c83f00c39165892d55dcd17ade2191e289697e2ac132d9ab721e20834e2a9e"
+  },
+  {
+    "base": "LL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LL/USD",
+    "pythFeedId": "2805c8894235111024c54253267f2b325be23763d534d2051742e39234b5835a"
+  },
+  {
+    "base": "LMTS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LMTS/USD",
+    "pythFeedId": "d34b642b86004cdd87fab54e9471483558e7ffb50928cfe8f06855124d1c84aa"
+  },
+  {
+    "base": "LOFI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LOFI/USD",
+    "pythFeedId": "82eebc2c47490ba9c0f9bc35ea9fb57a7e2bbf69b84a04ea2a3525153b8090ea"
+  },
+  {
+    "base": "LOOKS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LOOKS/USD",
+    "pythFeedId": "acecdd9ac741a1f6dad0fd6ade5354e9523bd0c864b955307cea3643fdfe8ff5"
+  },
+  {
+    "base": "LQTY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LQTY/USD",
+    "pythFeedId": "5e8b35b0da37ede980d8f4ddaa7988af73d8c3d110e3eddd2a56977beb839b63"
+  },
+  {
+    "base": "LRC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LRC/USD",
+    "pythFeedId": "20311405c2fc648cf5733197e95c03512af9cf64f2260aea7e212a8c8b7bdcfa"
+  },
+  {
+    "base": "LST",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LST/USD",
+    "pythFeedId": "12fb674ee496045b1d9cf7d5e65379acb026133c2ad69f3ed996fb9fe68e3a37"
+  },
+  {
+    "base": "LTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LTC/USD",
+    "pythFeedId": "6e3f3fa8253588df9326580180233eb791e03b443a3ba7a1d892e73874e19a54"
+  },
+  {
+    "base": "LUCE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LUCE/USD",
+    "pythFeedId": "19b27827b96e6e8517183e137e13237093922eb1c0c876f65f6e38ef9012ac45"
+  },
+  {
+    "base": "LUNA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LUNA/USD",
+    "pythFeedId": "e6ccd3f878cf338e6732bf59f60943e8ca2c28402fc4d9c258503b2edbe74a31"
+  },
+  {
+    "base": "LUNC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LUNC/USD",
+    "pythFeedId": "4456d442a152fd1f972b18459263ef467d3c29fb9d667e30c463b086691fbc79"
+  },
+  {
+    "base": "LUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.LUSD/USD",
+    "pythFeedId": "c9dc99720306ef43fd301396a6f8522c8be89c6c77e8c27d87966918a943fd20"
+  },
+  {
+    "base": "MANA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MANA/USD",
+    "pythFeedId": "1dfffdcbc958d732750f53ff7f06d24bb01364b3f62abea511a390c74b8d16a5"
+  },
+  {
+    "base": "MANEKI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MANEKI/USD",
+    "pythFeedId": "c63de9f502c78c206b1c85920dfa0a4494e080a2ebb38e73899eca656b6b1bfa"
+  },
+  {
+    "base": "MANTA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MANTA/USD",
+    "pythFeedId": "c3883bcf1101c111e9fcfe2465703c47f2b638e21fef2cce0502e6c8f416e0e2"
+  },
+  {
+    "base": "MANTRA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MANTRA/USD",
+    "pythFeedId": "a8fab0aef344a85a48fa5eb4ad32a02eb4a1bd7178bd23b29126fd5f74140c11"
+  },
+  {
+    "base": "MASK",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MASK/USD",
+    "pythFeedId": "b97d9aa5c9ea258252456963c3a9547d53e4848cb66ce342a3155520741a28d4"
+  },
+  {
+    "base": "MAV",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MAV/USD",
+    "pythFeedId": "5b131ede5d017511cf5280b9ebf20708af299266a033752b64180c4201363b11"
+  },
+  {
+    "base": "MBTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MBTC/USD",
+    "pythFeedId": "6665073f5bc307b97e68654ff11f3d8875abd6181855814d23ab01b8085c0906"
+  },
+  {
+    "base": "MCDX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MCDX/USD",
+    "pythFeedId": "27cac3c00ed32285b8686611bbc4a654279c1ea11ab4dc90822c2edd20734bca"
+  },
+  {
+    "base": "ME",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ME/USD",
+    "pythFeedId": "91519e3e48571e1232a85a938e714da19fe5ce05107f3eebb8a870b2e8020169"
+  },
+  {
+    "base": "MELANIA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MELANIA/USD",
+    "pythFeedId": "8fef7d52c7f4e3a6258d663f9d27e64a1b6fd95ab5f7d545dbf9a515353d0064"
+  },
+  {
+    "base": "MEME",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MEME/USD",
+    "pythFeedId": "cd2cee36951a571e035db0dfad138e6ecdb06b517cc3373cd7db5d3609b7927c"
+  },
+  {
+    "base": "MERL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MERL/USD",
+    "pythFeedId": "03e8dbf3e8f02edf5ca898dc7afbbac3f06c7d91c02986c3a8c6ce1a99e90355"
+  },
+  {
+    "base": "MET",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MET/USD",
+    "pythFeedId": "0292e0f405bcd4a496d34e48307f6787349ad2bcd8505c3d3a9f77d81a67a682"
+  },
+  {
+    "base": "META",
+    "quote": "USD",
+    "pythSymbol": "Crypto.META/USD",
+    "pythFeedId": "e379d8d3a1a44952474f057bdfe6e902a97f093b2872c152dcf04f612e3e3be9"
+  },
+  {
+    "base": "METASTABLE.MUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.METASTABLE.MUSD/USD",
+    "pythFeedId": "2ee09cdb656959379b9262f89de5ff3d4dfed0dd34c072b3e22518496a65249c"
+  },
+  {
+    "base": "METAX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.METAX/USD",
+    "pythFeedId": "bf3e5871be3f80ab7a4d1f1fd039145179fb58569e159aee1ccd472868ea5900"
+  },
+  {
+    "base": "METH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.METH/USD",
+    "pythFeedId": "fbc9c3a716650b6e24ab22ab85b1c0ef4141b18f4590cc0b986e2f9064cf73d6"
+  },
+  {
+    "base": "METIS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.METIS/USD",
+    "pythFeedId": "c22aa7943f65c9b1bb8d765bf4d5136590c48508f61912314f23bb730325b159"
+  },
+  {
+    "base": "MEW",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MEW/USD",
+    "pythFeedId": "514aed52ca5294177f20187ae883cec4a018619772ddce41efcc36a6448f5d5d"
+  },
+  {
+    "base": "MEZO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MEZO/USD",
+    "pythFeedId": "80beaaedbdd228e77c5d62dfcd74b0305674b7e27a5cc6a46e71bd3a696826df"
+  },
+  {
+    "base": "MEZO.MUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MEZO.MUSD/USD",
+    "pythFeedId": "0617a9b725011a126a2b9fd53563f4236501f32cf76d877644b943394606c6de"
+  },
+  {
+    "base": "MHYPE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MHYPE/USD",
+    "pythFeedId": "a7fb4cdafed5130e8731b8da7c9208881f24e9b671bb92438b1fbf361d578112"
+  },
+  {
+    "base": "MICHI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MICHI/USD",
+    "pythFeedId": "63a45218d6b13ffd28ca04748615511bf70eff80a3411c97d96b8ed74a6decab"
+  },
+  {
+    "base": "MIM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MIM/USD",
+    "pythFeedId": "7aa41f6ee464616f3cbc469fddfd7e63d8db319b7bd585cc95b24c29c9172916"
+  },
+  {
+    "base": "MINA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MINA/USD",
+    "pythFeedId": "e322f437708e16b033d785fceb5c7d61c94700364281a10fabc77ca20ef64bf1"
+  },
+  {
+    "base": "MMT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MMT/USD",
+    "pythFeedId": "1fc9127232d059b415f7b11989d06aa11a3563619e5b7a8e44ae440f0b95e4e1"
+  },
+  {
+    "base": "MNDE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MNDE/USD",
+    "pythFeedId": "3607bf4d7b78666bd3736c7aacaf2fd2bc56caa8667d3224971ebe3c0623292a"
+  },
+  {
+    "base": "MNT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MNT/USD",
+    "pythFeedId": "4e3037c822d852d79af3ac80e35eb420ee3b870dca49f9344a38ef4773fb0585"
+  },
+  {
+    "base": "MOBILE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MOBILE/USD",
+    "pythFeedId": "ff4c53361e36a9b837433c87d290c229e1f01aec5ef98d9f3f70953a20a629ce"
+  },
+  {
+    "base": "MOBY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MOBY/USD",
+    "pythFeedId": "edbaef2120caa0cc107c332bc2e9ef79b51c80fa4bb746098015c5c366aec42f"
+  },
+  {
+    "base": "MODE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MODE/USD",
+    "pythFeedId": "0386e113cc716a7c6a55decd97b19c90ce080d9f2f5255ac78a0e26889446d1e"
+  },
+  {
+    "base": "MOG",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MOG/USD",
+    "pythFeedId": "17894b9fff49cd07efeab94a0d02db16f158efe04e0dee1db6af5f069082ce83"
+  },
+  {
+    "base": "MON",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MON/USD",
+    "pythFeedId": "31491744e2dbf6df7fcf4ac0820d18a609b49076d45066d3568424e62f686cd1"
+  },
+  {
+    "base": "MOODENG",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MOODENG/USD",
+    "pythFeedId": "ffff73128917a90950cd0473fd2551d7cd274fd5a6cc45641881bbcc6ee73417"
+  },
+  {
+    "base": "MORPHO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MORPHO/USD",
+    "pythFeedId": "5b2a4c542d4a74dd11784079ef337c0403685e3114ba0d9909b5c7a7e06fdc42"
+  },
+  {
+    "base": "MOTHER",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MOTHER/USD",
+    "pythFeedId": "62742a997d01f7524f791fdb2dd43aaf0e567d765ebf8fd0406a994239e874d4"
+  },
+  {
+    "base": "MOVE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MOVE/USD",
+    "pythFeedId": "6bf748c908767baa762a1563d454ebec2d5108f8ee36d806aadacc8f0a075b6d"
+  },
+  {
+    "base": "MSETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MSETH/USD",
+    "pythFeedId": "cd4eb98d487478925bb032580ab13e7ccfcb2e814500b526f00bd9fa651cc6b6"
+  },
+  {
+    "base": "MSOL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MSOL/USD",
+    "pythFeedId": "c2289a6a43d2ce91c6f55caec370f4acc38a2ed477f58813334c6d03749ff2a4"
+  },
+  {
+    "base": "MSTRX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MSTRX/USD",
+    "pythFeedId": "53f95ba4e23ed15ea56083e2ee9a5eec48055d6f59033d4bb95f1ca2a2349c28"
+  },
+  {
+    "base": "MSUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MSUSD/USD",
+    "pythFeedId": "c753c899ffdfcc8d1a02440fe380501b454b559122998bcd245d9063d07cc162"
+  },
+  {
+    "base": "MTRG",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MTRG/USD",
+    "pythFeedId": "20d096e088a9b85f8cf09278965b77aeb05c00769e2ddeda5ea2d07ea554b283"
+  },
+  {
+    "base": "MUBARAK",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MUBARAK/USD",
+    "pythFeedId": "21ea1eed9fb00187e44ce5c2e747564756debcc6b5af222e3a077470e0f79104"
+  },
+  {
+    "base": "MYRO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MYRO/USD",
+    "pythFeedId": "6c19a9df349e8951d6bbae02f11ce54a025cd549b482403a0d897bb0bdbfd424"
+  },
+  {
+    "base": "MYX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.MYX/USD",
+    "pythFeedId": "19f2cec610f000c63b704ee3380bf7cb0ef94a110f72fd970def9fac4862bde8"
+  },
+  {
+    "base": "NAVX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NAVX/USD",
+    "pythFeedId": "88250f854c019ef4f88a5c073d52a18bb1c6ac437033f5932cd017d24917ab46"
+  },
+  {
+    "base": "NEAR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NEAR/USD",
+    "pythFeedId": "c415de8d2eba7db216527dff4b60e8f3a5311c740dadb233e13e12547e226750"
+  },
+  {
+    "base": "NECT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NECT/USD",
+    "pythFeedId": "ddf0dd319060db4561b5aa8f84a94816d33579f8dc2af2d8f74583bce20cd260"
+  },
+  {
+    "base": "NEIRO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NEIRO/USD",
+    "pythFeedId": "83dfac550d6066d5c837e99c27e38a392c5cccc9a637044c2ef6c843336da444"
+  },
+  {
+    "base": "NEON",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NEON/USD",
+    "pythFeedId": "d82183dd487bef3208a227bb25d748930db58862c5121198e723ed0976eb92b7"
+  },
+  {
+    "base": "NEXO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NEXO/USD",
+    "pythFeedId": "e5f406d97d7fa159c21647912b72aa8c669e24d7bd59bcd518587bbde027c531"
+  },
+  {
+    "base": "NFLXX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NFLXX/USD",
+    "pythFeedId": "02a67e6184e6c9dd65e14745a2a80df8b2b3d2ca91b4b191404936003d9929ae"
+  },
+  {
+    "base": "NIGHT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NIGHT/USD",
+    "pythFeedId": "2047d3b6ae5252c4394d576ad25f873d1360cd4f3e666af80e503c34d34901fc"
+  },
+  {
+    "base": "NIL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NIL/USD",
+    "pythFeedId": "a2f034a194c3b3336f22a2e4f053517253fcaf14f602fb4e2a118f5d55905259"
+  },
+  {
+    "base": "NOBODY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NOBODY/USD",
+    "pythFeedId": "9824b27ac78196f240ccaac1a01f1eb7ff0aba298a3ad64dfbcab44224df8e34"
+  },
+  {
+    "base": "NOT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NOT/USD",
+    "pythFeedId": "75ec6f04d4bded6afdc1440689be4402dd1e23d2ff2c21e081871eb2739ceb36"
+  },
+  {
+    "base": "NS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NS/USD",
+    "pythFeedId": "bb5ff26e47a3a6cc7ec2fce1db996c2a145300edc5acaabe43bf9ff7c5dd5d32"
+  },
+  {
+    "base": "NTRN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NTRN/USD",
+    "pythFeedId": "a8e6517966a52cb1df864b2764f3629fde3f21d2b640b5c572fcd654cbccd65e"
+  },
+  {
+    "base": "NVDAX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NVDAX/USD",
+    "pythFeedId": "4244d07890e4610f46bbde67de8f43a4bf8b569eebe904f136b469f148503b7f"
+  },
+  {
+    "base": "NXPC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.NXPC/USD",
+    "pythFeedId": "d7fb6cb62dd49c8466cff6b551c28c7192123f529405e9765d9db543b43411c4"
+  },
+  {
+    "base": "ODOS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ODOS/USD",
+    "pythFeedId": "1ba77b9dc10d6957caeb6ecdbe54badaef1e8af2f1c3a5157490e397c8935e91"
+  },
+  {
+    "base": "OG",
+    "quote": "USD",
+    "pythSymbol": "Crypto.OG/USD",
+    "pythFeedId": "0f7f8f64d3b762be8fead73e692ba52cd6e07076e0784810ecc95cf0d28e9a96"
+  },
+  {
+    "base": "OGN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.OGN/USD",
+    "pythFeedId": "8ba8899372f32b0b6b418006e654406facb6b6c8f24c1287cc7a86626e303d78"
+  },
+  {
+    "base": "OHM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.OHM/USD",
+    "pythFeedId": "3a8c0214e4fb7f1dd7792ed4d5b2971372e52f088fcd9cc02309253cbdc4a70e"
+  },
+  {
+    "base": "OKB",
+    "quote": "USD",
+    "pythSymbol": "Crypto.OKB/USD",
+    "pythFeedId": "d6f83dfeaff95d596ddec26af2ee32f391c206a183b161b7980821860eeef2f5"
+  },
+  {
+    "base": "OMI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.OMI/USD",
+    "pythFeedId": "06d9fa501fd2bef47265361ca0eaf6e0a97c3b226cea5ab760240f70818581ad"
+  },
+  {
+    "base": "ONDO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ONDO/USD",
+    "pythFeedId": "d40472610abe56d36d065a0cf889fc8f1dd9f3b7f2a478231a5fc6df07ea5ce3"
+  },
+  {
+    "base": "ONE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ONE/USD",
+    "pythFeedId": "c572690504b42b57a3f7aed6bd4aae08cbeeebdadcf130646a692fe73ec1e009"
+  },
+  {
+    "base": "OP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.OP/USD",
+    "pythFeedId": "385f64d993f7b77d8182ed5003d97c60aa3361f3cecfe711544d2d59165e9bdf"
+  },
+  {
+    "base": "ORCA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ORCA/USD",
+    "pythFeedId": "37505261e557e251290b8c8899453064e8d760ed5c65a779726f2490980da74c"
+  },
+  {
+    "base": "ORDER",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ORDER/USD",
+    "pythFeedId": "cb1dd84dbe147e75e80947c105fc7e7fd61200ef2f94c079ea249b5189d2c8a4"
+  },
+  {
+    "base": "ORDI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ORDI/USD",
+    "pythFeedId": "193c739db502aadcef37c2589738b1e37bdb257d58cf1ab3c7ebc8e6df4e3ec0"
+  },
+  {
+    "base": "ORE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ORE/USD",
+    "pythFeedId": "142b804c658e14ff60886783e46e5a51bdf398b4871d9d8f7c28aa1585cad504"
+  },
+  {
+    "base": "OS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.OS/USD",
+    "pythFeedId": "2bcd65e3c1b4580a5f59755ef30e11077238217dd418d301dd7ee4d252987675"
+  },
+  {
+    "base": "OSMO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.OSMO/USD",
+    "pythFeedId": "5867f5683c757393a0670ef0f701490950fe93fdb006d181c8265a831ac0c5c6"
+  },
+  {
+    "base": "OUSDT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.OUSDT/USD",
+    "pythFeedId": "2dc7f272d3010abe4de48755a50fcf5bd9eefd3b4af01d8f39f6c80ae51544fe"
+  },
+  {
+    "base": "P33",
+    "quote": "USD",
+    "pythSymbol": "Crypto.P33/USD",
+    "pythFeedId": "0ebdf945e158d0071a25ddd19f95ee76e15feae608b4bb1af8e325ee03572db6"
+  },
+  {
+    "base": "PARTI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PARTI/USD",
+    "pythFeedId": "f0ae06bfdd7cdb39cda6630e74c318bde1f4767506bb525d35b1e071b985a7a7"
+  },
+  {
+    "base": "PAXG",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PAXG/USD",
+    "pythFeedId": "273717b49430906f4b0c230e99aa1007f83758e3199edbc887c0d06c3e332494"
+  },
+  {
+    "base": "PENDLE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PENDLE/USD",
+    "pythFeedId": "9a4df90b25497f66b1afb012467e316e801ca3d839456db028892fe8c70c8016"
+  },
+  {
+    "base": "PENGU",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PENGU/USD",
+    "pythFeedId": "bed3097008b9b5e3c93bec20be79cb43986b85a996475589351a21e67bae9b61"
+  },
+  {
+    "base": "PEOPLE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PEOPLE/USD",
+    "pythFeedId": "b7fe919d83815ca6074c82a3286b1cd6ffb7d3136e323cd2b1ef706cfc7e5945"
+  },
+  {
+    "base": "PEPE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PEPE/USD",
+    "pythFeedId": "d69731a2e74ac1ce884fc3890f7ee324b6deb66147055249568869ed700882e4"
+  },
+  {
+    "base": "PERP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PERP/USD",
+    "pythFeedId": "944f2f908c5166e0732ea5b610599116cd8e1c41f47452697c1e84138b7184d6"
+  },
+  {
+    "base": "PI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PI/USD",
+    "pythFeedId": "8c102183926ffc9a1a1347a5a583661af37b415e93ea3f3591e94c303ed4f514"
+  },
+  {
+    "base": "PLUME",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PLUME/USD",
+    "pythFeedId": "ded84d57dbf810bf86b97936f12e1f01b8d6d01c251a4d6eac592147988d475c"
+  },
+  {
+    "base": "PNUT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PNUT/USD",
+    "pythFeedId": "116da895807f81f6b5c5f01b109376e7f6834dc8b51365ab7cdfa66634340e54"
+  },
+  {
+    "base": "POL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.POL/USD",
+    "pythFeedId": "ffd11c5a1cfd42f80afb2df4d9f264c15f956d68153335374ec10722edd70472"
+  },
+  {
+    "base": "PONKE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PONKE/USD",
+    "pythFeedId": "f4cb880742ecf6525885a239968914798c44cd83749856a6dff5c140ba5bf69b"
+  },
+  {
+    "base": "POPCAT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.POPCAT/USD",
+    "pythFeedId": "b9312a7ee50e189ef045aa3c7842e099b061bd9bdc99ac645956c3b660dc8cce"
+  },
+  {
+    "base": "PRCL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PRCL/USD",
+    "pythFeedId": "5bbd1ce617792b476c55991c27cdfd89794f9f13356babc9c92405f5f0079683"
+  },
+  {
+    "base": "PRIME",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PRIME/USD",
+    "pythFeedId": "e417fb7d1edcfe70283c608fa9f14d11ebf4d1b3ecf2e97e42a110f7fb649843"
+  },
+  {
+    "base": "PROMPT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PROMPT/USD",
+    "pythFeedId": "3512f8f7c90859bde36c063f455a6f62a042019bd94187972c0cccaa0425d25d"
+  },
+  {
+    "base": "PROVE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PROVE/USD",
+    "pythFeedId": "9750f4de788c4bb9852e1fb774ce8564163580fc7aa17961ed06614d0ac21242"
+  },
+  {
+    "base": "PSG",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PSG/USD",
+    "pythFeedId": "42abf92ba20e1bb9e5d30817dbf616d0f3318eaa07ad26d22f6ae9cb678419fd"
+  },
+  {
+    "base": "PUMP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PUMP/USD",
+    "pythFeedId": "7a01fca212788bba7c5bf8c9efd576a8a722f070d2c17596ff7bb609b8d5c3b9"
+  },
+  {
+    "base": "PURR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PURR/USD",
+    "pythFeedId": "e0154bf4dfbcf835fad3428c0d8c1078b83f687e4d6afafb827f7f9af70ec326"
+  },
+  {
+    "base": "PYTH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PYTH/USD",
+    "pythFeedId": "0bbf28e9a841a1cc788f6a361b17ca072d0ea3098a1e5df1c3922d06719579ff"
+  },
+  {
+    "base": "PYUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.PYUSD/USD",
+    "pythFeedId": "c1da1b73d7f01e7ddd54b3766cf7fcd644395ad14f70aa706ec5384c59e76692"
+  },
+  {
+    "base": "QNT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.QNT/USD",
+    "pythFeedId": "19ab139032007c8bd7d1fd3842ef392a5434569a72b555504a5aee47df2a0a35"
+  },
+  {
+    "base": "QQQX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.QQQX/USD",
+    "pythFeedId": "178a6f73a5aede9d0d682e86b0047c9f333ed0efe5c6537ca937565219c4054d"
+  },
+  {
+    "base": "QTUM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.QTUM/USD",
+    "pythFeedId": "b17096e28039ccc2b84e330c27e29706cf6779c3c6f2853527f516509f9819f6"
+  },
+  {
+    "base": "RAY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RAY/USD",
+    "pythFeedId": "91568baa8beb53db23eb3fb7f22c6e8bd303d103919e19733f2bb642d3e7987a"
+  },
+  {
+    "base": "RDNT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RDNT/USD",
+    "pythFeedId": "c8cf45412be4268bef8f76a8b0d60971c6e57ab57919083b8e9f12ba72adeeb6"
+  },
+  {
+    "base": "RED",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RED/USD",
+    "pythFeedId": "0bb28b82f08477fadbf9607fc8408ff61ca129fae40adc7a8d2ab8945f97ee74"
+  },
+  {
+    "base": "RENDER",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RENDER/USD",
+    "pythFeedId": "3d4a2bd9535be6ce8059d75eadeba507b043257321aa544717c56fa19b49e35d"
+  },
+  {
+    "base": "RESOLV",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RESOLV/USD",
+    "pythFeedId": "7c2c964893278a585eef902f1d90c458666daf6dd0533e823f9fffedcec5ab5a"
+  },
+  {
+    "base": "RETARDIO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RETARDIO/USD",
+    "pythFeedId": "527f38d4b210854189c2e7487e57297d7ddbdea1b23a5e8a6a5bbc98944abe93"
+  },
+  {
+    "base": "RETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RETH/USD",
+    "pythFeedId": "a0255134973f4fdf2f8f7808354274a3b1ebc6ee438be898d045e8b56ba1fe13"
+  },
+  {
+    "base": "REX33",
+    "quote": "USD",
+    "pythSymbol": "Crypto.REX33/USD",
+    "pythFeedId": "583015352f5936e099fa7149d496ac087c5bfbfc386ce875be27dc4d69c2e023"
+  },
+  {
+    "base": "REZ",
+    "quote": "USD",
+    "pythSymbol": "Crypto.REZ/USD",
+    "pythFeedId": "9df307038f76e26ba0f9aaa1d5eefce919bf5b7b282d0ad247d4f77ffb506ede"
+  },
+  {
+    "base": "RHEA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RHEA/USD",
+    "pythFeedId": "ded2a0d2624278a32c56725397cc98b24ddb83d8c4d2ce108b1fc44b1d8de22b"
+  },
+  {
+    "base": "RION",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RION/USD",
+    "pythFeedId": "2d8b864599418dc83cb33fe1d91f69e90c8c1c32123d74211950f52a5cef006a"
+  },
+  {
+    "base": "RLB",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RLB/USD",
+    "pythFeedId": "2f2d17abbc1e781bd87b4a5d52c8b2856886f5c482fa3593cebf6795040ab0b6"
+  },
+  {
+    "base": "RLP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RLP/USD",
+    "pythFeedId": "7265d5cf8ee0e7b5266f75ff19c42c5b7697a9756c9304aa78b6be4fbb8d823d"
+  },
+  {
+    "base": "RLUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RLUSD/USD",
+    "pythFeedId": "65652029e7acde632e80192dcaa6ea88e61d84a4c78a982a63e98f4bbcb288d5"
+  },
+  {
+    "base": "RON",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RON/USD",
+    "pythFeedId": "97cfe19da9153ef7d647b011c5e355142280ddb16004378573e6494e499879f3"
+  },
+  {
+    "base": "ROSE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ROSE/USD",
+    "pythFeedId": "488f59877d3950ca12c5529d3ec6d4904666b2ec2d37616e61ecc88e3d23d51c"
+  },
+  {
+    "base": "RPL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RPL/USD",
+    "pythFeedId": "24f94ac0fd8638e3fc41aab2e4df933e63f763351b640bf336a6ec70651c4503"
+  },
+  {
+    "base": "RSETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RSETH/USD",
+    "pythFeedId": "0caec284d34d836ca325cf7b3256c078c597bc052fbd3c0283d52b581d68d71f"
+  },
+  {
+    "base": "RSR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RSR/USD",
+    "pythFeedId": "fb7565b77267ba3f6ef770bed5d7f9b22b8542db676dbd9b934a2fcf945f4371"
+  },
+  {
+    "base": "RSWETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RSWETH/USD",
+    "pythFeedId": "17e349391a4d8362706ec4126c2fa42047601cb71c1063e38ca305fab9b0ec4d"
+  },
+  {
+    "base": "RUNE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.RUNE/USD",
+    "pythFeedId": "5fcf71143bb70d41af4fa9aa1287e2efd3c5911cee59f909f915c9f61baacb1e"
+  },
+  {
+    "base": "S",
+    "quote": "USD",
+    "pythSymbol": "Crypto.S/USD",
+    "pythFeedId": "f490b178d0c85683b7a0f2388b40af2e6f7c90cbe0f96b31f315f08d0e5a2d6d"
+  },
+  {
+    "base": "SAFE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SAFE/USD",
+    "pythFeedId": "7b3576858506a94fad3a9cc55e32934f0c3931150fe3a3c7b83558dbae5b8e38"
+  },
+  {
+    "base": "SAMO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SAMO/USD",
+    "pythFeedId": "49601625e1a342c1f90c3fe6a03ae0251991a1d76e480d2741524c29037be28a"
+  },
+  {
+    "base": "SAND",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SAND/USD",
+    "pythFeedId": "cb7a1d45139117f8d3da0a4b67264579aa905e3b124efede272634f094e1e9d1"
+  },
+  {
+    "base": "SATS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SATS/USD",
+    "pythFeedId": "40440d18fb5ad809e2825ce7dfc035cfa57135c13062a04addafe0c7f54425e0"
+  },
+  {
+    "base": "SCA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SCA/USD",
+    "pythFeedId": "7e17f0ac105abe9214deb9944c30264f5986bf292869c6bd8e8da3ccd92d79bc"
+  },
+  {
+    "base": "SCETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SCETH/USD",
+    "pythFeedId": "8bb5e69ed1ab19642a0e7e851b1ed7b3579d0548bc8ddd1077b0d9476bb1dabc"
+  },
+  {
+    "base": "SCR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SCR/USD",
+    "pythFeedId": "2e4ec9368637222474f16f5482be6bbebe857628842e47a07fa1bd24878eb041"
+  },
+  {
+    "base": "SCRT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SCRT/USD",
+    "pythFeedId": "ac5a498aa407c3642257dc8bd8b92efda656e708b22be9b96febcb77878d6bfa"
+  },
+  {
+    "base": "SCUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SCUSD/USD",
+    "pythFeedId": "316b1536978bee10c47b3c74c0b3995aabae973a3351621680a2aa383aca77b8"
+  },
+  {
+    "base": "SD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SD/USD",
+    "pythFeedId": "83aac6fae150e8850204ef5dce696c05ae2efa335a41c7e5c112bc73e5cbae35"
+  },
+  {
+    "base": "SDAI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SDAI/USD",
+    "pythFeedId": "710659c5a68e2416ce4264ca8d50d34acc20041d91289110eea152c52ff3dc39"
+  },
+  {
+    "base": "SEDA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SEDA/USD",
+    "pythFeedId": "6abf75211b819e5933e96466760b0ae8c326c7057d8a681d229430347b0825f6"
+  },
+  {
+    "base": "SEI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SEI/USD",
+    "pythFeedId": "53614f1cb0c031d4af66c04cb9c756234adad0e1cee85303795091499a4084eb"
+  },
+  {
+    "base": "SEND",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SEND/USD",
+    "pythFeedId": "7d19b607c945f7edf3a444289c86f7b58dcd8b18df82deadf925074807c99b59"
+  },
+  {
+    "base": "SENDCOIN.SEND",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SENDCOIN.SEND/USD",
+    "pythFeedId": "07b4391b29784ce5f02fc959aa1da3daa5909ba6561ee0a93d6ab5a896f4604c"
+  },
+  {
+    "base": "SFRXETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SFRXETH/USD",
+    "pythFeedId": "b2bb466ff5386a63c18aa7c3bc953cb540c755e2aa99dafb13bc4c177692bed0"
+  },
+  {
+    "base": "SHADOW",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SHADOW/USD",
+    "pythFeedId": "6f02ad2b8a307411fc3baedb9876e83efe9fa9f5b752aab8c99f4742c9e5f5d5"
+  },
+  {
+    "base": "SHIB",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SHIB/USD",
+    "pythFeedId": "f0d57deca57b3da2fe63a493f4c25925fdfd8edf834b20f93e1f84dbd1504d4a"
+  },
+  {
+    "base": "SIGN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SIGN/USD",
+    "pythFeedId": "64762254a3b5c7598b6b721dda6881991ba2cdf6c9a87f8d2ee7a40bb693f2ec"
+  },
+  {
+    "base": "SKATE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SKATE/USD",
+    "pythFeedId": "8237c60533d4f0030f480aa3cb0b1a92fa55b5828f602f47cb87bde988795f59"
+  },
+  {
+    "base": "SKI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SKI/USD",
+    "pythFeedId": "748f752e089f3018381c905e3640dd079ff145e68ebcaf1774a7d47b9cab7854"
+  },
+  {
+    "base": "SKL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SKL/USD",
+    "pythFeedId": "597d2ae7e4b92165d40f03ae57895e3e8245762a177b6db3274e4322b78f5b82"
+  },
+  {
+    "base": "SKY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SKY/USD",
+    "pythFeedId": "a483243eed64ca27a1f6e26385b7d1e0d07e9fe264bb6903efb3efc4689d3fe7"
+  },
+  {
+    "base": "SLP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SLP/USD",
+    "pythFeedId": "fba17701be318087db58d9797d5f1e89dcf5b95773ae2227c8a8eb4cf1d4e554"
+  },
+  {
+    "base": "SNX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SNX/USD",
+    "pythFeedId": "39d020f60982ed892abbcd4a06a276a9f9b7bfbce003204c110b6e488f502da3"
+  },
+  {
+    "base": "SOL",
+    "quote": "ETH",
+    "pythSymbol": "Crypto.SOL/ETH",
+    "pythFeedId": "de87506dabfadbef89af2d5d796ebae80ddaea240fc7667aa808fce3629cd8fb"
+  },
+  {
+    "base": "SOL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SOL/USD",
+    "pythFeedId": "ef0d8b6fda2ceba41da15d4095d1da392a0d2f8ed0c6c7bc0f4cfac8c280b56d"
+  },
+  {
+    "base": "SOLV",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SOLV/USD",
+    "pythFeedId": "03d73649ee5ff534163a584a865128c641ce1effedd330fa6bbe4c9581b0510e"
+  },
+  {
+    "base": "SOLVBTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SOLVBTC/USD",
+    "pythFeedId": "f253cf87dc7d5ed5aa14cba5a6e79aee8bcfaef885a0e1b807035a0bbecc36fa"
+  },
+  {
+    "base": "SONIC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SONIC/USD",
+    "pythFeedId": "b2748e718cf3a75b0ca099cb467aea6aa8f7d960b381b3970769b5a2d6be26dc"
+  },
+  {
+    "base": "SOON",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SOON/USD",
+    "pythFeedId": "55da0cd5ed2e1fc64b2a06ff2e67eaae8e98ee0f3ddeaea9d15a1879a2efa5de"
+  },
+  {
+    "base": "SOPH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SOPH/USD",
+    "pythFeedId": "3620d3842f69e8044f1e5bfead009605990f7141a3837e0dcc238a442b4f97af"
+  },
+  {
+    "base": "SPELL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SPELL/USD",
+    "pythFeedId": "1dcf38b0206d27849b0fcb8d2df21aff4f95873cce223f49d7c1ea3c5145ec63"
+  },
+  {
+    "base": "SPK",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SPK/USD",
+    "pythFeedId": "88a17f294aa817de3f22d5b1ebf2b4e5979e252264085f875eb9849eefeb718d"
+  },
+  {
+    "base": "SPX6900",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SPX6900/USD",
+    "pythFeedId": "8414cfadf82f6bed644d2e399c11df21ec0131aa574c56030b132113dbbf3a0a"
+  },
+  {
+    "base": "SPYX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SPYX/USD",
+    "pythFeedId": "2817b78438c769357182c04346fddaad1178c82f4048828fe0997c3c64624e14"
+  },
+  {
+    "base": "STBL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.STBL/USD",
+    "pythFeedId": "4506392652c427efd9e68f6c6b41fda5ff6d359fc0e32bc41f3a779b163a54ff"
+  },
+  {
+    "base": "STETH",
+    "quote": "ETH",
+    "pythSymbol": "Crypto.STETH/ETH",
+    "pythFeedId": "3af6a3098c56f58ff47cc46dee4a5b1910e5c157f7f0b665952445867470d61f"
+  },
+  {
+    "base": "STETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.STETH/USD",
+    "pythFeedId": "846ae1bdb6300b817cee5fdee2a6da192775030db5615b94a465f53bd40850b5"
+  },
+  {
+    "base": "STG",
+    "quote": "USD",
+    "pythSymbol": "Crypto.STG/USD",
+    "pythFeedId": "008546b175392b878c5c7ff0b6327b1cb12669be012fc2935c09a16fc8f6c58f"
+  },
+  {
+    "base": "STHYPE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.STHYPE/USD",
+    "pythFeedId": "068cd0617cbdd1dda615ed2b5ab4fe07d2e9f46347f5e785484844aa10d22dc5"
+  },
+  {
+    "base": "STONE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.STONE/USD",
+    "pythFeedId": "4dcc2fb96fb89a802ef9712f6bd2246d3607cf95ca5540cb24490d37003f8c46"
+  },
+  {
+    "base": "STORJ",
+    "quote": "USD",
+    "pythSymbol": "Crypto.STORJ/USD",
+    "pythFeedId": "21776e4ed1e763d580071fd6394d71e582672c788f64f4a279e60ec1497e27c4"
+  },
+  {
+    "base": "STREAM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.STREAM/USD",
+    "pythFeedId": "c862498a45ba1309fe2b31e9af28d903f526311e85e4b77e37e379a6b134dc47"
+  },
+  {
+    "base": "STRK",
+    "quote": "USD",
+    "pythSymbol": "Crypto.STRK/USD",
+    "pythFeedId": "6a182399ff70ccf3e06024898942028204125a819e519a335ffa4579e66cd870"
+  },
+  {
+    "base": "STS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.STS/USD",
+    "pythFeedId": "19f463beb47cb398cf2e2c8037f1d0073583cf18209c91a636f051d755ce0662"
+  },
+  {
+    "base": "STSUI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.STSUI/USD",
+    "pythFeedId": "0b3eae8cb6e221e7388a435290e0f2211172563f94769077b7f4c4c6a11eea76"
+  },
+  {
+    "base": "STX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.STX/USD",
+    "pythFeedId": "ec7a775f46379b5e943c3526b1c8d54cd49749176b0b98e02dde68d1bd335c17"
+  },
+  {
+    "base": "SUI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SUI/USD",
+    "pythFeedId": "23d7315113f5b1d3ba7a83604c44b94d79f4fd69af77f804fc7f920a6dc65744"
+  },
+  {
+    "base": "SUIUSDE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SUIUSDE/USD",
+    "pythFeedId": "8cead549d0e770dea8fdf5e018a85d59585265cf8bff16ba83962fc7996dbb7f"
+  },
+  {
+    "base": "SUN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SUN/USD",
+    "pythFeedId": "f9e525cd436857e2467825b9bf61a3c8a01b43e4999c5167e04045d318fb28e0"
+  },
+  {
+    "base": "SUSDE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SUSDE/USD",
+    "pythFeedId": "ca3ba9a619a4b3755c10ac7d5e760275aa95e9823d38a84fedd416856cdba37c"
+  },
+  {
+    "base": "SUSHI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SUSHI/USD",
+    "pythFeedId": "26e4f737fde0263a9eea10ae63ac36dcedab2aaf629261a994e1eeb6ee0afe53"
+  },
+  {
+    "base": "SWARMS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SWARMS/USD",
+    "pythFeedId": "26e8215286b4aa8d4aa77dff2d5feb1d83dc874c9aeb5a7d6d5fc4b83a005da4"
+  },
+  {
+    "base": "SWETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SWETH/USD",
+    "pythFeedId": "2fd8f34e9e6cb5c1a757e1aeb919136da3ae6d0d2243b2ad93d661e590578cd1"
+  },
+  {
+    "base": "SYN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SYN/USD",
+    "pythFeedId": "0afa62dff138fe0ea24e54bb875a634cc729675dab9f84462c964b2bb14c0349"
+  },
+  {
+    "base": "SYRUP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SYRUP/USD",
+    "pythFeedId": "ed86e0c6321d790302e5d88751995ebc9079273e549005d68a83ba72e48ff1ce"
+  },
+  {
+    "base": "SYRUPUSDC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SYRUPUSDC/USD",
+    "pythFeedId": "e616297dab48626eaacf6d030717b25823b13ae6520b83f4735bf8deec8e2c9a"
+  },
+  {
+    "base": "SYUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.SYUSD/USD",
+    "pythFeedId": "e7f14a58b2ce19f896b0d4f88d93933ec55e7a91cea94d9dbb43ad3fd6350440"
+  },
+  {
+    "base": "T",
+    "quote": "USD",
+    "pythSymbol": "Crypto.T/USD",
+    "pythFeedId": "7a072b799215196b0ecb6a58636ec312bce8461dcc33c28c3a046b1e636d121d"
+  },
+  {
+    "base": "TAC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TAC/USD",
+    "pythFeedId": "f3d1e3fbe7944d9008cbc4e6390677d60ba1ea118f230570369355dc3780c7b4"
+  },
+  {
+    "base": "TAIKO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TAIKO/USD",
+    "pythFeedId": "d878b9766566a87675421e9b11992c1f2ca2438d5b7d841cb147308e1bd6bb99"
+  },
+  {
+    "base": "TAO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TAO/USD",
+    "pythFeedId": "410f41de235f2db824e562ea7ab2d3d3d4ff048316c61d629c0b93f58584e1af"
+  },
+  {
+    "base": "TBTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TBTC/USD",
+    "pythFeedId": "56a3121958b01f99fdc4e1fd01e81050602c7ace3a571918bb55c6a96657cca9"
+  },
+  {
+    "base": "THAPT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.THAPT/USD",
+    "pythFeedId": "b29276972267db5d64ae718fb7f107ad9e72a79cabf9992f0e9bc75ad451a7f6"
+  },
+  {
+    "base": "THE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.THE/USD",
+    "pythFeedId": "1edda53e477165d3b287e6f65253faba42052cc39d390cc9e64b4b5bf6c06cc7"
+  },
+  {
+    "base": "THETA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.THETA/USD",
+    "pythFeedId": "ee70804471fe22d029ac2d2b00ea18bbf4fb062958d425e5830fd25bed430345"
+  },
+  {
+    "base": "THL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.THL/USD",
+    "pythFeedId": "74e3fbb0d33e0ed8c0078b56134dcebdae38852f0858a8ea4de4c5ea7474bd42"
+  },
+  {
+    "base": "TIA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TIA/USD",
+    "pythFeedId": "09f7c1d7dfbb7df2b8fe3d3d87ee94a2259d212da4f30c1f0540d066dfa44723"
+  },
+  {
+    "base": "TIBBIR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TIBBIR/USD",
+    "pythFeedId": "197091dd0a6fdb99a1d094404e9dc63b63095f5b7f829509b3265131e9a56053"
+  },
+  {
+    "base": "TNSR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TNSR/USD",
+    "pythFeedId": "05ecd4597cd48fe13d6cc3596c62af4f9675aee06e2e0b94c06d8bee2b659e05"
+  },
+  {
+    "base": "TOKEN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TOKEN/USD",
+    "pythFeedId": "12d65f1ff0624e4fe2cb450040cc7ba1db91914ad29e4c1a1d339494f078a92b"
+  },
+  {
+    "base": "TON",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TON/USD",
+    "pythFeedId": "8963217838ab4cf5cadc172203c1f0b763fbaa45f346d8ee50ba994bbcac3026"
+  },
+  {
+    "base": "TOSHI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TOSHI/USD",
+    "pythFeedId": "3450d9fbb8c3cf749578315668e21fabb4cd78dcfda1c1cba698b804bae2db2a"
+  },
+  {
+    "base": "TRB",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TRB/USD",
+    "pythFeedId": "ddcd037c2de8dbf2a0f6eebf1c039924baf7ebf0e7eb3b44bf421af69cc1b06d"
+  },
+  {
+    "base": "TRUMP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TRUMP/USD",
+    "pythFeedId": "879551021853eec7a7dc827578e8e69da7e4fa8148339aa0d3d5296405be4b1a"
+  },
+  {
+    "base": "TRX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TRX/USD",
+    "pythFeedId": "67aed5a24fdad045475e7195c98a98aea119c763f272d4523f5bac93a4f33c2b"
+  },
+  {
+    "base": "TSLAX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TSLAX/USD",
+    "pythFeedId": "47a156470288850a440df3a6ce85a55917b813a19bb5b31128a33a986566a362"
+  },
+  {
+    "base": "TST",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TST/USD",
+    "pythFeedId": "3541d1f0244f81487aa72ac3c65b5c4fabd354cd4e43867ba45e3d7f36433406"
+  },
+  {
+    "base": "TURBO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TURBO/USD",
+    "pythFeedId": "a00e67c6232f2f564932c252c440ed30759d10fee966b601c1613b0ed8692a5c"
+  },
+  {
+    "base": "TURBOS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TURBOS/USD",
+    "pythFeedId": "f9c2e890443dd995d0baafc08eea3358be1ffb874f93f99c30b3816c460bbac3"
+  },
+  {
+    "base": "TUSD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TUSD/USD",
+    "pythFeedId": "433faaa801ecdb6618e3897177a118b273a8e18cc3ff545aadfc207d58d028f7"
+  },
+  {
+    "base": "TUT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TUT/USD",
+    "pythFeedId": "25916ebc680dc2c1d7e1fb16690d8d7b1c41f876d32b6e8f356d81be02d9bec9"
+  },
+  {
+    "base": "TWT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.TWT/USD",
+    "pythFeedId": "998da06a0cc22e5f849b8ca16da633718125122c2b923682e17fa17f46b8be71"
+  },
+  {
+    "base": "UBTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.UBTC/USD",
+    "pythFeedId": "42bfb26778f3504a9f359a92c731f77d0c24aed9b7745276e3ad0c2d840b74c2"
+  },
+  {
+    "base": "UETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.UETH/USD",
+    "pythFeedId": "08c73e187b45ecb2ab8375b975865d3c4a225fef1ccc7f326ad6eec66a24567a"
+  },
+  {
+    "base": "UFART",
+    "quote": "USD",
+    "pythSymbol": "Crypto.UFART/USD",
+    "pythFeedId": "a210f55ff119d315002b5dc4f763b4e4114197028e45d6aca16498ab1433fb6d"
+  },
+  {
+    "base": "UMA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.UMA/USD",
+    "pythFeedId": "4b78d251770732f6304b1f41e9bebaabc3b256985ef18988f6de8d6562dd254c"
+  },
+  {
+    "base": "UNI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.UNI/USD",
+    "pythFeedId": "78d185a741d07edb3412b09008b7c5cfb9bbbd7d568bf00ba737b456ba171501"
+  },
+  {
+    "base": "UP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.UP/USD",
+    "pythFeedId": "c591a547856b091560b120ee14b165a84ca58eca23b2ab635df641340bde1f10"
+  },
+  {
+    "base": "URANUS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.URANUS/USD",
+    "pythFeedId": "ae537f03693a1ed70781aa64387eb553e7ff56df30972a74f728c75413fdd0d0"
+  },
+  {
+    "base": "USD0",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USD0/USD",
+    "pythFeedId": "5e8c65917af89ed66d03d082b1ae5ac93b8ed8e32363a61842c33f7d66cb2e00"
+  },
+  {
+    "base": "USD0++",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USD0++/USD",
+    "pythFeedId": "f9c96a45784d0ce4390825a43a313149da787e6a6c66076f3a3f83e92501baeb"
+  },
+  {
+    "base": "USD1",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USD1/USD",
+    "pythFeedId": "0a2425d43486780990d8b63543029e20556be51fd756cca584212f4d539611d4"
+  },
+  {
+    "base": "USDAF",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDAF/USD",
+    "pythFeedId": "44c245b2bce85eaec4758c324dc5f4e54ed1def9a02ba9595ca9eb1fb880d9b6"
+  },
+  {
+    "base": "USDAI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDAI/USD",
+    "pythFeedId": "2062b35e2893383ffcd1699b01622618fec1d95d1bc6fa81111df38940ee3134"
+  },
+  {
+    "base": "USDB",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDB/USD",
+    "pythFeedId": "41283d3f78ccb459a24e5f1f1b9f5a72a415a26ff9ce0391a6878f4cda6b477b"
+  },
+  {
+    "base": "USDC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDC/USD",
+    "pythFeedId": "eaa020c61cc479712813461ce153894a96a6c00b21ed0cfc2798d1f9a9e9c94a"
+  },
+  {
+    "base": "USDD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDD/USD",
+    "pythFeedId": "6d20210495d6518787b72e4ad06bc4df21e68d89a802cf6bced2fca6c29652a6"
+  },
+  {
+    "base": "USDE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDE/USD",
+    "pythFeedId": "6ec879b1e9963de5ee97e9c8710b742d6228252a5e2ca12d4ae81d7fe5ee8c5d"
+  },
+  {
+    "base": "USDF",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDF/USD",
+    "pythFeedId": "feb26a319cfbb09cfa85b382e4d97f48e6b8727a2b5e7e2fff0692ff676d5239"
+  },
+  {
+    "base": "USDG",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDG/USD",
+    "pythFeedId": "daa58c6a3ce7d4b9c46c32a6e646012c17c4a2b24c08dd8c5e476118b855a7da"
+  },
+  {
+    "base": "USDH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDH/USD",
+    "pythFeedId": "f364e785775b4cb2f159ea823f8b5b9b669a4c221a3f845e518ba0e09611c553"
+  },
+  {
+    "base": "USDHL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDHL/USD",
+    "pythFeedId": "1497fb795ae65533d36d147b1b88c8b7226866a201589904c13acd314f694799"
+  },
+  {
+    "base": "USDL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDL/USD",
+    "pythFeedId": "cd861966551d758d36e2b5deffdefa0f06b6b1dfce5ed64255f30cff35b1ec30"
+  },
+  {
+    "base": "USDN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDN/USD",
+    "pythFeedId": "ee8e0a7de474035b5cbc1a5f762a74d654e5006b25bfe18f390cc5a3915b88ac"
+  },
+  {
+    "base": "USDP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDP/USD",
+    "pythFeedId": "a6c8eca9aea31d6bb81fd6576638f30692d4afaa73237c097c193477aa5003b3"
+  },
+  {
+    "base": "USDS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDS/USD",
+    "pythFeedId": "77f0971af11cc8bac224917275c1bf55f2319ed5c654a1ca955c82fa2d297ea1"
+  },
+  {
+    "base": "USDSUI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDSUI/USD",
+    "pythFeedId": "d510fcdb3a63f35d3bb118d5db3afc5815a3f13bc55d48abb893b63f0315902a"
+  },
+  {
+    "base": "USDT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDT/USD",
+    "pythFeedId": "2b89b9dc8fdf9f34709a5b106b472f0f39bb6ca9ce04b0fd7f2e971688e2e53b"
+  },
+  {
+    "base": "USDT0",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDT0/USD",
+    "pythFeedId": "cfc1303ea9f083b1b4f99e1369fb9d2611f3230d5ea33a6abf2f86071c089fdc"
+  },
+  {
+    "base": "USDTB",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDTB/USD",
+    "pythFeedId": "e4731214382d8ed70a766930a7722c68064fc7ed4e6d70dbce3c84d4be81bc92"
+  },
+  {
+    "base": "USDU",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDU/USD",
+    "pythFeedId": "9c26b01925ed603f7c90deb29cd88751c580436333a7dca20a64a2c63785f502"
+  },
+  {
+    "base": "USDXL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDXL/USD",
+    "pythFeedId": "e10593860e9ee1c204e4f9569e877502f098dd1a4d84cc5bad06f23f77dcbfe2"
+  },
+  {
+    "base": "USDY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USDY/USD",
+    "pythFeedId": "e393449f6aff8a4b6d3e1165a7c9ebec103685f3b41e60db4277b5b6d10e7326"
+  },
+  {
+    "base": "USELESS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USELESS/USD",
+    "pythFeedId": "f4b55102bfc9ea1bb2342ea2cb050209ed2a398f7c534afbbc5164541861ba23"
+  },
+  {
+    "base": "USOL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USOL/USD",
+    "pythFeedId": "974c7a77dbace44d229be17fc176975e06404b004476aeaff37641818cb0c55a"
+  },
+  {
+    "base": "USR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USR/USD",
+    "pythFeedId": "10b013adec14c0fe839ca0fe54cec9e4d0b6c1585ac6d7e70010dac015e57f9c"
+  },
+  {
+    "base": "USTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USTC/USD",
+    "pythFeedId": "ef94acc2fb09eb976c6eb3000bab898cab891d5b800702cd1dc88e61d7c3c5e6"
+  },
+  {
+    "base": "USUAL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USUAL/USD",
+    "pythFeedId": "226ae20a70afb9d55a5724e1569a6da7a6e65fdb7eb56924ef1262e05a28b505"
+  },
+  {
+    "base": "USX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.USX/USD",
+    "pythFeedId": "80950327494d0e7f29bdddb061ed7d1def1d712cec73bc167af02f0664137a16"
+  },
+  {
+    "base": "VANA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.VANA/USD",
+    "pythFeedId": "1c83f1a39a4f8fa59fe3644f960ed172216527b681ef530eb591149c0087f900"
+  },
+  {
+    "base": "VELODROME.VELO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.VELODROME.VELO/USD",
+    "pythFeedId": "8b66bf97961dcd47336fe8467a4c7fd86e6c0bc77ebfbe91ab106a56d3a3513a"
+  },
+  {
+    "base": "VET",
+    "quote": "USD",
+    "pythSymbol": "Crypto.VET/USD",
+    "pythFeedId": "1722176f738aa1aafea170f8b27724042c5ac6d8cb9cf8ae02d692b0927e0681"
+  },
+  {
+    "base": "VIC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.VIC/USD",
+    "pythFeedId": "f80ba6864e3f1b36c873bcb2767079d5fb86cf04855e714b2a0f30d7e0830a24"
+  },
+  {
+    "base": "VINE",
+    "quote": "USD",
+    "pythSymbol": "Crypto.VINE/USD",
+    "pythFeedId": "22a54087e443d4d1db5bd018923337c72c818a99ca521ead71f72fa058f1ccf1"
+  },
+  {
+    "base": "VIRTUAL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.VIRTUAL/USD",
+    "pythFeedId": "8132e3eb1dac3e56939a16ff83848d194345f6688bff97eb1c8bd462d558802b"
+  },
+  {
+    "base": "VSUI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.VSUI/USD",
+    "pythFeedId": "57ff7100a282e4af0c91154679c5dae2e5dcacb93fd467ea9cb7e58afdcfde27"
+  },
+  {
+    "base": "VVV",
+    "quote": "USD",
+    "pythSymbol": "Crypto.VVV/USD",
+    "pythFeedId": "5ece7483ae221e3645ec0f9b5c6671ac830cb85471744df5d8e7deae152e31a2"
+  },
+  {
+    "base": "W",
+    "quote": "USD",
+    "pythSymbol": "Crypto.W/USD",
+    "pythFeedId": "eff7446475e218517566ea99e72a4abec2e1bd8498b43b7d8331e29dcb059389"
+  },
+  {
+    "base": "WAGMI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WAGMI/USD",
+    "pythFeedId": "7cce6e66952b0cf3d6f35d3a59e6decbe53850e67c880eee9ae876543eb5d6bd"
+  },
+  {
+    "base": "WAL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WAL/USD",
+    "pythFeedId": "eba0732395fae9dec4bae12e52760b35fc1c5671e2da8b449c9af4efe5d54341"
+  },
+  {
+    "base": "WAVES",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WAVES/USD",
+    "pythFeedId": "70dddcb074263ce201ea9a1be5b3537e59ed5b9060d309e12d61762cfe59fb7e"
+  },
+  {
+    "base": "WBETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WBETH/USD",
+    "pythFeedId": "a267be8dc252ce1e7981598af48ca0d0fe558caec7b11a9cf870fab5b7ab7c16"
+  },
+  {
+    "base": "WBTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WBTC/USD",
+    "pythFeedId": "c9d8b075a5c69303365ae23633d4e085199bf5c520a3b90fed1322a0342ffc33"
+  },
+  {
+    "base": "WCT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WCT/USD",
+    "pythFeedId": "10948bcc05eb7ca7f9254f5ac8f2b7171edfc3868b4fd6f0b330255f26d58920"
+  },
+  {
+    "base": "WEETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WEETH/USD",
+    "pythFeedId": "9ee4e7c60b940440a261eb54b6d8149c23b580ed7da3139f7f08f4ea29dad395"
+  },
+  {
+    "base": "WELL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WELL/USD",
+    "pythFeedId": "3cf6bab8bf8041dc8ee2a3edebe16b5f9f4ff3cce46006aeb15c885ba4779d0b"
+  },
+  {
+    "base": "WEN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WEN/USD",
+    "pythFeedId": "5169491cd7e2a44c98353b779d5eb612e4ac32e073f5cc534303d86307c2f1bc"
+  },
+  {
+    "base": "WETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WETH/USD",
+    "pythFeedId": "9d4294bbcd1174d6f2003ec365831e64cc31d9f6f15a2b85399db8d5000960f6"
+  },
+  {
+    "base": "WFRAGSOL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WFRAGSOL/USD",
+    "pythFeedId": "20ca2bf878779b0473f2074a513e736d486171ca9b4e428f4a9dd5a5024b7fd1"
+  },
+  {
+    "base": "WIF",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WIF/USD",
+    "pythFeedId": "4ca4beeca86f0d164160323817a4e42b10010a724c2217c6ee41b54cd4cc61fc"
+  },
+  {
+    "base": "WLD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WLD/USD",
+    "pythFeedId": "d6835ad1f773de4a378115eb6824bd0c0e42d84d1c84d9750e853fb6b6c7794a"
+  },
+  {
+    "base": "WLFI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WLFI/USD",
+    "pythFeedId": "d41369178d64f41d51ca95465c144a2c74d2fff30be69164835911943fa64c3e"
+  },
+  {
+    "base": "WOM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WOM/USD",
+    "pythFeedId": "43cddc3e1d0b17fec1cf2a230f46e9319887a037dcee56e053af44d8259fb042"
+  },
+  {
+    "base": "WOO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WOO/USD",
+    "pythFeedId": "b82449fd728133488d2d41131cffe763f9c1693b73c544d9ef6aaa371060dd25"
+  },
+  {
+    "base": "WSTETH",
+    "quote": "USD",
+    "pythSymbol": "Crypto.WSTETH/USD",
+    "pythFeedId": "6df640f3b8963d8f8358f791f352b8364513f6ab1cca5ed3f1f7b5448980e784"
+  },
+  {
+    "base": "XAI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XAI/USD",
+    "pythFeedId": "f7ac0d8fdf22640d39de13816cd0942aa6cf3874b95028d9a602056e1dc95e96"
+  },
+  {
+    "base": "XAUT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XAUT/USD",
+    "pythFeedId": "44465e17d2e9d390e70c999d5a11fda4f092847fcd2e3e5aa089d96c98a30e67"
+  },
+  {
+    "base": "XBTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XBTC/USD",
+    "pythFeedId": "ae8f269ed9c4bed616c99a98cf6dfe562bd3202e7f91821a471ff854713851b4"
+  },
+  {
+    "base": "XDC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XDC/USD",
+    "pythFeedId": "f689a76211f3505826357e49ddd683221d9632735e2b27fd07fb1805c47cdace"
+  },
+  {
+    "base": "XEC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XEC/USD",
+    "pythFeedId": "44622616f246ce5fc46cf9ebdb879b0c0157275510744cea824ad206e48390b3"
+  },
+  {
+    "base": "XION",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XION/USD",
+    "pythFeedId": "436ccb0d465f3cb48554bcc8def65ff695341b3ebe0897563d118b9291178d0f"
+  },
+  {
+    "base": "XLM",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XLM/USD",
+    "pythFeedId": "b7a8eba68a997cd0210c2e1e4ee811ad2d174b3611c22d9ebf16f4cb7e9ba850"
+  },
+  {
+    "base": "XMR",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XMR/USD",
+    "pythFeedId": "46b8cc9347f04391764a0361e0b17c3ba394b001e7c304f7650f6376e37c321d"
+  },
+  {
+    "base": "XPL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XPL/USD",
+    "pythFeedId": "9873512f5cb33c77ad7a5af098d74812c62111166be395fd0941c8cedb9b00d4"
+  },
+  {
+    "base": "XPRT",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XPRT/USD",
+    "pythFeedId": "9f520bbc39aad043e3bbb46b05079222d63bd94c150205f2a8889b6b36a0f376"
+  },
+  {
+    "base": "XRD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XRD/USD",
+    "pythFeedId": "816c6604beb161d3ad9c3b584f06c682e6299516165d756a68c7660b073b7072"
+  },
+  {
+    "base": "XRP",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XRP/USD",
+    "pythFeedId": "ec5d399846a9209f3fe5881d70aae9268c94339ff9817e8d18ff19fa05eea1c8"
+  },
+  {
+    "base": "XSGD",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XSGD/USD",
+    "pythFeedId": "c6e12cd46d605b3762d21373d04f3a3ca81c321a48329a5e6e1c27c26f743c8d"
+  },
+  {
+    "base": "XTZ",
+    "quote": "USD",
+    "pythSymbol": "Crypto.XTZ/USD",
+    "pythFeedId": "0affd4b8ad136a21d79bc82450a325ee12ff55a235abc242666e423b8bcffd03"
+  },
+  {
+    "base": "YFI",
+    "quote": "USD",
+    "pythSymbol": "Crypto.YFI/USD",
+    "pythFeedId": "425f4b198ab2504936886c1e93511bb6720fbcf2045a4f3c0723bb213846022f"
+  },
+  {
+    "base": "YU",
+    "quote": "USD",
+    "pythSymbol": "Crypto.YU/USD",
+    "pythFeedId": "f42978c0e26f9f3148e4b43f62891475dde489e145ea5248749cd007dcc35fb6"
+  },
+  {
+    "base": "YZY",
+    "quote": "USD",
+    "pythSymbol": "Crypto.YZY/USD",
+    "pythFeedId": "b0d7b84fd7025b1e62283dd322a3fa7784780516d1b3df7717e86a390b2c97dd"
+  },
+  {
+    "base": "ZBTC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ZBTC/USD",
+    "pythFeedId": "3d824c7f7c26ed1c85421ecec8c754e6b52d66a4e45de20a9c9ea91de8b396f9"
+  },
+  {
+    "base": "ZEC",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ZEC/USD",
+    "pythFeedId": "be9b59d178f0d6a97ab4c343bff2aa69caa1eaae3e9048a65788c529b125bb24"
+  },
+  {
+    "base": "ZEN",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ZEN/USD",
+    "pythFeedId": "d183ffe0155e8a55e7274155a14ea2e8b54059cef471f88fa3f7eb4b5d8dbc24"
+  },
+  {
+    "base": "ZEREBRO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ZEREBRO/USD",
+    "pythFeedId": "3dd13bf483f196da0429b354db1fa4802ff6a5c19c559a6abdd9a92707f426dc"
+  },
+  {
+    "base": "ZETA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ZETA/USD",
+    "pythFeedId": "b70656181007f487e392bf0d92e55358e9f0da5da6531c7c4ce7828aa11277fe"
+  },
+  {
+    "base": "ZEUS",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ZEUS/USD",
+    "pythFeedId": "31558e9ccb18c151af6c52bf78afd03098a7aca1b9cf171a65b693b464c2f066"
+  },
+  {
+    "base": "ZEX",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ZEX/USD",
+    "pythFeedId": "3d63be09d1b88f6dffe6585d0170670592124fd9fa4e0fe8a09ff18464f05e3a"
+  },
+  {
+    "base": "ZIL",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ZIL/USD",
+    "pythFeedId": "609722f3b6dc10fee07907fe86781d55eb9121cd0705b480954c00695d78f0cb"
+  },
+  {
+    "base": "ZK",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ZK/USD",
+    "pythFeedId": "cc03dc09298fb447e0bf9afdb760d5b24340fd2167fd33d8967dd8f9a141a2e8"
+  },
+  {
+    "base": "ZORA",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ZORA/USD",
+    "pythFeedId": "93eacee7286be62044cd8dfbdfdf1bea8f52a3ca6e0f512f4a05bd383f5666b1"
+  },
+  {
+    "base": "ZRO",
+    "quote": "USD",
+    "pythSymbol": "Crypto.ZRO/USD",
+    "pythFeedId": "3bd860bea28bf982fa06bcf358118064bb114086cc03993bd76197eaab0b8018"
+  }
+]
