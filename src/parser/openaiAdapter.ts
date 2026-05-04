@@ -10,7 +10,7 @@
 import { ParsedSignalSchema, type ParsedSignal } from "./schema";
 import { LlmAuthError, LlmError, LlmRateLimitError, LlmSchemaError } from "./llm";
 
-const URL = "https://api.openai.com/v1/chat/completions";
+const ENDPOINT = "https://api.openai.com/v1/chat/completions";
 const MODEL = "gpt-4o-mini";
 const SYSTEM_PROMPT =
   "You extract structured trade signal fields from messy social-media text. Use the extract_signal function. If unsure about a field, prefer null over guessing wrong; for required fields, make your best guess.";
@@ -101,7 +101,7 @@ export async function fetchOpenAiParse(
 
   let res: Response;
   try {
-    res = await fetch(URL, {
+    res = await fetch(ENDPOINT, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,

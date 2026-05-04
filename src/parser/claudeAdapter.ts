@@ -10,7 +10,7 @@
 import { ParsedSignalSchema, type ParsedSignal } from "./schema";
 import { LlmAuthError, LlmError, LlmRateLimitError, LlmSchemaError } from "./llm";
 
-const URL = "https://api.anthropic.com/v1/messages";
+const ENDPOINT = "https://api.anthropic.com/v1/messages";
 const MODEL = "claude-haiku-4-5";
 
 const TOOL_INPUT_SCHEMA = {
@@ -89,7 +89,7 @@ export async function fetchClaudeParse(
 
   let res: Response;
   try {
-    res = await fetch(URL, {
+    res = await fetch(ENDPOINT, {
       method: "POST",
       headers: {
         "x-api-key": apiKey,

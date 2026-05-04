@@ -38,6 +38,7 @@ export function CaptureScreen() {
   const [signalText, setSignalText] = useState("");
   const [parsed, setParsed] = useState<ParsedSignal | null>(null);
   const [parsing, setParsing] = useState(false);
+  const [llmInFlight, setLlmInFlight] = useState(false);
   const [parseErrorMsg, setParseErrorMsg] = useState<string | null>(null);
   const [report, setReport] = useState<SignalVerificationReport | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
@@ -80,6 +81,11 @@ export function CaptureScreen() {
     setParsed(null);
     setReport(null);
     abortRef.current = new AbortController();
+    // pipeline runs regex synchronously first; LLM only fires on miss + key configured.
+    // Defer the llmInFlight flag flip until after the regex pass would have completed.
+    // ~50ms is well above any regex latency (<5ms typical) so this fires only when
+    // we're actually waiting on the network LLM call.
+    const llmFlightTimer = setTimeout(() => setLlmInFlight(true), 50);
     try {
       const result = await parsePipeline(signalText, abortRef.current.signal);
       if (result.ok) {
@@ -101,7 +107,9 @@ export function CaptureScreen() {
         setParseErrorMsg((e as Error).message);
       }
     } finally {
+      clearTimeout(llmFlightTimer);
       setParsing(false);
+      setLlmInFlight(false);
       abortRef.current = null;
     }
   };
@@ -110,6 +118,7 @@ export function CaptureScreen() {
     abortRef.current?.abort();
     abortRef.current = null;
     setParsing(false);
+    setLlmInFlight(false);
   };
 
   const verify = async () => {
@@ -185,7 +194,7 @@ export function CaptureScreen() {
               >
                 <Text style={styles.parseBtnText}>{parsing ? "Parsing…" : "Parse signal"}</Text>
               </Pressable>
-              {parsing && (
+              {parsing && llmInFlight && (
                 <Pressable onPress={onCancelParse} style={[styles.parseBtn, styles.parseBtnSecondary]}>
                   <Text style={[styles.parseBtnText, styles.parseBtnTextSecondary]}>Cancel</Text>
                 </Pressable>
