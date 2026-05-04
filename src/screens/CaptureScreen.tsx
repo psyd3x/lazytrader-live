@@ -1,12 +1,13 @@
 // src/screens/CaptureScreen.tsx
-import { useState } from "react";
-import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { useMemo, useRef, useState } from "react";
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
 import { DetailsAccordion, type DetailFactor } from "../components/DetailsAccordion";
 import { FactorChips, type FactorChip, type FactorSeverity } from "../components/FactorChips";
 import { MultiTimeframeDashboard, type DashboardRow } from "../components/MultiTimeframeDashboard";
 import { NetBadge } from "../components/NetBadge";
 import { PairInput } from "../components/PairInput";
+import { ParsedSignalCard, type SizingPreview } from "../components/ParsedSignalCard";
 import { PrimaryCTA } from "../components/PrimaryCTA";
 import { RatingHeroCard } from "../components/RatingHeroCard";
 import { ScreenBackdrop } from "../components/ScreenBackdrop";
@@ -15,33 +16,104 @@ import { UploadScreenshotButton } from "../components/UploadScreenshotButton";
 import { WalletChip } from "../components/WalletChip";
 import { fetchCandlesForEngine, latestClose, NoCandlesError } from "../data/feed";
 import type { ResolvedPair } from "../data/pairs";
+import { ParseError, parsePipeline } from "../parser/pipeline";
+import type { ParsedSignal } from "../parser/schema";
 import { generateSignalVerification } from "../smc";
 import type { SignalInput, SignalVerificationReport } from "../smc";
 import { colors, fonts, fontSize, fontWeight, radius, space } from "../theme";
 
+const ACCOUNT_BALANCE = 1000;        // M8 makes editable
+const MAX_RISK_PCT = 1.0;            // M8 makes editable
+const MAX_LEVERAGE = 25;             // M8 makes editable
+
 /**
- * Capture screen — paste/upload signal → SMC engine → branded verify view.
+ * Capture screen — paste/upload signal → Parse → editable card → Verify → engine.
  *
- * M3: live OHLCV via fetchCandlesForEngine (Pyth primary, optional Birdeye
- * fallback). Pair from PairInput. Signal entry/SL/TPs still stubbed —
- * structured parser lands in M4.
+ * M4: live parser via parsePipeline (regex with LLM fallback). Sizing preview
+ * is read-only and derived from edited fields + global risk settings.
  */
 export function CaptureScreen() {
   const [pairText, setPairText] = useState("");
   const [resolvedPair, setResolvedPair] = useState<ResolvedPair | null>(null);
   const [signalText, setSignalText] = useState("");
+  const [parsed, setParsed] = useState<ParsedSignal | null>(null);
+  const [parsing, setParsing] = useState(false);
+  const [parseErrorMsg, setParseErrorMsg] = useState<string | null>(null);
   const [report, setReport] = useState<SignalVerificationReport | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const abortRef = useRef<AbortController | null>(null);
+
+  const sizing = useMemo<SizingPreview | null>(() => {
+    if (!parsed) return null;
+    const slDistancePct = Math.abs(parsed.entry - parsed.stopLoss) / parsed.entry;
+    if (!Number.isFinite(slDistancePct) || slDistancePct === 0) return null;
+    const riskAmount = ACCOUNT_BALANCE * (MAX_RISK_PCT / 100);
+    const notional = riskAmount / slDistancePct;
+    const idealLeverage = notional / ACCOUNT_BALANCE;
+    const cappedLeverage = Math.min(idealLeverage, MAX_LEVERAGE);
+    const cappedMargin = notional / cappedLeverage;
+    const actualRisk = cappedMargin * cappedLeverage * slDistancePct;
+    const capBinds = idealLeverage > MAX_LEVERAGE;
+    return {
+      margin: cappedMargin,
+      leverage: Math.round(cappedLeverage),
+      risk: actualRisk,
+      riskPct: (actualRisk / ACCOUNT_BALANCE) * 100,
+      capBinds,
+      intendedRiskPct: MAX_RISK_PCT,
+      maxLeverage: MAX_LEVERAGE,
+    };
+  }, [parsed]);
 
   const verifyDisabled =
     analyzing ||
+    parsed === null ||
     resolvedPair === null ||
     resolvedPair.pyth === null ||
-    signalText.trim().length === 0;
+    sizing === null;
+
+  const onParse = async () => {
+    if (!signalText.trim()) return;
+    setParsing(true);
+    setParseErrorMsg(null);
+    setParsed(null);
+    setReport(null);
+    abortRef.current = new AbortController();
+    try {
+      const result = await parsePipeline(signalText, abortRef.current.signal);
+      if (result.ok) {
+        setParsed(result.parsed);
+        // Auto-fill PairInput if it was empty
+        if (!pairText.trim()) {
+          setPairText(result.parsed.pair);
+          // Note: PairInput.onResolve will fire on its own next blur; we don't
+          // synthesize it here. User can tap into PairInput to trigger blur if
+          // they want immediate validation, or just tap Parse-then-Verify.
+        }
+      } else {
+        setParseErrorMsg(parseErrorToMessage(result.error, result.detail));
+      }
+    } catch (e) {
+      if ((e as Error).name === "AbortError") {
+        setParseErrorMsg(null); // user cancelled — silent
+      } else {
+        setParseErrorMsg((e as Error).message);
+      }
+    } finally {
+      setParsing(false);
+      abortRef.current = null;
+    }
+  };
+
+  const onCancelParse = () => {
+    abortRef.current?.abort();
+    abortRef.current = null;
+    setParsing(false);
+  };
 
   const verify = async () => {
-    if (resolvedPair === null || resolvedPair.pyth === null) return;
+    if (!parsed || !resolvedPair?.pyth || !sizing) return;
     setAnalyzing(true);
     setErrorMsg(null);
     setReport(null);
@@ -52,13 +124,20 @@ export function CaptureScreen() {
         setErrorMsg("Couldn't compute current price — no candles returned.");
         return;
       }
-      const stub: SignalInput = makeStubbedSignal(resolvedPair, currentPrice);
+      const finalSignal: SignalInput = {
+        pair: `${resolvedPair.base}${resolvedPair.quote}`,
+        direction: parsed.direction,
+        entry: parsed.entry,
+        stopLoss: parsed.stopLoss,
+        takeProfits: parsed.takeProfits,
+        leverage: sizing.leverage,
+      };
       const result = generateSignalVerification({
-        signal: stub,
+        signal: finalSignal,
         candleData,
         currentPrice,
-        accountBalance: 1000,
-        riskRules: { maxRiskPct: 1.0, maxLeverage: 25 },
+        accountBalance: ACCOUNT_BALANCE,
+        riskRules: { maxRiskPct: MAX_RISK_PCT, maxLeverage: MAX_LEVERAGE },
       });
       setReport(result);
     } catch (e) {
@@ -79,7 +158,7 @@ export function CaptureScreen() {
           <>
             <Text style={styles.h1}>Capture</Text>
             <Text style={styles.subtitle}>
-              Type a pair, paste a signal. SMC engine rates it against live Pyth data.
+              Paste a signal, tap Parse, review, then Verify against live data.
             </Text>
 
             <View style={styles.inputCard}>
@@ -98,6 +177,36 @@ export function CaptureScreen() {
 
             <UploadScreenshotButton onText={setSignalText} />
 
+            <View style={styles.parseRow}>
+              <Pressable
+                onPress={onParse}
+                disabled={parsing || !signalText.trim()}
+                style={[styles.parseBtn, (parsing || !signalText.trim()) && styles.parseBtnDisabled]}
+              >
+                <Text style={styles.parseBtnText}>{parsing ? "Parsing…" : "Parse signal"}</Text>
+              </Pressable>
+              {parsing && (
+                <Pressable onPress={onCancelParse} style={[styles.parseBtn, styles.parseBtnSecondary]}>
+                  <Text style={[styles.parseBtnText, styles.parseBtnTextSecondary]}>Cancel</Text>
+                </Pressable>
+              )}
+            </View>
+
+            {parseErrorMsg !== null && (
+              <View style={styles.errorBox}>
+                <Text style={styles.errorTitle}>Parser error</Text>
+                <Text style={styles.errorBody}>{parseErrorMsg}</Text>
+              </View>
+            )}
+
+            {parsed !== null && (
+              <ParsedSignalCard
+                value={parsed}
+                onChange={setParsed}
+                sizing={sizing}
+              />
+            )}
+
             {errorMsg !== null && (
               <View style={styles.errorBox}>
                 <Text style={styles.errorTitle}>Engine error</Text>
@@ -114,22 +223,25 @@ export function CaptureScreen() {
           </>
         )}
 
-        {report !== null && <ReportView report={report} onReset={() => setReport(null)} />}
+        {report !== null && <ReportView report={report} onReset={() => { setReport(null); setParsed(null); setSignalText(""); setPairText(""); }} />}
       </ScrollView>
     </ScreenBackdrop>
   );
 }
 
-/** Stubbed signal — entry/SL/TPs derived from live price. M4 replaces with parser. */
-function makeStubbedSignal(pair: ResolvedPair, currentPrice: number): SignalInput {
-  return {
-    pair: `${pair.base}${pair.quote}`,
-    direction: "long",
-    entry: currentPrice * 0.998,
-    stopLoss: currentPrice * 0.985,
-    takeProfits: [currentPrice * 1.012, currentPrice * 1.028, currentPrice * 1.05],
-    leverage: 5,
-  };
+function parseErrorToMessage(err: ParseError, detail?: string): string {
+  switch (err) {
+    case ParseError.NoLlmConfig:
+      return "AI fallback not configured — set up Claude or OpenAI in Settings, or use a signal format the regex understands.";
+    case ParseError.AuthInvalid:
+      return "AI key invalid — check Settings.";
+    case ParseError.RateLimited:
+      return "AI rate-limited — try again in a moment.";
+    case ParseError.Malformed:
+      return `AI returned malformed data${detail ? ` (${detail.slice(0, 80)})` : ""} — try paste again.`;
+    case ParseError.Network:
+      return `Couldn't reach AI${detail ? ` (${detail.slice(0, 80)})` : ""} — check your network.`;
+  }
 }
 
 function toErrorMessage(e: unknown): string {
@@ -146,7 +258,6 @@ function ReportView({ report, onReset }: { report: SignalVerificationReport; onR
   const chips = toFactorChips(report);
   const sizing = toSizingStats(report);
   const detailFactors = toDetailFactors(report);
-
   return (
     <View style={{ gap: space.md }}>
       <RatingHeroCard {...heroProps} />
@@ -160,8 +271,7 @@ function ReportView({ report, onReset }: { report: SignalVerificationReport; onR
   );
 }
 
-// ─── Engine → component adapters (unchanged from prior visual-layer pass) ──
-
+// ─── Engine → component adapters (UNCHANGED from M3) ──────
 function toHeroProps(r: SignalVerificationReport) {
   const ltfAnalysis = r.timeframeAnalyses["1m"] ?? r.timeframeAnalyses["5m"] ?? null;
   const obHint = ltfAnalysis?.nearestOb?.isInside === true ? "OB" : null;
@@ -175,7 +285,6 @@ function toHeroProps(r: SignalVerificationReport) {
     sessionTag: tag,
   };
 }
-
 function toDashboardRows(r: SignalVerificationReport): DashboardRow[] {
   return Object.entries(r.timeframeAnalyses).map(([tf, a]) => ({
     tf,
@@ -186,7 +295,6 @@ function toDashboardRows(r: SignalVerificationReport): DashboardRow[] {
     ema: a.ema.direction,
   }));
 }
-
 function toFactorChips(r: SignalVerificationReport): FactorChip[] {
   const labels: Record<string, string> = {
     timeframe_alignment: "TF",
@@ -203,15 +311,11 @@ function toFactorChips(r: SignalVerificationReport): FactorChip[] {
     return { label: labels[name] ?? name, score, severity: sev };
   });
 }
-
 function toSizingStats(r: SignalVerificationReport) {
   const ps = r.positionSizing;
   if (ps === null) return null;
-  return {
-    size: ps.positionSize, risk: ps.riskAmount, riskPct: ps.riskPct, slPct: ps.slDistancePct,
-  };
+  return { size: ps.positionSize, risk: ps.riskAmount, riskPct: ps.riskPct, slPct: ps.slDistancePct };
 }
-
 function toDetailFactors(r: SignalVerificationReport): DetailFactor[] {
   return Object.entries(r.scoring.factors).map(([name, f]) => ({
     name: name.replace(/_/g, " "),
@@ -240,6 +344,16 @@ const styles = StyleSheet.create({
     fontFamily: fonts.mono, fontSize: fontSize.sm, lineHeight: 18,
     textAlignVertical: "top",
   },
+  parseRow: { flexDirection: "row", gap: space.sm },
+  parseBtn: {
+    flex: 1, paddingVertical: space.sm, borderRadius: radius.sm,
+    borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface2,
+    alignItems: "center",
+  },
+  parseBtnDisabled: { opacity: 0.4 },
+  parseBtnSecondary: { backgroundColor: "transparent" },
+  parseBtnText: { color: colors.text, fontSize: fontSize.sm, fontWeight: fontWeight.semibold },
+  parseBtnTextSecondary: { color: colors.muted },
   errorBox: {
     borderRadius: radius.sm, borderWidth: 1, borderColor: colors.danger,
     backgroundColor: colors.dangerBg, padding: space.md,
