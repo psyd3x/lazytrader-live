@@ -1,14 +1,20 @@
 // src/screens/SettingsScreen.tsx
 import { useEffect, useState } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { NetBadge } from "../components/NetBadge";
 import { ScreenBackdrop } from "../components/ScreenBackdrop";
 import { SecretInput } from "../components/SecretInput";
 import { WalletChip } from "../components/WalletChip";
 import { fetchBirdeyeCandles, BirdeyeAuthError } from "../data/birdeye";
+import { fetchClaudeParse } from "../parser/claudeAdapter";
+import { fetchOpenAiParse } from "../parser/openaiAdapter";
+import { LlmAuthError } from "../parser/llm";
 import {
   clearBirdeyeApiKey, getBirdeyeApiKey, setBirdeyeApiKey,
+  clearClaudeApiKey, getClaudeApiKey, setClaudeApiKey,
+  clearOpenAiApiKey, getOpenAiApiKey, setOpenAiApiKey,
+  getLlmProvider, setLlmProvider, type LlmProvider,
 } from "../storage/secureSettings";
 import { colors, fonts, fontSize, fontWeight, radius, space } from "../theme";
 
@@ -19,61 +25,138 @@ const SOL_TEST_PAIR = {
 };
 
 export function SettingsScreen() {
-  const [savedKey, setSavedKey] = useState<string | null>(null);
-  const [draftKey, setDraftKey] = useState("");
-  const [saving, setSaving] = useState(false);
-  const [status, setStatus] = useState<string | null>(null);
+  // Birdeye state (M3, unchanged)
+  const [savedBirdeyeKey, setSavedBirdeyeKey] = useState<string | null>(null);
+  const [draftBirdeyeKey, setDraftBirdeyeKey] = useState("");
+  const [savingBirdeye, setSavingBirdeye] = useState(false);
+  const [birdeyeStatus, setBirdeyeStatus] = useState<string | null>(null);
+
+  // LLM state (M4)
+  const [provider, setProvider] = useState<LlmProvider>("claude");
+  const [savedClaudeKey, setSavedClaudeKey] = useState<string | null>(null);
+  const [savedOpenAiKey, setSavedOpenAiKey] = useState<string | null>(null);
+  const [draftLlmKey, setDraftLlmKey] = useState("");
+  const [savingLlm, setSavingLlm] = useState(false);
+  const [llmStatus, setLlmStatus] = useState<string | null>(null);
 
   useEffect(() => {
     void (async () => {
-      const k = await getBirdeyeApiKey();
-      setSavedKey(k);
-      setDraftKey(k ?? "");
+      const bk = await getBirdeyeApiKey();
+      setSavedBirdeyeKey(bk);
+      setDraftBirdeyeKey(bk ?? "");
+
+      const p = (await getLlmProvider()) ?? "claude";
+      setProvider(p);
+      const ck = await getClaudeApiKey();
+      const ok = await getOpenAiApiKey();
+      setSavedClaudeKey(ck);
+      setSavedOpenAiKey(ok);
+      setDraftLlmKey((p === "claude" ? ck : ok) ?? "");
     })();
   }, []);
 
-  const handleSave = async () => {
-    setSaving(true);
-    setStatus("Testing key…");
+  // ─── Birdeye handlers (unchanged from M3) ────────────────
+  const handleBirdeyeSave = async () => {
+    setSavingBirdeye(true);
+    setBirdeyeStatus("Testing key…");
     try {
-      // Validate by hitting Birdeye OHLCV for SOL (smallest meaningful request).
       const now = Math.floor(Date.now() / 1000);
       await fetchBirdeyeCandles({
         pair: SOL_TEST_PAIR,
         tf: "1H",
         fromUnix: now - 3600,
         toUnix: now,
-        apiKey: draftKey.trim(),
+        apiKey: draftBirdeyeKey.trim(),
       });
-      await setBirdeyeApiKey(draftKey);
-      setSavedKey(draftKey.trim());
-      setStatus("Saved · key valid");
+      await setBirdeyeApiKey(draftBirdeyeKey);
+      setSavedBirdeyeKey(draftBirdeyeKey.trim());
+      setBirdeyeStatus("Saved · key valid");
     } catch (e) {
       if (e instanceof BirdeyeAuthError) {
-        setStatus("Key invalid — not saved");
+        setBirdeyeStatus("Key invalid — not saved");
       } else {
-        // Network/rate-limit — save anyway with a warning. Spec §9.
-        await setBirdeyeApiKey(draftKey);
-        setSavedKey(draftKey.trim());
-        setStatus(`Saved · couldn't verify (${(e as Error).message.slice(0, 60)})`);
+        await setBirdeyeApiKey(draftBirdeyeKey);
+        setSavedBirdeyeKey(draftBirdeyeKey.trim());
+        setBirdeyeStatus(`Saved · couldn't verify (${(e as Error).message.slice(0, 60)})`);
       }
     } finally {
-      setSaving(false);
+      setSavingBirdeye(false);
     }
   };
-
-  const handleClear = async () => {
+  const handleBirdeyeClear = async () => {
     try {
       await clearBirdeyeApiKey();
-      setSavedKey(null);
-      setDraftKey("");
-      setStatus("Cleared");
+      setSavedBirdeyeKey(null);
+      setDraftBirdeyeKey("");
+      setBirdeyeStatus("Cleared");
     } catch (e) {
-      setStatus(`Couldn't clear: ${(e as Error).message.slice(0, 60)}`);
+      setBirdeyeStatus(`Couldn't clear: ${(e as Error).message.slice(0, 60)}`);
     }
   };
 
-  const fallbackEnabled = savedKey !== null && savedKey.length > 0;
+  // ─── LLM handlers (M4) ───────────────────────────────────
+  const handleProviderSwitch = async (next: LlmProvider) => {
+    setProvider(next);
+    await setLlmProvider(next);
+    setDraftLlmKey((next === "claude" ? savedClaudeKey : savedOpenAiKey) ?? "");
+    setLlmStatus(null);
+  };
+
+  const handleLlmSave = async () => {
+    setSavingLlm(true);
+    setLlmStatus("Testing key…");
+    try {
+      // Probe with a tiny request — both providers schema-validate the response,
+      // so a 200 + parseable result confirms the key works for our use case.
+      if (provider === "claude") {
+        await fetchClaudeParse("LONG BTCUSDT entry 70000 SL 69000 TP 71000", draftLlmKey.trim());
+        await setClaudeApiKey(draftLlmKey);
+        setSavedClaudeKey(draftLlmKey.trim());
+      } else {
+        await fetchOpenAiParse("LONG BTCUSDT entry 70000 SL 69000 TP 71000", draftLlmKey.trim());
+        await setOpenAiApiKey(draftLlmKey);
+        setSavedOpenAiKey(draftLlmKey.trim());
+      }
+      setLlmStatus("Saved · key valid");
+    } catch (e) {
+      if (e instanceof LlmAuthError) {
+        setLlmStatus("Key invalid — not saved");
+      } else {
+        // Network/rate-limit/schema — save anyway with a warning, mirrors Birdeye behavior
+        if (provider === "claude") {
+          await setClaudeApiKey(draftLlmKey);
+          setSavedClaudeKey(draftLlmKey.trim());
+        } else {
+          await setOpenAiApiKey(draftLlmKey);
+          setSavedOpenAiKey(draftLlmKey.trim());
+        }
+        setLlmStatus(`Saved · couldn't verify (${(e as Error).message.slice(0, 60)})`);
+      }
+    } finally {
+      setSavingLlm(false);
+    }
+  };
+
+  const handleLlmClear = async () => {
+    try {
+      if (provider === "claude") {
+        await clearClaudeApiKey();
+        setSavedClaudeKey(null);
+      } else {
+        await clearOpenAiApiKey();
+        setSavedOpenAiKey(null);
+      }
+      setDraftLlmKey("");
+      setLlmStatus("Cleared");
+    } catch (e) {
+      setLlmStatus(`Couldn't clear: ${(e as Error).message.slice(0, 60)}`);
+    }
+  };
+
+  const birdeyeFallbackEnabled = savedBirdeyeKey !== null && savedBirdeyeKey.length > 0;
+  const activeKey = provider === "claude" ? savedClaudeKey : savedOpenAiKey;
+  const llmConfigured = activeKey !== null && activeKey.length > 0;
+  const providerHelperUrl = provider === "claude" ? "console.anthropic.com" : "platform.openai.com";
 
   return (
     <ScreenBackdrop>
@@ -96,20 +179,52 @@ export function SettingsScreen() {
 
         <Section title="Data Sources">
           <Row label="Primary" right={<Badge text="Pyth Benchmarks ●" />} />
-          <Row
-            label="Birdeye fallback"
-            right={<Badge text={fallbackEnabled ? "● Enabled" : "○ Disabled"} />}
-          />
+          <Row label="Birdeye fallback" right={<Badge text={birdeyeFallbackEnabled ? "● Enabled" : "○ Disabled"} />} />
           <View style={styles.cardBody}>
             <SecretInput
-              value={draftKey}
-              onChangeText={setDraftKey}
+              value={draftBirdeyeKey}
+              onChangeText={setDraftBirdeyeKey}
               placeholder="Birdeye API key"
-              helperText={status ?? (fallbackEnabled ? "Key saved" : "Get a key at birdeye.so/developers")}
-              onSave={handleSave}
-              onClear={handleClear}
-              saving={saving}
-              saveDisabled={draftKey.trim() === (savedKey ?? "")}
+              helperText={birdeyeStatus ?? (birdeyeFallbackEnabled ? "Key saved" : "Get a key at birdeye.so/developers")}
+              onSave={handleBirdeyeSave}
+              onClear={handleBirdeyeClear}
+              saving={savingBirdeye}
+              saveDisabled={draftBirdeyeKey.trim() === (savedBirdeyeKey ?? "")}
+            />
+          </View>
+        </Section>
+
+        <Section title="AI Fallback">
+          <Row
+            label="Provider"
+            right={
+              <View style={styles.segmentRow}>
+                <Pressable
+                  style={[styles.segmentSm, provider === "claude" && styles.segmentSmActive]}
+                  onPress={() => void handleProviderSwitch("claude")}
+                >
+                  <Text style={[styles.segmentSmText, provider === "claude" && styles.segmentSmTextActive]}>Claude</Text>
+                </Pressable>
+                <Pressable
+                  style={[styles.segmentSm, provider === "gpt-4o-mini" && styles.segmentSmActive]}
+                  onPress={() => void handleProviderSwitch("gpt-4o-mini")}
+                >
+                  <Text style={[styles.segmentSmText, provider === "gpt-4o-mini" && styles.segmentSmTextActive]}>OpenAI</Text>
+                </Pressable>
+              </View>
+            }
+          />
+          <Row label="Status" right={<Badge text={llmConfigured ? "● Configured" : "○ Not configured"} />} />
+          <View style={styles.cardBody}>
+            <SecretInput
+              value={draftLlmKey}
+              onChangeText={setDraftLlmKey}
+              placeholder={provider === "claude" ? "sk-ant-..." : "sk-..."}
+              helperText={llmStatus ?? (llmConfigured ? "Key saved" : `Get a key at ${providerHelperUrl}`)}
+              onSave={handleLlmSave}
+              onClear={handleLlmClear}
+              saving={savingLlm}
+              saveDisabled={draftLlmKey.trim() === (activeKey ?? "")}
             />
           </View>
         </Section>
@@ -139,7 +254,6 @@ function Section({ title, children }: { title: string; children: React.ReactNode
     </View>
   );
 }
-
 function Row({ label, right }: { label: string; right: React.ReactNode }) {
   return (
     <View style={styles.row}>
@@ -148,7 +262,6 @@ function Row({ label, right }: { label: string; right: React.ReactNode }) {
     </View>
   );
 }
-
 function Badge({ text, warn = false }: { text: string; warn?: boolean }) {
   return (
     <View style={[styles.badge, warn ? { backgroundColor: colors.warningBg } : { backgroundColor: colors.surface2, borderWidth: 1, borderColor: colors.border }]}>
@@ -161,9 +274,7 @@ const styles = StyleSheet.create({
   topbar: { flexDirection: "row", justifyContent: "space-between", paddingHorizontal: space.lg, paddingTop: space.sm, paddingBottom: space.xs },
   body: { padding: space.md, paddingBottom: 80, gap: space.md },
   h1: { fontSize: 22, fontWeight: fontWeight.bold, color: colors.text, marginVertical: space.sm },
-  section: {
-    borderRadius: radius.md, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, overflow: "hidden",
-  },
+  section: { borderRadius: radius.md, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, overflow: "hidden" },
   sectionTitle: {
     paddingHorizontal: space.md, paddingTop: space.md, paddingBottom: 4,
     fontSize: fontSize.xs - 1, color: colors.muted, letterSpacing: 1, textTransform: "uppercase", fontWeight: fontWeight.semibold,
@@ -183,4 +294,12 @@ const styles = StyleSheet.create({
   badge: { paddingHorizontal: space.sm, paddingVertical: 3, borderRadius: radius.pill },
   badgeText: { fontSize: fontSize.xs - 1, color: colors.muted },
   foot: { color: colors.muted, fontSize: fontSize.xs, textAlign: "center", paddingVertical: space.lg },
+  segmentRow: { flexDirection: "row", gap: 4 },
+  segmentSm: {
+    paddingHorizontal: space.sm, paddingVertical: 4, borderRadius: radius.sm,
+    borderWidth: 1, borderColor: colors.border, backgroundColor: colors.bg,
+  },
+  segmentSmActive: { backgroundColor: colors.surface2, borderColor: colors.text },
+  segmentSmText: { color: colors.muted, fontSize: fontSize.xs - 1, fontWeight: fontWeight.semibold },
+  segmentSmTextActive: { color: colors.text },
 });
