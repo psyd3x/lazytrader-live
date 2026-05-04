@@ -128,13 +128,14 @@ function tryEmojiUsdt(raw: string): RegexFields | null {
   const tpBlockMatch = raw.match(/Take\s*profit\s*=\s*\[([^\]]+)\]?/i);
   if (!pairMatch || !dirMatch || !entryRangeMatch || !slMatch || !tpBlockMatch) return null;
   const lev = raw.match(/Leverage\s*:?-?\s*(\d+)x/i);
-  const lo = parseFloat(entryRangeMatch[1]);
-  const hi = parseFloat(entryRangeMatch[2]);
-  const stopLoss = parseFloat(slMatch[1]);
+  const lo = parseDollarsAmount(entryRangeMatch[1]);
+  const hi = parseDollarsAmount(entryRangeMatch[2]);
+  const stopLoss = parseDollarsAmount(slMatch[1]);
+  if (lo === null || hi === null || stopLoss === null) return null;
   const takeProfits = tpBlockMatch[1]
     .split(",")
-    .map((s) => parseFloat(s.trim()))
-    .filter((n) => Number.isFinite(n));
+    .map((s) => parseDollarsAmount(s))
+    .filter((n): n is number => n !== null);
   if (takeProfits.length === 0) return null;
   return {
     pair: expandPair(pairMatch[1], pairMatch[2]),
