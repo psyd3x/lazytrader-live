@@ -15,7 +15,7 @@ import { SizingStrip } from "../components/SizingStrip";
 import { UploadScreenshotButton } from "../components/UploadScreenshotButton";
 import { WalletChip } from "../components/WalletChip";
 import { fetchCandlesForEngine, latestClose, NoCandlesError } from "../data/feed";
-import type { ResolvedPair } from "../data/pairs";
+import { resolveToPythFeed, type ResolvedPair } from "../data/pairs";
 import { ParseError, parsePipeline } from "../parser/pipeline";
 import type { ParsedSignal } from "../parser/schema";
 import { generateSignalVerification } from "../smc";
@@ -79,12 +79,15 @@ export function CaptureScreen() {
       const result = await parsePipeline(signalText, abortRef.current.signal);
       if (result.ok) {
         setParsed(result.parsed);
-        // Auto-fill PairInput if it was empty
+        // Auto-fill PairInput if it was empty. PairInput's blur handler is the
+        // user-facing resolve path; for the autofill case we synthesize the
+        // resolve here so Verify enables without requiring the user to tap
+        // into the pair field. Without this, resolvedPair stays null and the
+        // Verify button silently no-ops (it's only opacity-dimmed when
+        // disabled, which reads as "active" on a phone screen).
         if (!pairText.trim()) {
           setPairText(result.parsed.pair);
-          // Note: PairInput.onResolve will fire on its own next blur; we don't
-          // synthesize it here. User can tap into PairInput to trigger blur if
-          // they want immediate validation, or just tap Parse-then-Verify.
+          setResolvedPair(resolveToPythFeed(result.parsed.pair));
         }
       } else {
         setParseErrorMsg(parseErrorToMessage(result.error, result.detail));
