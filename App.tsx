@@ -5,6 +5,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { AppTabs } from "./src/navigation/AppTabs";
 import { colors } from "./src/theme";
+import { MwaProvider } from "./src/wallet/MwaProvider";
 
 const navTheme = {
   ...DefaultTheme,
@@ -22,10 +23,12 @@ const navTheme = {
 export default function App() {
   return (
     <SafeAreaProvider>
-      <NavigationContainer theme={navTheme}>
-        <StatusBar style="light" />
-        <AppTabs />
-      </NavigationContainer>
+      <MwaProvider>
+        <NavigationContainer theme={navTheme}>
+          <StatusBar style="light" />
+          <AppTabs />
+        </NavigationContainer>
+      </MwaProvider>
     </SafeAreaProvider>
   );
 }

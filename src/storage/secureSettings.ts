@@ -18,6 +18,7 @@ const KEYS = {
   llmProvider: "llm_provider",
   claudeApiKey: "claude_api_key",
   openaiApiKey: "openai_api_key",
+  rpcEndpoint: "rpc_endpoint",
 } as const;
 
 export type LlmProvider = "claude" | "gpt-4o-mini";
@@ -76,6 +77,22 @@ export async function setOpenAiApiKey(value: string): Promise<void> {
 }
 export async function clearOpenAiApiKey(): Promise<void> {
   await SecureStore.deleteItemAsync(KEYS.openaiApiKey);
+}
+
+// ─── RPC Endpoint (M5) ─────────────────────────────────────
+export async function getRpcEndpoint(): Promise<string | null> {
+  return SecureStore.getItemAsync(KEYS.rpcEndpoint);
+}
+export async function setRpcEndpoint(value: string): Promise<void> {
+  const trimmed = value.trim();
+  if (!trimmed) {
+    await clearRpcEndpoint();
+    return;
+  }
+  await SecureStore.setItemAsync(KEYS.rpcEndpoint, trimmed);
+}
+export async function clearRpcEndpoint(): Promise<void> {
+  await SecureStore.deleteItemAsync(KEYS.rpcEndpoint);
 }
 
 /**
