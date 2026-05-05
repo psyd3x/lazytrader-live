@@ -58,9 +58,15 @@ export function useUsdcBalance(walletAddress: string | null): UsdcBalanceState {
       try {
         const acc = await conn.getTokenAccountBalance(ata);
         setBalance(parseFloat(acc.value.uiAmountString ?? "0"));
-      } catch {
-        // ATA not initialized = no USDC ever held; treat as $0, not an error.
-        setBalance(0);
+      } catch (e) {
+        // Distinguish "ATA doesn't exist" (= user never held USDC, balance is 0)
+        // from real RPC errors (429, 5xx, network) which must surface to outer catch.
+        const msg = e instanceof Error ? e.message : String(e);
+        if (msg.toLowerCase().includes("could not find account")) {
+          setBalance(0);
+        } else {
+          throw e;
+        }
       }
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
