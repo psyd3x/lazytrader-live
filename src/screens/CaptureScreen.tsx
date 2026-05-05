@@ -151,7 +151,7 @@ export function CaptureScreen() {
   return (
     <ScreenBackdrop>
       <View style={styles.topbar}>
-        <WalletChip state="disconnected" />
+        <WalletChip />
         <NetBadge network="devnet" />
       </View>
       <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">

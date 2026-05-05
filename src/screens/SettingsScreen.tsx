@@ -7,6 +7,8 @@ import { ScreenBackdrop } from "../components/ScreenBackdrop";
 import { SecretInput } from "../components/SecretInput";
 import { WalletChip } from "../components/WalletChip";
 import { fetchBirdeyeCandles, BirdeyeAuthError } from "../data/birdeye";
+import { useConnect } from "../wallet/useConnect";
+import { useUsdcBalance } from "../wallet/useUsdcBalance";
 import { fetchClaudeParse } from "../parser/claudeAdapter";
 import { fetchOpenAiParse } from "../parser/openaiAdapter";
 import { LlmAuthError } from "../parser/llm";
@@ -161,16 +163,13 @@ export function SettingsScreen() {
   return (
     <ScreenBackdrop>
       <View style={styles.topbar}>
-        <WalletChip state="disconnected" />
+        <WalletChip />
         <NetBadge network="devnet" />
       </View>
       <ScrollView contentContainerStyle={styles.body}>
         <Text style={styles.h1}>Settings</Text>
 
-        <Section title="Wallet">
-          <Row label="Status" right={<Badge text="Disconnected" />} />
-          <Row label="Connect Phantom" right={<Text style={styles.muted}>—</Text>} />
-        </Section>
+        <WalletCard />
 
         <Section title="Network">
           <Row label="Cluster" right={<Badge text="Devnet" warn />} />
@@ -246,6 +245,54 @@ export function SettingsScreen() {
   );
 }
 
+function WalletCard() {
+  const { address, isConnected, isConnecting, connectAndSignIn, disconnect } = useConnect();
+  const { balance, isLoading, refresh } = useUsdcBalance(address);
+
+  return (
+    <View style={styles.section}>
+      <Text style={styles.sectionTitle}>Wallet</Text>
+      {isConnected && address ? (
+        <>
+          <View style={styles.row}>
+            <Text style={styles.rowLabel}>Address</Text>
+          </View>
+          <View style={styles.cardBody}>
+            <Text style={styles.mono} numberOfLines={1}>{address}</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.rowLabel}>USDC balance</Text>
+            <Text style={styles.mono}>
+              {isLoading ? "…" : balance === null ? "—" : `$${balance.toFixed(2)}`}
+            </Text>
+          </View>
+          <View style={styles.cardBody}>
+            <Pressable onPress={() => void refresh()} style={styles.linkBtn}>
+              <Text style={styles.linkBtnText}>Refresh balance</Text>
+            </Pressable>
+            <View style={{ height: space.sm }} />
+            <Pressable onPress={() => void disconnect()} style={styles.dangerBtn}>
+              <Text style={styles.dangerBtnText}>Disconnect wallet</Text>
+            </Pressable>
+          </View>
+        </>
+      ) : (
+        <View style={styles.cardBody}>
+          <Pressable
+            onPress={() => void connectAndSignIn()}
+            disabled={isConnecting}
+            style={styles.primaryBtn}
+          >
+            <Text style={styles.primaryBtnText}>
+              {isConnecting ? "Connecting…" : "Connect Wallet"}
+            </Text>
+          </Pressable>
+        </View>
+      )}
+    </View>
+  );
+}
+
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <View style={styles.section}>
@@ -302,4 +349,32 @@ const styles = StyleSheet.create({
   segmentSmActive: { backgroundColor: colors.surface2, borderColor: colors.text },
   segmentSmText: { color: colors.muted, fontSize: fontSize.xs - 1, fontWeight: fontWeight.semibold },
   segmentSmTextActive: { color: colors.text },
+  // Wallet card buttons
+  primaryBtn: {
+    backgroundColor: colors.primaryBg,
+    borderWidth: 1,
+    borderColor: colors.primaryBorder,
+    borderRadius: radius.md,
+    paddingVertical: space.sm,
+    alignItems: "center",
+  },
+  primaryBtnText: { color: colors.primary, fontSize: fontSize.sm, fontWeight: fontWeight.semibold },
+  linkBtn: {
+    backgroundColor: colors.surface2,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: radius.md,
+    paddingVertical: space.sm,
+    alignItems: "center",
+  },
+  linkBtnText: { color: colors.muted, fontSize: fontSize.sm, fontWeight: fontWeight.semibold },
+  dangerBtn: {
+    backgroundColor: colors.dangerBg,
+    borderWidth: 1,
+    borderColor: colors.danger,
+    borderRadius: radius.md,
+    paddingVertical: space.sm,
+    alignItems: "center",
+  },
+  dangerBtnText: { color: colors.danger, fontSize: fontSize.sm, fontWeight: fontWeight.semibold },
 });

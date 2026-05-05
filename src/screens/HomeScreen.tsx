@@ -1,23 +1,42 @@
 // src/screens/HomeScreen.tsx
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { NetBadge } from "../components/NetBadge";
 import { PrimaryCTA } from "../components/PrimaryCTA";
 import { ScreenBackdrop } from "../components/ScreenBackdrop";
 import { WalletChip } from "../components/WalletChip";
+import { useConnect } from "../wallet/useConnect";
 import { colors, fonts, fontSize, fontWeight, radius, space } from "../theme";
 
 export function HomeScreen() {
   const nav = useNavigation<{ navigate: (n: string) => void }>();
+  const { isConnected, isConnecting, connectAndSignIn } = useConnect();
   return (
     <ScreenBackdrop>
       <View style={styles.topbar}>
-        <WalletChip state="disconnected" />
+        <WalletChip />
         <NetBadge network="devnet" />
       </View>
       <ScrollView contentContainerStyle={styles.body}>
+        {!isConnected && (
+          <View style={styles.connectCTA}>
+            <Text style={styles.connectCTATitle}>Connect a wallet to start trading</Text>
+            <Text style={styles.connectCTASubtitle}>
+              Sign once with Phantom or Solflare — your keys never leave the wallet.
+            </Text>
+            <Pressable
+              onPress={() => void connectAndSignIn()}
+              disabled={isConnecting}
+              style={styles.connectCTAButton}
+            >
+              <Text style={styles.connectCTAButtonText}>
+                {isConnecting ? "Connecting…" : "Connect Wallet"}
+              </Text>
+            </Pressable>
+          </View>
+        )}
         <View style={styles.brand}>
           <LinearGradient
             colors={[colors.primary, colors.secondary]}
@@ -92,4 +111,41 @@ const styles = StyleSheet.create({
   emptyText: { color: colors.muted, fontSize: fontSize.sm },
 
   cta: { marginTop: space.lg },
+
+  // Wallet Connect CTA hero block (shown when disconnected)
+  connectCTA: {
+    borderRadius: radius.md,
+    borderWidth: 1,
+    borderColor: colors.primaryBorder,
+    backgroundColor: colors.primaryBg,
+    padding: space.lg,
+    alignItems: "center",
+    gap: space.sm,
+  },
+  connectCTATitle: {
+    color: colors.text,
+    fontSize: fontSize.md,
+    fontWeight: fontWeight.bold,
+    textAlign: "center",
+  },
+  connectCTASubtitle: {
+    color: colors.muted,
+    fontSize: fontSize.sm,
+    textAlign: "center",
+    lineHeight: 18,
+    maxWidth: 280,
+  },
+  connectCTAButton: {
+    marginTop: space.xs,
+    backgroundColor: colors.primary,
+    borderRadius: radius.md,
+    paddingVertical: space.sm,
+    paddingHorizontal: space.xl,
+    alignItems: "center",
+  },
+  connectCTAButtonText: {
+    color: colors.primaryFg,
+    fontSize: fontSize.sm,
+    fontWeight: fontWeight.bold,
+  },
 });

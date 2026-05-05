@@ -1,35 +1,29 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text } from "react-native";
 
-import { colors, fonts, fontSize, radius, space } from "../theme";
+import { useConnect } from "../wallet/useConnect";
+import { colors, fonts, fontSize, fontWeight, radius, space } from "../theme";
 
-export type WalletChipState = "disconnected" | "connecting" | "connected";
+export function WalletChip() {
+  const { address, isConnected, isConnecting, connectAndSignIn } = useConnect();
 
-interface Props {
-  state: WalletChipState;
-  /** Truncated pubkey to show when connected, e.g. "7xKp…aR8q". */
-  shortAddress?: string;
-}
+  const onPress = () => {
+    if (!isConnected && !isConnecting) {
+      void connectAndSignIn();
+    }
+    // If already connected, tap is a no-op — full management lives in Settings
+  };
 
-/**
- * Compact topbar chip showing wallet connection status.
- * Stub for now — wallet logic lands in M5.
- */
-export function WalletChip({ state, shortAddress }: Props) {
-  const dotColor =
-    state === "connected" ? colors.success
-    : state === "connecting" ? colors.warning
-    : colors.muted;
-
-  const label =
-    state === "connected" ? (shortAddress ?? "CONNECTED")
-    : state === "connecting" ? "CONNECTING…"
-    : "DISCONNECTED";
+  const label = isConnecting
+    ? "CONNECTING…"
+    : isConnected && address
+      ? `${address.slice(0, 4)}…${address.slice(-4)}`
+      : "DISCONNECTED";
 
   return (
-    <View style={styles.chip}>
-      <View style={[styles.dot, { backgroundColor: dotColor, opacity: state === "disconnected" ? 0.5 : 1 }]} />
+    <Pressable onPress={onPress} style={[styles.chip, isConnected && styles.chipConnected]}>
+      <Text style={[styles.dot, isConnected && styles.dotConnected]}>●</Text>
       <Text style={styles.label}>{label}</Text>
-    </View>
+    </Pressable>
   );
 }
 
@@ -37,22 +31,23 @@ const styles = StyleSheet.create({
   chip: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 6,
-    paddingHorizontal: space.md,
-    paddingVertical: space.xs,
+    gap: space.xs,
+    paddingHorizontal: space.sm,
+    paddingVertical: 6,
     borderRadius: radius.pill,
     backgroundColor: colors.surface2,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: 1,
     borderColor: colors.border,
   },
-  dot: {
-    width: 6,
-    height: 6,
-    borderRadius: 3,
+  chipConnected: {
+    borderColor: colors.success,
   },
+  dot: { color: colors.muted, fontSize: 8 },
+  dotConnected: { color: colors.success },
   label: {
     fontFamily: fonts.mono,
     fontSize: fontSize.xs,
+    fontWeight: fontWeight.bold,
     color: colors.muted,
     letterSpacing: 0.5,
   },
