@@ -8,7 +8,12 @@ import { defineConfig } from "vitest/config";
  */
 export default defineConfig({
   test: {
-    include: ["src/smc/**/*.test.ts", "src/data/**/*.test.ts", "src/parser/**/*.test.ts"],
+    include: [
+      "src/smc/**/*.test.ts",
+      "src/data/**/*.test.ts",
+      "src/parser/**/*.test.ts",
+      "src/wallet/**/*.test.ts",
+    ],
     environment: "node",
     reporters: ["default"],
   },
