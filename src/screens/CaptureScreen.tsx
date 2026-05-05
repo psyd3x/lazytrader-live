@@ -7,7 +7,7 @@ import { FactorChips, type FactorChip, type FactorSeverity } from "../components
 import { MultiTimeframeDashboard, type DashboardRow } from "../components/MultiTimeframeDashboard";
 import { NetBadge } from "../components/NetBadge";
 import { PairInput } from "../components/PairInput";
-import { ParsedSignalCard, type SizingPreview } from "../components/ParsedSignalCard";
+import { ParsedSignalCard } from "../components/ParsedSignalCard";
 import { PrimaryCTA } from "../components/PrimaryCTA";
 import { RatingHeroCard } from "../components/RatingHeroCard";
 import { ScreenBackdrop } from "../components/ScreenBackdrop";
@@ -20,6 +20,7 @@ import { ParseError, parsePipeline } from "../parser/pipeline";
 import type { ParsedSignal } from "../parser/schema";
 import { generateSignalVerification } from "../smc";
 import type { SignalInput, SignalVerificationReport } from "../smc";
+import { computeSizingPreview } from "../smc/uiSizing";
 import { colors, fonts, fontSize, fontWeight, radius, space } from "../theme";
 
 const ACCOUNT_BALANCE = 1000;        // M8 makes editable
@@ -45,27 +46,15 @@ export function CaptureScreen() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
 
-  const sizing = useMemo<SizingPreview | null>(() => {
-    if (!parsed) return null;
-    const slDistancePct = Math.abs(parsed.entry - parsed.stopLoss) / parsed.entry;
-    if (!Number.isFinite(slDistancePct) || slDistancePct === 0) return null;
-    const riskAmount = ACCOUNT_BALANCE * (MAX_RISK_PCT / 100);
-    const notional = riskAmount / slDistancePct;
-    const idealLeverage = notional / ACCOUNT_BALANCE;
-    const cappedLeverage = Math.min(idealLeverage, MAX_LEVERAGE);
-    const cappedMargin = notional / cappedLeverage;
-    const actualRisk = cappedMargin * cappedLeverage * slDistancePct;
-    const capBinds = idealLeverage > MAX_LEVERAGE;
-    return {
-      margin: cappedMargin,
-      leverage: Math.round(cappedLeverage),
-      risk: actualRisk,
-      riskPct: (actualRisk / ACCOUNT_BALANCE) * 100,
-      capBinds,
-      intendedRiskPct: MAX_RISK_PCT,
-      maxLeverage: MAX_LEVERAGE,
-    };
-  }, [parsed]);
+  const sizing = useMemo(
+    () =>
+      computeSizingPreview(parsed, {
+        accountBalance: ACCOUNT_BALANCE,
+        maxRiskPct: MAX_RISK_PCT,
+        maxLeverage: MAX_LEVERAGE,
+      }),
+    [parsed],
+  );
 
   const verifyDisabled =
     analyzing ||

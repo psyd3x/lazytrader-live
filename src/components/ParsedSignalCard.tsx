@@ -2,17 +2,10 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 import type { ParsedSignal } from "../parser/schema";
+import type { SizingPreview } from "../smc/uiSizing";
 import { colors, fonts, fontSize, fontWeight, radius, space } from "../theme";
 
-export interface SizingPreview {
-  margin: number;          // $ collateral required at chosen leverage
-  leverage: number;        // capped to maxLeverage
-  risk: number;            // $ loss if SL hits
-  riskPct: number;         // % of accountBalance
-  capBinds: boolean;       // true when leverage === maxLeverage AND risk < intended budget
-  intendedRiskPct: number; // user's settings value (e.g. 1.0)
-  maxLeverage: number;     // user's settings cap (e.g. 25)
-}
+export type { SizingPreview };
 
 export interface ParsedSignalCardProps {
   /** Current parsed signal (controlled). */

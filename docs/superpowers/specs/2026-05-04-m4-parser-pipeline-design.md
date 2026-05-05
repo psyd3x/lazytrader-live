@@ -597,29 +597,31 @@ Test `pipeline.test.ts` mocks the LLM adapter and asserts that for `regexShouldH
 
 **Read-only fields:** Pair (PairInput is the source of truth — autofills if empty when card renders), source chip, multipleTrades chip, signalLeverage line, sizing preview, notes.
 
-**Sizing preview** is computed live from edited values. Derivation:
+**Sizing preview** is computed live from edited values. Trader-intuitive convention: margin equals the user's intended risk budget; leverage is derived from SL distance to make margin-loss-at-SL equal margin (clamped to `maxLeverage`). Derivation:
 
 ```ts
 slDistancePct  = abs(entry - stopLoss) / entry
-riskAmount     = accountBalance × maxRiskPct        // e.g. $1000 × 1% = $10
-notional       = riskAmount / slDistancePct         // size needed to hit exactly riskAmount at SL
-idealLeverage  = notional / accountBalance          // leverage if user posts full balance as margin
-cappedLeverage = min(idealLeverage, maxLeverage)    // clamped to user's cap (M3 stub: 25x)
-cappedMargin   = notional / cappedLeverage          // collateral required at the chosen leverage
-actualRisk     = cappedMargin × cappedLeverage × slDistancePct
-                                                    //   = riskAmount when cap doesn't bind
-                                                    //   < riskAmount when cap binds (cappedLev = maxLev)
+margin         = accountBalance × (maxRiskPct / 100)   // intended risk budget (e.g. $1000 × 1% = $10)
+idealLeverage  = 1 / slDistancePct                     // leverage so margin*lev*slDistPct == margin
+cappedLeverage = min(idealLeverage, maxLeverage)       // clamped to user's cap (M3 stub: 25x)
+notional       = margin × cappedLeverage               // position size posted
+actualRisk     = notional × slDistancePct
+                                                       //   = margin (full budget) when cap doesn't bind
+                                                       //   < margin (under-risked) when cap binds
+capBinds       = idealLeverage > maxLeverage           // i.e. slDistancePct < 1/maxLeverage (= 4% at 25×)
 ```
 
+Implemented in `src/smc/uiSizing.ts` (`computeSizingPreview`) so the math is unit-tested independently of CaptureScreen.
+
 **Display lines:**
-- `Margin: $cappedMargin` (rounded to 2 dp)
+- `Margin: $margin` (rounded to 2 dp)
 - `Leverage: cappedLeverage × (at your cap)` if `cappedLeverage === maxLeverage`, else `Leverage: cappedLeverage ×`
 - `Risk: $actualRisk (P% of account)` where `P = (actualRisk / accountBalance) × 100`
 
-**Warning chip on Risk line** when `cappedLeverage === maxLeverage` AND `actualRisk < riskAmount`:
+**Warning chip on Risk line** when `capBinds`:
 `SL too tight for {maxRiskPct}% risk budget at {maxLeverage}× cap — actual risk: P%`.
 
-When `cappedLeverage < maxLeverage` → no warning, full risk budget is reached.
+When the cap doesn't bind → no warning, full risk budget is reached.
 
 **Verify button** (in CaptureScreen, below the card) is disabled until:
 - ParsedSignalCard has rendered (i.e. parse succeeded)
